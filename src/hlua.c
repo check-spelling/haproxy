@@ -2385,7 +2385,7 @@ __LJMP static int hlua_socket_close_helper(lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2453,7 +2453,7 @@ __LJMP static int hlua_socket_receive_yield(struct lua_State *L, int status, lua
 		WILL_LJMP(luaL_error(L, "The 'receive' function is only allowed in "
 		                      "'frontend', 'backend' or 'task'"));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2607,7 +2607,7 @@ __LJMP static int hlua_socket_receive(struct lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2692,7 +2692,7 @@ static int hlua_socket_write_yield(struct lua_State *L,int status, lua_KContext 
 	buf = MAY_LJMP(luaL_checklstring(L, 2, &buf_len));
 	sent = MAY_LJMP(luaL_checkinteger(L, 3));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2924,7 +2924,7 @@ __LJMP static int hlua_socket_getpeername(struct lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2965,7 +2965,7 @@ static int hlua_socket_getsockname(struct lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3016,7 +3016,7 @@ __LJMP static int hlua_socket_connect_yield(struct lua_State *L, int status, lua
 	if (!hlua)
 		return 0;
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3034,7 +3034,7 @@ __LJMP static int hlua_socket_connect_yield(struct lua_State *L, int status, lua
 	appctx = csk_ctx->appctx;
 	s = appctx_strm(appctx);
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid) {
@@ -3089,7 +3089,7 @@ __LJMP static int hlua_socket_connect(struct lua_State *L)
 	/* Get args. */
 	socket  = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3237,7 +3237,7 @@ __LJMP static int hlua_socket_settimeout(struct lua_State *L)
 	if (tmout == 0)
 		tmout++; /* very small timeouts are adjusted to a minimum of 1ms */
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
