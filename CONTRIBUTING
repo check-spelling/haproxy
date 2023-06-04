@@ -621,12 +621,12 @@ do not think about them anymore after a few patches.
    the file you change, or a subsystem maintainers whose address is mentioned
    in a MAINTAINERS file. Not everyone reads the list on a daily basis so it's
    very easy to miss some changes. Don't consider it as a failure when a
-   reviewer tells you you have to modify your patch, actually it's a success
-   because now you know what is missing for your work to get accepted.  That's
-   why you should not hesitate to CC enough people. Don't copy people who have
-   no deal with your work area just because you found their address on the
-   list. That's the best way to appear careless about their time and make them
-   reject your changes in the future.
+   reviewer tells you that you have to modify your patch, actually it's a
+   success because now you know what is missing for your work to get accepted.
+   That's why you should not hesitate to CC enough people. Don't copy people
+   who have no deal with your work area just because you found their address
+   on the list. That's the best way to appear careless about their time and
+   make them reject your changes in the future.
 
 
 Patch classifying rules
