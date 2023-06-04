@@ -1699,7 +1699,7 @@ void list_mux_proto(FILE *out)
 
 		done = 0;
 
-		/* note: the block below could be simplied using macros but for only
+		/* note: the block below could be simplified using macros but for only
 		 * 4 flags it's not worth it.
 		 */
 		if (item->mux->flags & MX_FL_HTX)
