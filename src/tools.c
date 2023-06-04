@@ -1311,7 +1311,7 @@ struct sockaddr_storage *str2sa_range(const char *str, int *port, int *low, int 
 	if (proto || (opts & PA_O_CONNECT)) {
 		/* Note: if the caller asks for a proto, we must find one,
 		 * except if we inherit from a raw FD (family == AF_CUST_EXISTING_FD)
-		 * orif we return with an fqdn that will resolve later,
+		 * or if we return with an fqdn that will resolve later,
 		 * in which case the address is not known yet (this is only
 		 * for servers actually).
 		 */
