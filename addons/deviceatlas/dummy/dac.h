@@ -571,7 +571,7 @@ struct da_deviceinfo {
     /**
      * The per-deviceinfo heap is stored here. Allocations for data in the result
      * come from the raw data in these buffers. The size of the fixed-size buffer
-     * built in to da_buf is sized such that all known search results will not
+     * built into da_buf is sized such that all known search results will not
      * require memory allocation via malloc()
      */
     struct da_buf *heap;
