@@ -235,7 +235,7 @@ protobuf_skip_varint(unsigned char **pos, size_t *len, size_t vlen)
 }
 
 /*
- * If succeeded, return the length of a prococol buffers varint found at <pos> as
+ * If succeeded, return the length of a protocol buffers varint found at <pos> as
  * position address, with <len> as address of the available bytes at <*pos>.
  * Update <*pos> to make it point to the next available byte. Decrease <*len>
  * by the number of bytes used to encode this varint.
