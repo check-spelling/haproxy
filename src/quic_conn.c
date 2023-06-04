@@ -6832,7 +6832,7 @@ static inline int quic_padding_check(const unsigned char *pos,
  * <l> is the listener instance on which it was received.
  *
  * By default, <new_tid> is set to -1. However, if thread affinity has been
- * chanbed, it will be set to its new thread ID.
+ * changed, it will be set to its new thread ID.
  *
  * Returns the quic-conn instance or NULL if not found or thread affinity
  * changed.

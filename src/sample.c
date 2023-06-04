@@ -2146,7 +2146,7 @@ static int sample_conv_wt6(const struct arg *arg_p, struct sample *smp, void *pr
 }
 
 /* hashes the binary input into a 32-bit unsigned int using xxh.
- * The seed of the hash defaults to 0 but can be changd in argument 1.
+ * The seed of the hash defaults to 0 but can be changed in argument 1.
  */
 static int sample_conv_xxh32(const struct arg *arg_p, struct sample *smp, void *private)
 {
@@ -2166,7 +2166,7 @@ static int sample_conv_xxh32(const struct arg *arg_p, struct sample *smp, void *
  * In fact, the function returns a 64 bit unsigned, but the sample
  * storage of haproxy only proposes 64-bits signed, so the value is
  * cast as signed. This cast doesn't impact the hash repartition.
- * The seed of the hash defaults to 0 but can be changd in argument 1.
+ * The seed of the hash defaults to 0 but can be changed in argument 1.
  */
 static int sample_conv_xxh64(const struct arg *arg_p, struct sample *smp, void *private)
 {
