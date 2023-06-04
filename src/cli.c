@@ -1866,7 +1866,7 @@ static int cli_parse_set_anon(char **args, char *payload, struct appctx *appctx,
 	return 1;
 }
 
-/* This function set the global anonyzing key, restricted to level 'admin' */
+/* This function set the global anonymizing key, restricted to level 'admin' */
 static int cli_parse_set_global_key(char **args, char *payload, struct appctx *appctx, void *private)
 {
 	long long key;
