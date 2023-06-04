@@ -7644,7 +7644,7 @@ static inline int qc_build_frms(struct list *outlist, struct list *inlist,
 
 				stream_desc = eb64_entry(node, struct qc_stream_desc, by_id);
 				if (strm_frm->offset.key + strm_frm->len <= stream_desc->ack_offset) {
-					TRACE_DEVEL("ignored frame frame in already acked range",
+					TRACE_DEVEL("ignored frame in already acked range",
 					            QUIC_EV_CONN_PRSAFRM, qc, cf);
 					qc_frm_free(&cf);
 					continue;
