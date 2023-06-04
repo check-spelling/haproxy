@@ -2649,7 +2649,7 @@ size_t my_memspn(const void *str, size_t len, const void *accept, size_t acceptl
 	return ret;
 }
 
-/* get length of the initial segment consisting entirely of bytes not in <rejcet> */
+/* get length of the initial segment consisting entirely of bytes not in <reject> */
 size_t my_memcspn(const void *str, size_t len, const void *reject, size_t rejectlen)
 {
 	size_t ret = 0;
