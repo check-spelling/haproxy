@@ -589,7 +589,7 @@ static int hlua_queue_push(lua_State *L)
 	return 1;
 }
 
-/* internal queue pop helper, returns 1 if it successfuly popped an item
+/* internal queue pop helper, returns 1 if it successfully popped an item
  * from the queue and pushed it on lua stack.
  *
  * Else it returns 0 (nothing is pushed on the stack)
