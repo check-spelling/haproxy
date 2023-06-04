@@ -181,7 +181,7 @@ Encoded Sender Table Id | Encoded Local Table Name Length | Table Name | Encoded
 
 
 Encoded Sender Table ID present a the id numerical ID affected to that table by the sender
-It will be used by "Updates Aknowlegement Messages" and "Table Switch Messages".
+It will be used by "Updates Acknowledgement Messages" and "Table Switch Messages".
 
 Encoded Local Table Name Length present the length to read the table name.
 
