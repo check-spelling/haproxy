@@ -1178,7 +1178,7 @@ Here is the list of all known errors:
      11           | invalid interlaced frames
      12           | frame-id not found (it does not match any referenced frame)
      13           | resource allocation error
-     99           | an unknown error occurrde
+     99           | an unknown error occurred
   ----------------+--------------------------------------------------------
 
 An agent can define its own errors using a not yet assigned status code.
