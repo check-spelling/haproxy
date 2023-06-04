@@ -381,7 +381,7 @@ void wurfl_important_header_destroy(wurfl_important_header_handle);
 wurfl_device_handle wurfl_lookup_with_important_header(wurfl_handle, wurfl_important_header_handle);
 wurfl_device_handle wurfl_get_device_with_important_header(wurfl_handle, const char *deviceid, wurfl_important_header_handle);
 
-// Enumerator of all headers that should be passed to a lookup function. Returns a null-termninated list of const char*
+// Enumerator of all headers that should be passed to a lookup function. Returns a null-terminated list of const char*
 //
 // Example usage:
 //
