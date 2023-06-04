@@ -2070,7 +2070,7 @@ void resolv_detach_from_resolution_answer_items(struct resolv_resolution *res,  
 	leave_resolver_code();
 }
 
-/* Removes a requester from a DNS resolution. It takes takes care of all the
+/* Removes a requester from a DNS resolution. It takes care of all the
  * consequences. It also cleans up some parameters from the requester.
  */
 static void _resolv_unlink_resolution(struct resolv_requester *requester)
