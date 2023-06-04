@@ -489,7 +489,7 @@ size_t da_getpropcount(const da_deviceinfo_t *info);
 /**
  * @brief Represents a usable device atlas interface.
  *
- * No user servicable parts inside: access should
+ * No user serviceable parts inside: access should
  * be via the functional API.
  */
 struct da_atlas {
