@@ -341,7 +341,7 @@ int h1_parse_msg_hdrs(struct h1m *h1m, union h1_sl *h1sl, struct htx *dsthtx,
 	if (!max || !b_data(srcbuf))
 		goto end;
 
-	/* Realing input buffer if necessary */
+	/* Realign input buffer if necessary */
 	if (b_head(srcbuf) + b_data(srcbuf) > b_wrap(srcbuf))
 		b_slow_realign_ofs(srcbuf, trash.area, 0);
 
@@ -894,7 +894,7 @@ int h1_parse_msg_tlrs(struct h1m *h1m, struct htx *dsthtx,
 		goto output_full;
 	}
 
-	/* Realing input buffer if necessary */
+	/* Realign input buffer if necessary */
 	if (b_peek(srcbuf, ofs) > b_tail(srcbuf))
 		b_slow_realign_ofs(srcbuf, trash.area, 0);
 
