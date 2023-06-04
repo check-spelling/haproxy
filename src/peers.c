@@ -2222,7 +2222,7 @@ static inline int peer_treat_definemsg(struct appctx *appctx, struct peer *p,
 		goto ignore_msg;
 	}
 
-	/* Check if there there is the additional expire data */
+	/* Check if there is the additional expire data */
 	intdecode(msg_cur, msg_end);
 	if (*msg_cur) {
 		uint64_t data_type;
