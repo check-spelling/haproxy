@@ -518,7 +518,7 @@ int quic_tls_tx_ctx_init(EVP_CIPHER_CTX **tx_ctx,
 
 /* Encrypt in place <buf> plaintext with <len> as length with QUIC_TLS_TAG_LEN
  * included tailing bytes for the tag.
- * Note that for CCM mode, we must set the the ciphertext length if AAD data
+ * Note that for CCM mode, we must set the ciphertext length if AAD data
  * are provided from <aad> buffer with <aad_len> as length. This is always the
  * case here. So the caller of this function must provide <aad>.
  *
@@ -546,7 +546,7 @@ int quic_tls_encrypt(unsigned char *buf, size_t len,
 
 /* Decrypt in place <buf> ciphertext with <len> as length with QUIC_TLS_TAG_LEN
  * included tailing bytes for the tag.
- * Note that for CCM mode, we must set the the ciphertext length if AAD data
+ * Note that for CCM mode, we must set the ciphertext length if AAD data
  * are provided from <aad> buffer with <aad_len> as length. This is always the
  * case here. So the caller of this function must provide <aad>. Also not the
  * there is no need to call EVP_DecryptFinal_ex for CCM mode.
@@ -579,7 +579,7 @@ int quic_tls_decrypt(unsigned char *buf, size_t len,
  * in place its ciphertest if <out> output buffer ciphertest with <len> as length
  * is different from <in> input buffer. This is the responbality of the caller
  * to check that the output buffer has at least the same size as the input buffer.
- * Note that for CCM mode, we must set the the ciphertext length if AAD data
+ * Note that for CCM mode, we must set the ciphertext length if AAD data
  * are provided from <aad> buffer with <aad_len> as length. This is always the
  * case here. So the caller of this function must provide <aad>. Also note that
  * there is no need to call EVP_DecryptFinal_ex for CCM mode.

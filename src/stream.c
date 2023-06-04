@@ -1490,7 +1490,7 @@ int stream_set_http_mode(struct stream *s, const struct mux_proto_list *mux_prot
 	conn = sc_conn(sc);
 	if (conn) {
 		se_have_more_data(s->scf->sedesc);
-		/* Make sure we're unsubscribed, the the new
+		/* Make sure we're unsubscribed, the new
 		 * mux will probably want to subscribe to
 		 * the underlying XPRT
 		 */

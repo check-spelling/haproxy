@@ -1564,7 +1564,7 @@ static size_t h1_handle_headers(struct h1s *h1s, struct h1m *h1m, struct htx *ht
 
 	/* Reject HTTP/1.0 GET/HEAD/DELETE requests with a payload except if
 	 * accept_payload_with_any_method global option is set.
-	 *There is a payload if the c-l is not null or the the payload is
+	 *There is a payload if the c-l is not null or the payload is
 	 * chunk-encoded.  A parsing error is reported but a A
 	 * 413-Payload-Too-Large is returned instead of a 400-Bad-Request.
 	 */
@@ -4114,7 +4114,7 @@ static int add_hdr_case_adjust(const char *from, const char *to, char **err)
 	return 0;
 }
 
-/* Migrate the the connection to the current thread.
+/* Migrate the connection to the current thread.
  * Return 0 if successful, non-zero otherwise.
  * Expected to be called with the old thread lock held.
  */

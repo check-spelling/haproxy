@@ -531,7 +531,7 @@ you will systematically be asked for when posting a bug report :
 
 The relevant information that many non-developer users can verify here are :
   - the version : 1.6-dev7-a088d3-4 above means the code is currently at commit
-    ID "a088d3" which is the 4th one after after official version "1.6-dev7".
+    ID "a088d3" which is the 4th one after the official version "1.6-dev7".
     Version 1.6-dev7 would show as "1.6-dev7-8c1ad7". What matters here is in
     fact "1.6-dev7". This is the 7th development version of what will become
     version 1.6 in the future. A development version not suitable for use in
@@ -4136,7 +4136,7 @@ using regular expressions involving the dollar symbol).
 
 Environment variables also make it convenient to write configurations which are
 expected to work on various sites where only the address changes. It can also
-permit to remove passwords from some configs. Example below where the the file
+permit to remove passwords from some configs. Example below where the file
 "site1.env" file is sourced by the init script upon startup :
 
   $ cat site1.env

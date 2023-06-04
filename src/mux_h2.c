@@ -6850,7 +6850,7 @@ static int h2_show_sd(struct buffer *msg, struct sedesc *sd, const char *pfx)
 	return ret;
 }
 
-/* Migrate the the connection to the current thread.
+/* Migrate the connection to the current thread.
  * Return 0 if successful, non-zero otherwise.
  * Expected to be called with the old thread lock held.
  */
