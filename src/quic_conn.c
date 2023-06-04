@@ -8228,7 +8228,7 @@ static struct quic_tx_packet *qc_build_pkt(unsigned char **pos,
 	*pos = last_byte;
 	/* Attach the built packet to its tree. */
 	pkt->pn_node.key = pn;
-	/* Set the packet in fligth length for in flight packet only. */
+	/* Set the packet in flight length for in flight packet only. */
 	if (pkt->flags & QUIC_FL_TX_PACKET_IN_FLIGHT) {
 		pkt->in_flight_len = pkt->len;
 		qc->path->prep_in_flight += pkt->len;
