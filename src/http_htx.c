@@ -833,7 +833,7 @@ int http_update_authority(struct htx *htx, struct htx_sl *sl, const struct ist h
 }
 
 /* Update the header host by extracting the authority of the uri <uri>. flags of
- * the start-line are also updated accordingly. For orgin-form and asterisk-form
+ * the start-line are also updated accordingly. For origin-form and asterisk-form
  * uri, the header host is not changed and the flag HTX_SL_F_HAS_AUTHORITY is
  * removed from the flags of the start-line. Otherwise, this flag is set and the
  * authority is used to set the value of the header host. This function returns
