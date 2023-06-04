@@ -4085,7 +4085,7 @@ int parse_asctime_date(const char *date, int len, struct tm *tm)
  * obs-date     = rfc850-date / asctime-date
  *
  * parses an HTTP date in the RFC format and is accepted
- * alternatives. <date> is the strinf containing the date,
+ * alternatives. <date> is the string containing the date,
  * len is the len of the string. <tm> is filled with the
  * parsed time. We must considers this time as GMT.
  */
