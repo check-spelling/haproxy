@@ -7527,7 +7527,7 @@ void quic_apply_header_protection(struct quic_conn *qc, unsigned char *pos,
  *
  * Update consequently <*len> to reflect the size of these frames built
  * by this function. Also attach these frames to <l> frame list.
- * Return 1 if at least one ack-eleciting frame could be built, 0 if not.
+ * Return 1 if at least one ack-eliciting frame could be built, 0 if not.
  */
 static inline int qc_build_frms(struct list *outlist, struct list *inlist,
                                 size_t room, size_t *len, size_t headlen,
