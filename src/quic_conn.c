@@ -2092,7 +2092,7 @@ static void qc_treat_ack_of_ack(struct quic_conn *qc,
 	TRACE_LEAVE(QUIC_EV_CONN_PRSAFRM, qc);
 }
 
-/* Send a packet ack event nofication for each newly acked packet of
+/* Send a packet ack event notification for each newly acked packet of
  * <newly_acked_pkts> list and free them.
  * Always succeeds.
  */
