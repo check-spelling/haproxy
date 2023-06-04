@@ -3258,7 +3258,7 @@ static void http_manage_client_side_cookies(struct stream *s, struct channel *re
 				 * This allows to share a same cookie between several servers, for example
 				 * to dedicate backup servers to specific servers only.
 				 * However, to prevent clients from sticking to cookie-less backup server
-				 * when they have incidentely learned an empty cookie, we simply ignore
+				 * when they have incidentally learned an empty cookie, we simply ignore
 				 * empty cookies and mark them as invalid.
 				 * The same behaviour is applied when persistence must be ignored.
 				 */
