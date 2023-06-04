@@ -419,7 +419,7 @@ struct quic_rx_packet {
 	const struct quic_version *version;
 
 	unsigned char type;
-	/* Initial desctination connection ID. */
+	/* Initial destination connection ID. */
 	struct quic_cid dcid;
 	struct quic_cid scid;
 	/* Packet number offset : only valid for Initial/Handshake/0-RTT/1-RTT. */
