@@ -563,7 +563,7 @@ span <name> [<reference>]
   referenced span, or be root 'span'.  In case we did not specify a reference
   to the previously created span, the new span will become the root span.
   We need to pay attention to the fact that in one trace there can be only
-  one root span.  In case we have specified a non-existent span as a reference,
+  one root span.  In case we have specified a nonexistent span as a reference,
   a new span will not be created.
 
   Arguments :

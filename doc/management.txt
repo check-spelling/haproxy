@@ -3002,7 +3002,7 @@ show resolvers [<resolvers section id>]
     cname: number of CNAME responses
     cname_error: CNAME errors encountered with this server
     any_err: number of empty response (IE: server does not support ANY type)
-    nx: non existent domain response received from this server
+    nx: nonexistent domain response received from this server
     timeout: how many time this server did not answer in time
     refused: number of requests refused by this server
     other: any other DNS errors

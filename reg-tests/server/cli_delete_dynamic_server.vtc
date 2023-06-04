@@ -47,11 +47,11 @@ haproxy h1 -cli {
 }
 
 haproxy h1 -cli {
-	# non existent backend
+	# nonexistent backend
 	send "del server foo/s1"
 	expect ~ "No such backend."
 
-	# non existent server
+	# nonexistent server
 	send "del server test/other"
 	expect ~ "No such server."
 }
