@@ -2638,7 +2638,7 @@ static int _srv_parse_tmpl_init(struct server *srv, struct proxy *px)
 		/* Set this new server ID. */
 		_srv_parse_set_id_from_prefix(newsrv, srv->tmpl_info.prefix, i);
 
-		/* Linked backwards first. This will be restablished after parsing. */
+		/* Linked backwards first. This will be reestablished after parsing. */
 		newsrv->next = px->srv;
 		px->srv = newsrv;
 	}
