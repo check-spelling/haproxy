@@ -291,7 +291,7 @@ client c1 -connect ${h1_fe_gzip_sock} {
         expect resp.http.cache-control == "no-transform"
         expect resp.bodylen == 100
 
-        # 9. Response with uncompressable content-type
+        # 9. Response with uncompressible content-type
         txreq -url "/c1.9" \
           -hdr "Accept-Encoding: gzip"
         rxresp
@@ -301,7 +301,7 @@ client c1 -connect ${h1_fe_gzip_sock} {
         expect resp.http.content-type == "text/css"
         expect resp.bodylen == 100
 
-        # 10. Response with uncompressable content-type
+        # 10. Response with uncompressible content-type
         txreq -url "/c1.10" \
           -hdr "Accept-Encoding: gzip"
         rxresp
