@@ -2931,7 +2931,7 @@ static struct h2s *h2c_bck_handle_headers(struct h2c *h2c, struct h2s *h2s)
 	}
 
 	/* Unblock busy server h2s waiting for the response headers to validate
-	 * the tunnel establishment or the end of the response of an oborted
+	 * the tunnel establishment or the end of the response of an aborted
 	 * tunnel
 	 */
 	if ((h2s->flags & (H2_SF_BODY_TUNNEL|H2_SF_BLK_MBUSY)) == (H2_SF_BODY_TUNNEL|H2_SF_BLK_MBUSY) ||
