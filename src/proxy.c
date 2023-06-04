@@ -2041,7 +2041,7 @@ struct task *manage_proxy(struct task *t, void *context, unsigned int state)
 			/* We purposely enforce a budget limitation since we don't want
 			 * to spend too much time purging old entries
 			 *
-			 * This is known to cause the watchdog to occasionnaly trigger if
+			 * This is known to cause the watchdog to occasionally trigger if
 			 * the table is huge and all entries become available for purge
 			 * at the same time
 			 *
