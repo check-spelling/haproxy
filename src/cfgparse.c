@@ -3776,7 +3776,7 @@ out_uri_auth_compat:
 
 			/* this will also properly set the transport layer for
 			 * prod and checks
-			 * if default-server have use_ssl, prerare ssl init
+			 * if default-server have use_ssl, prepare ssl init
 			 * without activating it */
 			if (newsrv->use_ssl == 1 || newsrv->check.use_ssl == 1 ||
 			    (newsrv->proxy->options & PR_O_TCPCHK_SSL) ||
