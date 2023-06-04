@@ -1136,7 +1136,7 @@ struct sink *sink_new_from_logsrv(struct logsrv *logsrv)
 	if (!sink_init_forward(sink))
 		goto error;
 
-	/* reset familyt of logsrv to consider the ring buffer target */
+	/* reset family of logsrv to consider the ring buffer target */
 	logsrv->addr.ss_family = AF_UNSPEC;
 
 	return sink;
