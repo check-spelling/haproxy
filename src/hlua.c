@@ -1525,7 +1525,7 @@ void hlua_ctx_destroy(struct hlua *lua)
 	luaL_unref(hlua_states[lua->state_id], LUA_REGISTRYINDEX, lua->Tref);
 	RESET_SAFE_LJMP_PARENT(lua);
 	/* Forces a garbage collecting process. If the Lua program is finished
-	 * without error, we run the GC on the thread pointer. Its freed all
+	 * without error, we run the GC on the thread pointer. Its frees all
 	 * the unused memory.
 	 * If the thread is finished with an error or is currently yielded,
 	 * it seems that the GC applied on the thread doesn't clean anything,
