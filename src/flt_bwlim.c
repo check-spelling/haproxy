@@ -30,7 +30,7 @@ const char *bwlim_flt_id = "bandwidth limitation filter";
 
 struct flt_ops bwlim_ops;
 
-#define BWLIM_FL_NONE    0x00000000 /* For init purposr */
+#define BWLIM_FL_NONE    0x00000000 /* For init purposes */
 #define BWLIM_FL_IN      0x00000001 /* Limit clients uploads */
 #define BWLIM_FL_OUT     0x00000002 /* Limit clients downloads */
 #define BWLIM_FL_SHARED  0x00000004 /* Limit shared between clients (using stick-tables) */
