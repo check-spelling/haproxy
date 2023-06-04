@@ -262,7 +262,7 @@ local process to push all known ending with a Resync Finished Message or a Resyn
 
 A new process will wait for a an incoming connection from a local process during 5 seconds. It will learn the updates from this
 process until it receives a Resync Finished Message or a Resync Partial Message. If it receive a  Resync Finished Message it will consider itself
-as fully updated and stops to ask for resync. If it receive a Resync Partial Message it will wait once again for 5 seconds for an other incoming connection from a local process.
+as fully updated and stops to ask for resync. If it receive a Resync Partial Message it will wait once again for 5 seconds for another incoming connection from a local process.
 Same thing if the session was broken before receiving any "Resync Partial Message" or "Resync Finished Message".
 
 If one of these 5 seconds timeout expire, the process will try to request resync from a remote connected peer (see b). The process will wait until 5seconds

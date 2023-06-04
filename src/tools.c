@@ -5898,7 +5898,7 @@ const char *hash_anon(uint32_t scramble, const char *string2hash, const char *pr
 
 /* This function hashes or not an ip address ipstring, scramble is the anonymizing
  * key, returns the hashed ip with his port or ipstring when there is nothing to hash.
- * Put hasport equal 0 to point out ipstring has no port, else put an other int.
+ * Put hasport equal 0 to point out ipstring has no port, else put another int.
  * Without port, return a simple hash or ipstring.
  */
 const char *hash_ipanon(uint32_t scramble, char *ipstring, int hasport)

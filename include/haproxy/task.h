@@ -698,7 +698,7 @@ static inline const char *task_wakeup_type_str(uint t)
 
 /* This function register a new signal. "lua" is the current lua
  * execution context. It contains a pointer to the associated task.
- * "link" is a list head attached to an other task that must be wake
+ * "link" is a list head attached to another task that must be wake
  * the lua task if an event occurs. This is useful with external
  * events like TCP I/O or sleep functions. This function allocate
  * memory for the signal.

@@ -182,7 +182,7 @@ struct resolv_options {
 	} pref_net[SRV_MAX_PREF_NET];
 	int pref_net_nb; /* The number of registered preferred networks. */
 	int accept_duplicate_ip; /* flag to indicate whether the associated object can use an IP address
-				    already set to an other object of the same group */
+				    already set to another object of the same group */
 	int ignore_weight; /* flag to indicate whether to ignore the weight within the record */
 };
 
