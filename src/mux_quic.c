@@ -2553,7 +2553,7 @@ static int qmux_init(struct connection *conn, struct proxy *prx,
 
 	qcc->wait_event.tasklet = tasklet_new();
 	if (!qcc->wait_event.tasklet) {
-		TRACE_ERROR("taslket alloc failure", QMUX_EV_QCC_NEW);
+		TRACE_ERROR("tasklet alloc failure", QMUX_EV_QCC_NEW);
 		goto fail_no_tasklet;
 	}
 
