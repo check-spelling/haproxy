@@ -1383,7 +1383,7 @@ spoe_release_appctx(struct appctx *appctx)
 			    &spoe_appctx->buffer_wait);
 	pool_free(pool_head_spoe_appctx, spoe_appctx);
 
-	/* Update runtinme agent info */
+	/* Update runtime agent info */
 	agent->rt[tid].frame_size = agent->max_frame_size;
 	list_for_each_entry(spoe_appctx, &agent->rt[tid].applets, list)
 		HA_ATOMIC_UPDATE_MIN(&agent->rt[tid].frame_size, spoe_appctx->max_frame_size);
@@ -1497,7 +1497,7 @@ spoe_handle_connecting_appctx(struct appctx *appctx)
 			SPOE_APPCTX(appctx)->node.key = 0;
 			eb32_insert(&agent->rt[tid].idle_applets, &SPOE_APPCTX(appctx)->node);
 
-			/* Update runtinme agent info */
+			/* Update runtime agent info */
 			HA_ATOMIC_UPDATE_MIN(&agent->rt[tid].frame_size, SPOE_APPCTX(appctx)->max_frame_size);
 			goto next;
 	}
