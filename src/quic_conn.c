@@ -8012,7 +8012,7 @@ static int qc_do_build_pkt(unsigned char *pos, const unsigned char *end,
 			dglen += 1;
 			/* Note that only we are in the case where this Initial packet
 			 * is not coalesced to an Handshake packet. We must directly
-			 * pad the datragram.
+			 * pad the datagram.
 			 */
 			if (pkt->type == QUIC_PACKET_TYPE_INITIAL) {
 				if (dglen < QUIC_INITIAL_PACKET_MINLEN) {
