@@ -158,7 +158,7 @@ enum spoe_frame_error {
 	SPOE_FRM_ERRS,
 };
 
-/* Scopes used for variables set by agents. It is a way to be agnotic to vars
+/* Scopes used for variables set by agents. It is a way to be agnostic to vars
  * scope. */
 enum spoe_vars_scope {
 	SPOE_SCOPE_PROC = 0, /* <=> SCOPE_PROC  */
