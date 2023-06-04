@@ -3945,7 +3945,7 @@ int srv_set_addr_via_libc(struct server *srv, int *err_code)
 	return 0;
 }
 
-/* Set the server's FDQN (->hostname) from <hostname>.
+/* Set the server's FQDN (->hostname) from <hostname>.
  * Returns -1 if failed, 0 if not.
  *
  * Must be called with the server lock held.
@@ -4155,7 +4155,7 @@ const char *srv_update_fqdn(struct server *server, const char *fqdn, const char 
 	chunk_reset(msg);
 
 	if (server->hostname && strcmp(fqdn, server->hostname) == 0) {
-		chunk_appendf(msg, "no need to change the FDQN");
+		chunk_appendf(msg, "no need to change the FQDN");
 		goto out;
 	}
 
