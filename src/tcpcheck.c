@@ -4153,7 +4153,7 @@ int proxy_parse_ssl_hello_chk_opt(char **args, int cur_arg, struct proxy *curpx,
 		"16"                        /* ContentType         : 0x16 = Handshake          */
 		"0300"                      /* ProtocolVersion     : 0x0300 = SSLv3            */
 		"0079"                      /* ContentLength       : 0x79 bytes after this one */
-		"01"                        /* HanshakeType        : 0x01 = CLIENT HELLO       */
+		"01"                        /* HandshakeType        : 0x01 = CLIENT HELLO       */
 		"000075"                    /* HandshakeLength     : 0x75 bytes after this one */
 		"0300"                      /* Hello Version       : 0x0300 = v3               */
 		"%[date(),htonl,hex]"       /* Unix GMT Time (s)   : filled with <now> (@0x0B) */
