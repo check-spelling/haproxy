@@ -3333,7 +3333,7 @@ static int sample_conv_strcmp(const struct arg *arg_p, struct sample *smp, void 
 /*
  * This converter can takes a Host header value as defined by rfc9110#section-7.2
  * Host = uri-host [ ":" port ] ;
- * It returns the uri-host value in lowecase with the port stripped.
+ * It returns the uri-host value in lowercase with the port stripped.
  */
 static int sample_conv_host_only(const struct arg *arg_p, struct sample *smp, void *private)
 {
