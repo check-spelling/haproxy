@@ -1212,7 +1212,7 @@ static void cli_release_handler(struct appctx *appctx)
 	}
 }
 
-/* This function dumps all environmnent variables to the buffer. It returns 0
+/* This function dumps all environment variables to the buffer. It returns 0
  * if the output buffer is full and it needs to be called again, otherwise
  * non-zero. It takes its context from the show_env_ctx in svcctx, and will
  * start from ->var and dump only one variable if ->show_one is set.
