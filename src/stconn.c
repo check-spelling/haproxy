@@ -341,7 +341,7 @@ int sc_attach_strm(struct stconn *sc, struct stream *strm)
 	return 0;
 }
 
-/* Detaches the stconn from the endpoint, if any. For a connecrion, if a
+/* Detaches the stconn from the endpoint, if any. For a connection, if a
  * mux owns the connection ->detach() callback is called. Otherwise, it means
  * the stream connector owns the connection. In this case the connection is closed
  * and released. For an applet, the appctx is released. If still allocated, the

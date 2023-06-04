@@ -2924,7 +2924,7 @@ static struct ncbuf *quic_get_ncbuf(struct ncbuf *ncbuf)
 	return ncbuf;
 }
 
-/* Parse <frm> CRYPTO frame coming with <pkt> packet at <qel> <qc> connectionn.
+/* Parse <frm> CRYPTO frame coming with <pkt> packet at <qel> <qc> connection.
  * Returns 1 if succeeded, 0 if not. Also set <*fast_retrans> to 1 if the
  * speed up handshake completion may be run after having received duplicated
  * CRYPTO data.
