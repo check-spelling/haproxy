@@ -50,7 +50,7 @@ jobs:
       with:
         fetch-depth: 100
 #
-# Github Action cache key cannot contain comma, so we calculate it based on job name
+# GitHub Action cache key cannot contain comma, so we calculate it based on job name
 #
     - name: Generate cache key
       id: generate-cache-key

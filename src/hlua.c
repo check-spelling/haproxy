@@ -1481,7 +1481,7 @@ static void hlua_httpclient_destroy_all(struct hlua *hlua)
 	 * another thread sharing the same main lua stack (lua coroutine)
 	 * could execute hlua_httpclient_gc() on the hlua->hc_list items
 	 * in parallel: Lua GC applies on the main stack, it is not limited to
-	 * a single coroutine stack, see Github issue #2037 for reference.
+	 * a single coroutine stack, see GitHub issue #2037 for reference.
 	 * Remember, coroutines created using lua_newthread() are not meant to
 	 * be thread safe in Lua. (From lua co-author:
 	 * http://lua-users.org/lists/lua-l/2011-07/msg00072.html)
