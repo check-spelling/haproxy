@@ -838,7 +838,7 @@ int cfg_parse_global(const char *file, int linenum, char **args, int kwm)
 
 		if (!i || args[1][i]) {
 			ha_alert("parsing [%s:%d]: '%s' requires valid node name - non-empty string"
-				 " with digits(0-9), letters(A-Z, a-z), dot(.), hyphen(-) or underscode(_).\n",
+				 " with digits(0-9), letters(A-Z, a-z), dot(.), hyphen(-) or underscore(_).\n",
 				 file, linenum, args[0]);
 			err_code |= ERR_ALERT | ERR_FATAL;
 			goto out;

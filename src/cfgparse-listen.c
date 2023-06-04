@@ -1843,7 +1843,7 @@ int cfg_parse_listen(const char *file, int linenum, char **args, int kwm)
 
 				if (!i || args[2][i]) {
 					ha_alert("parsing [%s:%d]: '%s %s' invalid node name - should be a string"
-						 "with digits(0-9), letters(A-Z, a-z), hyphen(-) or underscode(_).\n",
+						 "with digits(0-9), letters(A-Z, a-z), hyphen(-) or underscore(_).\n",
 						 file, linenum, args[0], args[1]);
 					err_code |= ERR_ALERT | ERR_FATAL;
 					goto out;
