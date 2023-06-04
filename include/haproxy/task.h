@@ -278,7 +278,7 @@ static inline struct task *task_unlink_wq(struct task *t)
  * timer is infinite, do nothing and rely on wake_expired_task to clean up.
  * If the task uses a shared wait queue, it's queued into the global wait queue,
  * protected by the global wq_lock, otherwise by it necessarily belongs to the
- * current thread'sand is queued without locking.
+ * current thread's and is queued without locking.
  */
 static inline void task_queue(struct task *task)
 {
