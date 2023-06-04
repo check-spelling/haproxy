@@ -40,7 +40,7 @@ struct list post_server_check_list = LIST_HEAD_INIT(post_server_check_list);
 
 /* These functions are called for each thread just after the thread creation
  * and before running the init functions. They should be used to do per-thread
- * (re-)allocations that are needed by subsequent functoins. They must return 0
+ * (re-)allocations that are needed by subsequent functions. They must return 0
  * if an error occurred. */
 struct list per_thread_alloc_list = LIST_HEAD_INIT(per_thread_alloc_list);
 
