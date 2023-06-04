@@ -1080,7 +1080,7 @@ Proxy class
 .. js:attribute:: Proxy.listeners
 
   Contains a table with the attached listeners. The table is indexed by listener
-  name, and each each listeners entry is an object of type
+  name, and each listeners entry is an object of type
   :ref:`listener_class`.
 
 .. js:function:: Proxy.pause(px)
