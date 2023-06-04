@@ -326,7 +326,7 @@ static inline size_t max_stream_data_size(size_t sz, size_t ilen, size_t dlen)
 }
 
 /* Return the length in bytes of <pn> packet number depending on
- * <largest_acked_pn> the largest ackownledged packet number.
+ * <largest_acked_pn> the largest acknowledged packet number.
  */
 static inline size_t quic_packet_number_length(int64_t pn,
                                                int64_t largest_acked_pn)
