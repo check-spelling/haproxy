@@ -126,7 +126,7 @@ static forceinline char *h1s_show_flags(char *buf, size_t len, const char *delim
 
 /* H1 connection state, in h1c->state */
 enum h1_cs {
-	H1_CS_IDLE,        /* IDLE connection. A freashly open or a reusable connection (H1S is NULL) */
+	H1_CS_IDLE,        /* IDLE connection. A freshly open or a reusable connection (H1S is NULL) */
 	H1_CS_EMBRYONIC,   /* Connection is waiting for the message headers (H1S is not NULL, not attached to a SC - Frontend connection only) */
 	H1_CS_UPGRADING,   /* TCP>H1 upgrade in-progress (H1S is not NULL and attached to a SC - Frontend connection only) */
 	H1_CS_RUNNING,     /* Connection fully established and the H1S is processing data (H1S is not NULL and attached to a SC) */
