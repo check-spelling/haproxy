@@ -708,7 +708,7 @@
 			p->next = (el);                                    \
 	} while (0)
 
-/* Internal macroes for the foreach macroes */
+/* Internal macros for the foreach macros */
 #define _MT_LIST_UNLOCK_NEXT(el, np)                                       \
 	do {                                                               \
 		struct mt_list *n = (np);                                  \
@@ -717,7 +717,7 @@
 		        n->prev = (el);                                    \
 	} while (0)
 
-/* Internal macroes for the foreach macroes */
+/* Internal macros for the foreach macros */
 #define _MT_LIST_UNLOCK_PREV(el, np)                                       \
 	do {                                                               \
 		struct mt_list *p = (np);                                  \
