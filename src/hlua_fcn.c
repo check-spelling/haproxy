@@ -271,7 +271,7 @@ void *hlua_checkudata(lua_State *L, int ud, int class_ref)
 	if (!lua_istable(L, ud))
 		luaL_argerror(L, ud, NULL);
 
-	/* pop the metatable of the referencecd object. */
+	/* pop the metatable of the referenced object. */
 	if (!lua_getmetatable(L, ud))
 		luaL_argerror(L, ud, NULL);
 
