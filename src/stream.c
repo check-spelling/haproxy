@@ -1667,7 +1667,7 @@ void stream_update_timings(struct task *t, uint64_t lat, uint64_t cpu)
 			continue;					\
 }
 
-/* These 2 following macros call an analayzer for the specified channel if the
+/* These 2 following macros call an analyzer for the specified channel if the
  * right flag is set. The first one is used for "filterable" analyzers. If a
  * stream has some registered filters, pre and post analyze callbacks are
  * called. The second are used for other analyzers (AN_REQ/RES_FLT_* and
