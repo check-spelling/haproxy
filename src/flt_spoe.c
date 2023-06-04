@@ -2984,7 +2984,7 @@ spoe_sig_stop(struct sig_handler *sh)
 	while (p) {
 		struct flt_conf *fconf;
 
-		/* SPOE filter are not initialized for disabled proxoes. Move to
+		/* SPOE filter are not initialized for disabled proxies. Move to
 		 * the next one
 		 */
 		if (p->flags & PR_FL_DISABLED) {
