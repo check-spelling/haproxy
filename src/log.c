@@ -83,7 +83,7 @@ static const struct log_fmt_st log_formats[LOG_FORMATS] = {
 
 /*
  * This map is used with all the FD_* macros to check whether a particular bit
- * is set or not. Each bit represents an ACSII code. ha_bit_set() sets those
+ * is set or not. Each bit represents an ASCII code. ha_bit_set() sets those
  * bytes which should be escaped. When ha_bit_test() returns non-zero, it means
  * that the byte should be escaped. Be careful to always pass bytes from 0 to
  * 255 exclusively to the macros.
