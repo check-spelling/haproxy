@@ -2488,7 +2488,7 @@ int stream_set_backend(struct stream *s, struct proxy *be)
 			return 0;
 	}
 	else if (IS_HTX_STRM(s) && be->mode != PR_MODE_HTTP) {
-		/* If a TCP backend is assgiend to an HTX stream, return an
+		/* If a TCP backend is assigned to an HTX stream, return an
 		 * error. It may happens for a new stream on a previously
 		 * upgraded connections. */
 		if (!(s->flags & SF_ERR_MASK))
