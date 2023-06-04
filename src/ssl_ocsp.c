@@ -847,7 +847,7 @@ static struct task *ssl_ocsp_update_responses(struct task *task, void *context, 
  * Create the main OCSP update task that will iterate over the OCSP responses
  * stored in ocsp_update_tree and send an OCSP request via the http_client
  * applet to the corresponding OCSP responder. The task will then be in charge
- * of processing the response, verifying it and resinserting it in the actual
+ * of processing the response, verifying it and reinserting it in the actual
  * ocsp response tree if the response is valid.
  * Returns 0 in case of success.
  */
