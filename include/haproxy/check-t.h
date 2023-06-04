@@ -30,7 +30,7 @@
  * so it is important to keep its includes list to the minimum possible (i.e.
  * only types whose size needs to be known). Since there are no function
  * prototypes nor pointers here, forward declarations are not really necessary.
- * This file oughtt to be split into multiple parts, at least regular checks vs
+ * This file ought to be split into multiple parts, at least regular checks vs
  * tcp-checks.
  */
 
