@@ -1,5 +1,5 @@
 /*
- * include/haprox/cbuf.h
+ * include/haproxy/cbuf.h
  * This file contains definitions and prototypes for circular buffers.
  * Inspired from Linux circular buffers (include/linux/circ_buf.h).
  *
