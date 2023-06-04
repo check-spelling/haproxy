@@ -669,7 +669,7 @@ static struct appctx *sink_forward_session_create(struct sink *sink, struct sink
 }
 
 /*
- * Task to handle connctions to forward servers
+ * Task to handle connections to forward servers
  */
 static struct task *process_sink_forward(struct task * task, void *context, unsigned int state)
 {
@@ -702,7 +702,7 @@ static struct task *process_sink_forward(struct task * task, void *context, unsi
 	return task;
 }
 /*
- * Init task to manage connctions to forward servers
+ * Init task to manage connections to forward servers
  *
  * returns 0 in case of error.
  */
