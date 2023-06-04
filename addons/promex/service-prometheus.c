@@ -414,7 +414,7 @@ enum promex_srv_state promex_srv_status(struct server *sv)
 
 /* Convert a field to its string representation and write it in <out>, followed
  * by a newline, if there is enough space. non-numeric value are converted in
- * "NaN" because Prometheus only support numerical values (but it is unexepected
+ * "NaN" because Prometheus only support numerical values (but it is unexpected
  * to process this kind of value). It returns 1 on success. Otherwise, it
  * returns 0. The buffer's length must not exceed <max> value.
  */
