@@ -707,7 +707,7 @@ static void dns_session_io_handler(struct appctx *appctx)
 			/* consume all data until the end of the message from the channel */
 			co_skip(sc_oc(sc), ds->rx_msg.len - ds->rx_msg.offset);
 
-			/* reset reader offset to 0 for next message reand */
+			/* reset reader offset to 0 for next message read */
 			ds->rx_msg.offset = 0;
 
 			/* try remap query id to original */
