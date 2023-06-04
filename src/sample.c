@@ -569,7 +569,7 @@ struct sample_fetch *sample_fetch_getnext(struct sample_fetch *current, int *idx
 		kwl = LIST_NEXT(&sample_fetches.list, struct sample_fetch_kw_list *, list);
 		(*idx) = 0;
 	} else {
-		/* Get kwl corresponding to the curret entry. */
+		/* Get kwl corresponding to the current entry. */
 		base = current + 1 - (*idx);
 		kwl = container_of(base, struct sample_fetch_kw_list, kw);
 	}
@@ -612,7 +612,7 @@ struct sample_conv *sample_conv_getnext(struct sample_conv *current, int *idx)
 		kwl = LIST_NEXT(&sample_convs.list, struct sample_conv_kw_list *, list);
 		(*idx) = 0;
 	} else {
-		/* Get kwl corresponding to the curret entry. */
+		/* Get kwl corresponding to the current entry. */
 		base = current + 1 - (*idx);
 		kwl = container_of(base, struct sample_conv_kw_list, kw);
 	}
