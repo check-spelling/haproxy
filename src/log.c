@@ -773,7 +773,7 @@ int parse_logsrv(char **args, struct list *logsrvs, int do_del, const char *file
 	int fd;
 
 	/*
-	 * "no log": delete previous herited or defined syslog
+	 * "no log": delete previous inherited or defined syslog
 	 *           servers.
 	 */
 	if (do_del) {
