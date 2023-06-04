@@ -3280,7 +3280,7 @@ more:
 		if (px_st == STAT_PX_ST_SV) {
 			struct server *cur = ctx->obj2;
 
-			/* re-entrant dump */
+			/* reentrant dump */
 			BUG_ON(!cur);
 			if (cur->flags & SRV_F_DELETED) {
 				/* the server could have been marked as deleted
