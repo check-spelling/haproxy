@@ -1096,7 +1096,7 @@ static int tlskeys_finalize_config(void)
  * status extension, the issuer's certificate is mandatory.  It should be
  * present in ckch->ocsp_issuer.
  *
- * In addition, the ckch->ocsp_reponse buffer is loaded as a DER format of an
+ * In addition, the ckch->ocsp_response buffer is loaded as a DER format of an
  * OCSP response. If file is empty or content is not a valid OCSP response,
  * OCSP status extension is enabled but OCSP response is ignored (a warning is
  * displayed).

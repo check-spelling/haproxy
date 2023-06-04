@@ -685,7 +685,7 @@ enum tcpcheck_eval_ret tcpcheck_ldap_expect_bindrsp(struct check *check, struct 
 		/* For message size encoded on several bytes, we only handle
 		 * size encoded on 2 or 4 bytes. There is no reason to make this
 		 * part to complex because only Active Directory is known to
-		 * encode BindReponse length on 4 bytes.
+		 * encode BindResponse length on 4 bytes.
 		 */
 		nbytes = (*ptr & 0x7f);
 		if (b_data(&check->bi) < 1 + nbytes)
