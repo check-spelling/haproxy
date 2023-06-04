@@ -1558,7 +1558,7 @@ void pattern_init_head(struct pattern_head *head)
  * acl.
  *
  * The unique_id identify inline acl. The unique id is unique for each acl.
- * You cannot force the same id in the configuration file, because this repoort
+ * You cannot force the same id in the configuration file, because this report
  * an error.
  *
  * A particular case appears if the filename is a number. In this case, the
