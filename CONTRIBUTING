@@ -228,7 +228,7 @@ do not think about them anymore after a few patches.
    You have read and understood "doc/coding-style.txt", and you're actively
    determined to respect it and to enforce it on your coworkers if you're going
    to submit a team's work. We don't care what text editor you use, whether it's
-   an hex editor, cat, vi, emacs, Notepad, Word, or even Eclipse. The editor is
+   a hex editor, cat, vi, emacs, Notepad, Word, or even Eclipse. The editor is
    only the interface between you and the text file. What matters is what is in
    the text file in the end. The editor is not an excuse for submitting poorly
    indented code, which only proves that the person has no consideration for
