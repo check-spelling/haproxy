@@ -1014,7 +1014,7 @@ static void h1_release(struct h1c *h1c)
 
 	TRACE_POINT(H1_EV_H1C_END);
 
-	/* The connection must be aattached to this mux to be released */
+	/* The connection must be attached to this mux to be released */
 	if (h1c->conn && h1c->conn->ctx == h1c)
 		conn = h1c->conn;
 
