@@ -406,7 +406,7 @@ void sample_register_fetches(struct sample_fetch_kw_list *kwl)
 }
 
 /*
- * Registers the sample format coverstion keyword list <pckl> as a list of valid keywords for next
+ * Registers the sample format conversion keyword list <pckl> as a list of valid keywords for next
  * parsing sessions.
  */
 void sample_register_convs(struct sample_conv_kw_list *pckl)
