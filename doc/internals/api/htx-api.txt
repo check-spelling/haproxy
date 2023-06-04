@@ -336,7 +336,7 @@ Once with an HTX message, following functions may help to process it :
 
 4.3. HTX Blocks manipulations
 
-Once the available sapce in an HTX message is known, the next step is to add HTX
+Once the available space in an HTX message is known, the next step is to add HTX
 blocks. First of all the function htx_nbblks() returns the number of blocks
 allocated in an HTX message. Then, there is an add function per block's type :
 
