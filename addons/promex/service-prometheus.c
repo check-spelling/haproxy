@@ -91,7 +91,7 @@ struct promex_ctx {
 	int obj_state;             /* current state among PROMEX_{FRONT|BACK|SRV|LI}_STATE_* */
 };
 
-/* Promtheus metric type (gauge or counter) */
+/* Prometheus metric type (gauge or counter) */
 enum promex_mt_type {
 	PROMEX_MT_GAUGE   = 1,
 	PROMEX_MT_COUNTER = 2,
