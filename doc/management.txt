@@ -1537,7 +1537,7 @@ Limitations do exist: the length of the whole buffer passed to the CLI must
 not be greater than tune.bfsize and the pattern "<<" must not be glued to the
 last word of the line.
 
-When entering a paylod while in interactive mode, the prompt will change from
+When entering a payload while in interactive mode, the prompt will change from
 "> " to "+ ".
 
 It is important to understand that when multiple haproxy processes are started
