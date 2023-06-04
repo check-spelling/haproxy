@@ -1296,7 +1296,7 @@ int post_sink_resolve()
 					}
 				}
 				else if (sink->type != SINK_TYPE_BUFFER) {
-					ha_alert("log server declared in proxy section '%s' in file '%s' at line %d uses incomatible ring named '%s'.\n",
+					ha_alert("log server declared in proxy section '%s' in file '%s' at line %d uses incompatible ring named '%s'.\n",
 					         px->id, logsrv->conf.file, logsrv->conf.line, logsrv->ring_name);
 					err_code |= ERR_ALERT | ERR_FATAL;
 				}
