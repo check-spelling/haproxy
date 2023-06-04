@@ -863,7 +863,7 @@ at the beginning of the subject, when you're asking for someone to review your
 change before getting it merged. If the patch is OK to be merged, then it can
 be merge as-is and the '[RFC]' tag will automatically be removed. If you don't
 want it to be merged at all, you can simply state it in the message, or use an
-alternate 'WIP/' prefix in front of your tag tag ("work in progress").
+alternate 'WIP/' prefix in front of your tag ("work in progress").
 
 The tags are not rigid, follow your intuition first, and they may be readjusted
 when your patch is merged. It may happen that a same patch has a different tag
