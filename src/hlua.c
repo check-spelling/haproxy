@@ -2558,7 +2558,7 @@ connection_closed:
 
 no_peer:
 
-	/* If the buffer containds data. */
+	/* If the buffer contains data. */
 	if (socket->b.n > 0) {
 		luaL_pushresult(&socket->b);
 		return 1;
