@@ -1193,7 +1193,7 @@ IMPORTANT NOTE: By default, for a specific stream, when an abnormal/unexpected
 
 To avoid a stream to wait indefinitely, you must carefully choose the
 acknowledgement timeout. In most of cases, it will be quiet low. But it depends
-on the responsivness of your service.
+on the responsiveness of your service.
 
 You must also choose idle timeout carefully. Because connection with your
 service depends on the backend configuration used by the SPOA, it is important
