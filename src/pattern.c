@@ -904,7 +904,7 @@ struct pattern *pat_match_dir(struct sample *smp, struct pattern_expr *expr, int
 }
 
 /* Checks that the pattern is included inside the tested string, but enclosed
- * between the delmiters '/', '?', '.' or ":" or at the beginning or end of
+ * between the delimiters '/', '?', '.' or ":" or at the beginning or end of
  * the string. Delimiters at the beginning or end of the pattern are ignored.
  */
 struct pattern *pat_match_dom(struct sample *smp, struct pattern_expr *expr, int fill)
