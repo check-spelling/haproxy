@@ -234,7 +234,7 @@ static struct htx_blk *htx_reserve_nxblk(struct htx *htx, uint32_t blksz)
  *  2: the block's payload must be moved at the new block address before doing
  *     the expansion.
  *
- *  3: the HTX message message must be defragmented
+ *  3: the HTX message must be defragmented
  */
 static int htx_prepare_blk_expansion(struct htx *htx, struct htx_blk *blk, int32_t delta)
 {
