@@ -84,7 +84,7 @@
  * At the end, if payload wrapping or blocks defragmentation is not enough, some
  * free space may be get back with a full defragmentation. This way, the holes in
  * the middle are not reusable but count in the available free space. The only
- * way to reuse this lost space is to fully defragmenate the HTX message.
+ * way to reuse this lost space is to fully defragment the HTX message.
  *
  *                                   - * -
  *
