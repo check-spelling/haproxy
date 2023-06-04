@@ -1969,7 +1969,7 @@ static int stats_dump_fe_stats(struct stconn *sc, struct proxy *px)
 
 /* Fill <stats> with the listener statistics. <stats> is preallocated array of
  * length <len>. The length of the array must be at least ST_F_TOTAL_FIELDS. If
- * this length is less then this value, the function returns 0, otherwise, it
+ * this length is less than this value, the function returns 0, otherwise, it
  * returns 1.  If selected_field is != NULL, only fill this one. <flags> can
  * take the value STAT_SHLGNDS.
  */
@@ -2249,7 +2249,7 @@ int stats_fill_sv_stats(struct proxy *px, struct server *sv, int flags,
 		stats_fill_sv_stats_computestate(sv, ref, &state);
 	}
 
-	/* compue time values for later use */
+	/* compute time values for later use */
 	if (selected_field == NULL || *selected_field == ST_F_QTIME ||
 	    *selected_field == ST_F_CTIME || *selected_field == ST_F_RTIME ||
 	    *selected_field == ST_F_TTIME) {
@@ -3280,7 +3280,7 @@ more:
 		if (px_st == STAT_PX_ST_SV) {
 			struct server *cur = ctx->obj2;
 
-			/* re-entrant dump */
+			/* reentrant dump */
 			BUG_ON(!cur);
 			if (cur->flags & SRV_F_DELETED) {
 				/* the server could have been marked as deleted
@@ -3838,7 +3838,7 @@ static void stats_dump_html_end()
 	chunk_appendf(&trash_chunk, "</body></html>\n");
 }
 
-/* Dumps the stats JSON header to the local trash buffer buffer which. The
+/* Dumps the stats JSON header to the local trash buffer which. The
  * caller is responsible for clearing it if needed.
  */
 static void stats_dump_json_header()
@@ -4621,7 +4621,7 @@ static int stats_dump_typed_info_fields(struct buffer *out,
 
 /* Fill <info> with HAProxy global info. <info> is preallocated array of length
  * <len>. The length of the array must be INF_TOTAL_FIELDS. If this length is
- * less then this value, the function returns 0, otherwise, it returns 1. Some
+ * less than this value, the function returns 0, otherwise, it returns 1. Some
  * fields' presence or precision may depend on some of the STAT_* flags present
  * in <flags>.
  */

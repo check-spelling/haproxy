@@ -308,7 +308,7 @@ void set_thread_cpu_affinity()
  * hard to export for post-mortem analysis. For this reason we copy it into a
  * union and will use the smallest scalar type at least as large as its size,
  * which will keep endianness and alignment for all regular sizes. As a last
- * resort we end up with a long long ligned to the first bytes in memory, which
+ * resort we end up with a long long aligned to the first bytes in memory, which
  * will be endian-dependent if pthread_t is larger than a long long (not seen
  * yet).
  */
@@ -1370,7 +1370,7 @@ int thread_resolve_group_mask(struct thread_set *ts, int defgrp, char **err)
  * - 12-19,24-31       valid (abs threads 12 to 19 and 24 to 31)
  * - 1/all             valid (all 32 or 64 threads of group 1)
  * - 1/1-4,1/8-10,2/1  valid
- * - 1/1-4,8-10        invalid (mixes relatve "1/1-4" with absolute "8-10")
+ * - 1/1-4,8-10        invalid (mixes relative "1/1-4" with absolute "8-10")
  * - 1-4,8-10,2/1      invalid (mixes absolute "1-4,8-10" with relative "2/1")
  * - 1/odd-4           invalid (mixes range with boundary)
  *

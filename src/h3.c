@@ -341,7 +341,7 @@ static int h3_is_frame_valid(struct h3c *h3c, struct qcs *qcs, uint64_t ftype)
 
 	case H3_FT_PUSH_PROMISE:
 		return h3s->type != H3S_T_CTRL &&
-		       (id & QCS_ID_SRV_INTIATOR_BIT);
+		       (id & QCS_ID_SRV_INITIATOR_BIT);
 
 	default:
 		/* draft-ietf-quic-http34 9. Extensions to HTTP/3
@@ -764,7 +764,7 @@ static ssize_t h3_trailers_to_htx(struct qcs *qcs, const struct buffer *buf,
 	if (!h3s->data_len) {
 		/* Notify that no body is present. This can only happens if
 		 * there is H3 HEADERS as trailers without or empty H3 DATA
-		 * frame. So this is probably not realistice ?
+		 * frame. So this is probably not realistic ?
 		 *
 		 * TODO if sl is NULL because already consumed there is no way
 		 * to notify about missing body.

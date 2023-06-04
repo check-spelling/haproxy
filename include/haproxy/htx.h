@@ -33,7 +33,7 @@
 /* ->extra field value when the payload length is unknown (non-chunked message
  * with no "Content-length" header)
  */
-#define HTX_UNKOWN_PAYLOAD_LENGTH ULLONG_MAX
+#define HTX_UNKNOWN_PAYLOAD_LENGTH ULLONG_MAX
 
 extern struct htx htx_empty;
 

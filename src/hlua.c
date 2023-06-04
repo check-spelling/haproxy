@@ -1481,7 +1481,7 @@ static void hlua_httpclient_destroy_all(struct hlua *hlua)
 	 * another thread sharing the same main lua stack (lua coroutine)
 	 * could execute hlua_httpclient_gc() on the hlua->hc_list items
 	 * in parallel: Lua GC applies on the main stack, it is not limited to
-	 * a single coroutine stack, see Github issue #2037 for reference.
+	 * a single coroutine stack, see GitHub issue #2037 for reference.
 	 * Remember, coroutines created using lua_newthread() are not meant to
 	 * be thread safe in Lua. (From lua co-author:
 	 * http://lua-users.org/lists/lua-l/2011-07/msg00072.html)
@@ -1525,12 +1525,12 @@ void hlua_ctx_destroy(struct hlua *lua)
 	luaL_unref(hlua_states[lua->state_id], LUA_REGISTRYINDEX, lua->Tref);
 	RESET_SAFE_LJMP_PARENT(lua);
 	/* Forces a garbage collecting process. If the Lua program is finished
-	 * without error, we run the GC on the thread pointer. Its freed all
+	 * without error, we run the GC on the thread pointer. It frees all
 	 * the unused memory.
-	 * If the thread is finnish with an error or is currently yielded,
+	 * If the thread is finished with an error or is currently yielded,
 	 * it seems that the GC applied on the thread doesn't clean anything,
-	 * so e run the GC on the main thread.
-	 * NOTE: maybe this action locks all the Lua threads untiml the en of
+	 * so we run the GC on the main thread.
+	 * NOTE: maybe this action locks all the Lua threads until the end of
 	 * the garbage collection.
 	 */
 	if (lua->gc_count) {
@@ -2385,7 +2385,7 @@ __LJMP static int hlua_socket_close_helper(lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2453,7 +2453,7 @@ __LJMP static int hlua_socket_receive_yield(struct lua_State *L, int status, lua
 		WILL_LJMP(luaL_error(L, "The 'receive' function is only allowed in "
 		                      "'frontend', 'backend' or 'task'"));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2558,7 +2558,7 @@ connection_closed:
 
 no_peer:
 
-	/* If the buffer containds data. */
+	/* If the buffer contains data. */
 	if (socket->b.n > 0) {
 		luaL_pushresult(&socket->b);
 		return 1;
@@ -2607,7 +2607,7 @@ __LJMP static int hlua_socket_receive(struct lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2692,7 +2692,7 @@ static int hlua_socket_write_yield(struct lua_State *L,int status, lua_KContext 
 	buf = MAY_LJMP(luaL_checklstring(L, 2, &buf_len));
 	sent = MAY_LJMP(luaL_checkinteger(L, 3));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2924,7 +2924,7 @@ __LJMP static int hlua_socket_getpeername(struct lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -2965,7 +2965,7 @@ static int hlua_socket_getsockname(struct lua_State *L)
 
 	socket = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3016,7 +3016,7 @@ __LJMP static int hlua_socket_connect_yield(struct lua_State *L, int status, lua
 	if (!hlua)
 		return 0;
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3034,7 +3034,7 @@ __LJMP static int hlua_socket_connect_yield(struct lua_State *L, int status, lua
 	appctx = csk_ctx->appctx;
 	s = appctx_strm(appctx);
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid) {
@@ -3068,7 +3068,7 @@ __LJMP static int hlua_socket_connect_yield(struct lua_State *L, int status, lua
 	return 0;
 }
 
-/* This function fail or initite the connection. */
+/* This function fail or initiate the connection. */
 __LJMP static int hlua_socket_connect(struct lua_State *L)
 {
 	struct hlua_socket *socket;
@@ -3089,7 +3089,7 @@ __LJMP static int hlua_socket_connect(struct lua_State *L)
 	/* Get args. */
 	socket  = MAY_LJMP(hlua_checksocket(L, 1));
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3237,7 +3237,7 @@ __LJMP static int hlua_socket_settimeout(struct lua_State *L)
 	if (tmout == 0)
 		tmout++; /* very small timeouts are adjusted to a minimum of 1ms */
 
-	/* Check if we run on the same thread than the xreator thread.
+	/* Check if we run on the same thread than the creator thread.
 	 * We cannot access to the socket if the thread is different.
 	 */
 	if (socket->tid != tid)
@@ -3352,7 +3352,7 @@ static int hlua_channel_new(lua_State *L, struct channel *channel)
 	lua_pushlightuserdata(L, channel);
 	lua_rawseti(L, -2, 0);
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_channel_ref);
 	lua_setmetatable(L, -2);
 	return 1;
@@ -3738,7 +3738,7 @@ __LJMP static int hlua_channel_getline(lua_State *L)
 }
 
 /* Retrieves a given amount of input data at the given offset. By default all
- * available input data are returned. The offset may be negactive to start from
+ * available input data are returned. The offset may be negative to start from
  * the end of input data. The length may be -1 to set it to the maximum buffer
  * size.
  */
@@ -3757,7 +3757,7 @@ __LJMP static int hlua_channel_get_data(lua_State *L)
 }
 
 /* Retrieves a given amount of input data at the given offset. By default all
- * available input data are returned. The offset may be negactive to start from
+ * available input data are returned. The offset may be negative to start from
  * the end of input data. The length may be -1 to set it to the maximum buffer
  * size.
  */
@@ -4381,7 +4381,7 @@ static int hlua_fetches_new(lua_State *L, struct hlua_txn *txn, unsigned int fla
 	hsmp->dir = txn->dir;
 	hsmp->flags = flags;
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_fetches_ref);
 	lua_setmetatable(L, -2);
 
@@ -4514,7 +4514,7 @@ static int hlua_converters_new(lua_State *L, struct hlua_txn *txn, unsigned int 
  * It uses closure argument to store the associated converter. It
  * returns only one argument or throws an error. An error is thrown
  * only if an error is encountered during the argument parsing. If
- * the converter function function fails, nil is returned.
+ * the converter function fails, nil is returned.
  */
 __LJMP static int hlua_run_sample_conv(lua_State *L)
 {
@@ -4678,7 +4678,7 @@ __LJMP static int hlua_applet_tcp_set_var(lua_State *L)
 	if (lua_gettop(L) < 3 || lua_gettop(L) > 4)
 		WILL_LJMP(luaL_error(L, "'set_var' needs between 3 and 4 arguments"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_tcp(L, 1));
@@ -4712,7 +4712,7 @@ __LJMP static int hlua_applet_tcp_unset_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "unset_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_tcp(L, 1));
@@ -4735,7 +4735,7 @@ __LJMP static int hlua_applet_tcp_get_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "get_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_tcp(L, 1));
@@ -4883,7 +4883,7 @@ __LJMP static int hlua_applet_tcp_recv_yield(lua_State *L, int status, lua_KCont
 
 	if (len == -1) {
 
-		/* If len == -1, catenate all the data avalaile and
+		/* If len == -1, catenate all the data available and
 		 * yield because we want to get all the data until
 		 * the end of data stream.
 		 */
@@ -5138,7 +5138,7 @@ static int hlua_applet_http_new(lua_State *L, struct appctx *ctx)
 		if (type == HTX_BLK_DATA)
 			len += htx_get_blksz(blk);
 	}
-	if (htx->extra != HTX_UNKOWN_PAYLOAD_LENGTH)
+	if (htx->extra != HTX_UNKNOWN_PAYLOAD_LENGTH)
 		len += htx->extra;
 
 	/* Stores the request path. */
@@ -5169,7 +5169,7 @@ __LJMP static int hlua_applet_http_set_var(lua_State *L)
 	if (lua_gettop(L) < 3 || lua_gettop(L) > 4)
 		WILL_LJMP(luaL_error(L, "'set_var' needs between 3 and 4 arguments"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_http(L, 1));
@@ -5203,7 +5203,7 @@ __LJMP static int hlua_applet_http_unset_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "unset_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_http(L, 1));
@@ -5226,7 +5226,7 @@ __LJMP static int hlua_applet_http_get_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "get_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_http(L, 1));
@@ -5551,7 +5551,7 @@ __LJMP static int hlua_applet_http_send(lua_State *L)
 		WILL_LJMP(lua_error(L));
 	}
 
-	/* This integer is used for followinf the amount of data sent. */
+	/* This integer is used for following the amount of data sent. */
 	lua_pushinteger(L, 0);
 
 	return MAY_LJMP(hlua_applet_http_send_yield(L, 0, 0));
@@ -7777,7 +7777,7 @@ __LJMP static int hlua_set_var(lua_State *L)
 	if (lua_gettop(L) < 3 || lua_gettop(L) > 4)
 		WILL_LJMP(luaL_error(L, "'set_var' needs between 3 and 4 arguments"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	htxn = MAY_LJMP(hlua_checktxn(L, 1));
@@ -7809,7 +7809,7 @@ __LJMP static int hlua_unset_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "unset_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	htxn = MAY_LJMP(hlua_checktxn(L, 1));
@@ -7830,7 +7830,7 @@ __LJMP static int hlua_get_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "get_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	htxn = MAY_LJMP(hlua_checktxn(L, 1));
@@ -7851,7 +7851,7 @@ __LJMP static int hlua_set_priv(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "set_priv"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	MAY_LJMP(hlua_checktxn(L, 1));
@@ -7877,7 +7877,7 @@ __LJMP static int hlua_get_priv(lua_State *L)
 
 	MAY_LJMP(check_args(L, 1, "get_priv"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	MAY_LJMP(hlua_checktxn(L, 1));
@@ -7993,7 +7993,7 @@ static int hlua_txn_new(lua_State *L, struct stream *s, struct proxy *p, int dir
 		lua_rawset(L, -3);
 	}
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_txn_ref);
 	lua_setmetatable(L, -2);
 
@@ -8509,7 +8509,7 @@ static int hlua_txn_reply_new(lua_State *L)
 	lua_settable(L, -3);
 	/* stack: [ txn, <Arg:table>, <Reply:table> ] */
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_txn_reply_ref);
 	lua_setmetatable(L, -2);
 	return 1;
@@ -8726,7 +8726,7 @@ __LJMP static int hlua_msleep(lua_State *L)
 	return 0;
 }
 
-/* This functionis an LUA binding. it permits to give back
+/* This function is an LUA binding. it permits to give back
  * the hand at the HAProxy scheduler. It is used when the
  * LUA processing consumes a lot of time.
  */
@@ -8806,7 +8806,7 @@ __LJMP static int hlua_coroutine_create(lua_State *L)
 
 /* This function is used as a callback of a task. It is called by the
  * HAProxy task subsystem when the task is awaked. The LUA runtime can
- * return an E_AGAIN signal, the emmiter of this signal must set a
+ * return an E_AGAIN signal, the emitter of this signal must set a
  * signal to wake the task.
  *
  * Task wrapper are longjmp safe because the only one Lua code
@@ -9033,7 +9033,7 @@ static void hlua_event_subscription_destroy(struct hlua_event_sub *hlua_sub)
  * Strictly speaking, there is no runtime limit for the callback function
  * (timeout set to default task timeout), but if the event queue goes past
  * the limit of unconsumed events an error will be reported and the
- * susbscription will pause itself for as long as it takes for the handler to
+ * subscription will pause itself for as long as it takes for the handler to
  * catch up (events will be lost as a result).
  * If the event handler does not need the sequential ordering and wants to
  * process multiple events at a time, it may spawn a new side-task using
@@ -10234,7 +10234,7 @@ static enum act_return hlua_action(struct act_rule *rule, struct proxy *px,
 		/* Restore the function in the stack. */
 		hlua_pushref(s->hlua->T, rule->arg.hlua_rule->fcn->function_ref[s->hlua->state_id]);
 
-		/* Create and and push object stream in the stack. */
+		/* Create and push object stream in the stack. */
 		if (!hlua_txn_new(s->hlua->T, s, px, dir, hflags)) {
 			SEND_ERR(px, "Lua function '%s': full stack.\n",
 			         rule->arg.hlua_rule->fcn->name);
@@ -10420,7 +10420,7 @@ static int hlua_applet_tcp_init(struct appctx *ctx)
 	/* Restore the function in the stack. */
 	hlua_pushref(hlua->T, ctx->rule->arg.hlua_rule->fcn->function_ref[hlua->state_id]);
 
-	/* Create and and push object stream in the stack. */
+	/* Create and push object stream in the stack. */
 	if (!hlua_applet_tcp_new(hlua->T, ctx)) {
 		SEND_ERR(strm->be, "Lua applet tcp '%s': full stack.\n",
 		         ctx->rule->arg.hlua_rule->fcn->name);
@@ -10611,7 +10611,7 @@ static int hlua_applet_http_init(struct appctx *ctx)
 	/* Restore the function in the stack. */
 	hlua_pushref(hlua->T, ctx->rule->arg.hlua_rule->fcn->function_ref[hlua->state_id]);
 
-	/* Create and and push object stream in the stack. */
+	/* Create and push object stream in the stack. */
 	if (!hlua_applet_http_new(hlua->T, ctx)) {
 		SEND_ERR(strm->be, "Lua applet http '%s': full stack.\n",
 		         ctx->rule->arg.hlua_rule->fcn->name);
@@ -12776,7 +12776,7 @@ __LJMP static int hlua_ckch_set(lua_State *L)
 			goto end;
 		}
 
-		/* appply the change on the duplicate */
+		/* apply the change on the duplicate */
 		if (cert_ext->load(filename, payload, data, &err) != 0) {
 			memprintf(&err, "%sCan't load the payload for '%s'", err ? err : "", cert_ext->ext);
 			errcode |= ERR_ALERT | ERR_FATAL;
@@ -13055,7 +13055,7 @@ int hlua_post_init()
  * zero. This one verifies that the limits are respected but is optimized
  * for the fast case where limits are not used, hence stats are not updated.
  *
- * Warning: while this API ressembles glibc's realloc() a lot, glibc surpasses
+ * Warning: while this API resembles glibc's realloc() a lot, glibc surpasses
  * POSIX by making realloc(ptr,0) an effective free(), but others do not do
  * that and will simply allocate zero as if it were the result of malloc(0),
  * so mapping this onto realloc() will lead to memory leaks on non-glibc

@@ -658,7 +658,7 @@ void check_notify_stopping(struct check *check)
 	if ((s->agent.state & CHK_ST_ENABLED) && (s->agent.health < s->agent.rise))
 		return;
 
-	TRACE_STATE("health-check condionnaly succeeded, set server STOPPING", CHK_EV_HCHK_END|CHK_EV_HCHK_SUCC, check);
+	TRACE_STATE("health-check conditionally succeeded, set server STOPPING", CHK_EV_HCHK_END|CHK_EV_HCHK_SUCC, check);
 	srv_set_stopping(s, check_notify_cause(check));
 }
 

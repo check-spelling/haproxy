@@ -30,7 +30,7 @@ const char *bwlim_flt_id = "bandwidth limitation filter";
 
 struct flt_ops bwlim_ops;
 
-#define BWLIM_FL_NONE    0x00000000 /* For init purposr */
+#define BWLIM_FL_NONE    0x00000000 /* For init purposes */
 #define BWLIM_FL_IN      0x00000001 /* Limit clients uploads */
 #define BWLIM_FL_OUT     0x00000002 /* Limit clients downloads */
 #define BWLIM_FL_SHARED  0x00000004 /* Limit shared between clients (using stick-tables) */
@@ -416,7 +416,7 @@ static enum act_return bwlim_set_limit(struct act_rule *rule, struct proxy *px,
 	return ACT_RET_CONT;
 }
 
-/* Check function for "set-bandwidth-limit" aciton. It returns 1 on
+/* Check function for "set-bandwidth-limit" action. It returns 1 on
  * success. Otherwise, it returns 0 and <err> is filled.
  */
 int check_bwlim_action(struct act_rule *rule, struct proxy *px, char **err)
@@ -711,7 +711,7 @@ INITCALL1(STG_REGISTER, http_req_keywords_register, &http_req_actions);
 INITCALL1(STG_REGISTER, http_res_keywords_register, &http_res_actions);
 
 
-/* Generic function to parse bandwidth limitation filter configurartion. It
+/* Generic function to parse bandwidth limitation filter configuration. It
  * Returns -1 on error and 0 on success. It handles configuration for per-stream
  * and shared limitations.
  */

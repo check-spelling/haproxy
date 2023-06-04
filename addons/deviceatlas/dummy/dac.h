@@ -173,7 +173,7 @@ void da_seterrorfunc(da_errorfunc_t callback);
 
 /**
  * @brief Given a specific HTTP header, return the associated ID for that header.
- * When passing evidence to the API, its type is identified using its da_evidince_id_t.
+ * When passing evidence to the API, its type is identified using its da_evidence_id_t.
  * @param atlas atlas instance
  * @param header_name Header's name
  * @return evidence id
@@ -489,7 +489,7 @@ size_t da_getpropcount(const da_deviceinfo_t *info);
 /**
  * @brief Represents a usable device atlas interface.
  *
- * No user servicable parts inside: access should
+ * No user serviceable parts inside: access should
  * be via the functional API.
  */
 struct da_atlas {
@@ -571,7 +571,7 @@ struct da_deviceinfo {
     /**
      * The per-deviceinfo heap is stored here. Allocations for data in the result
      * come from the raw data in these buffers. The size of the fixed-size buffer
-     * built in to da_buf is sized such that all known search results will not
+     * built into da_buf is sized such that all known search results will not
      * require memory allocation via malloc()
      */
     struct da_buf *heap;

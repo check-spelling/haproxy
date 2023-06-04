@@ -74,7 +74,7 @@ enum se_flags {
 	/* following flags are supposed to be set by the app layer and read by
 	 * the endpoint :
 	 */
-	SE_FL_WAIT_FOR_HS   = 0x00400000,  /* This stream is waiting for handhskae */
+	SE_FL_WAIT_FOR_HS   = 0x00400000,  /* This stream is waiting for handshake */
 	SE_FL_KILL_CONN     = 0x00800000,  /* must kill the connection when the SC closes */
 	SE_FL_WAIT_DATA     = 0x01000000,  /* stream endpoint cannot work without more data from the stream's output */
 	SE_FL_WONT_CONSUME  = 0x02000000,  /* stream endpoint will not consume more data */
@@ -196,7 +196,7 @@ static forceinline char *sc_show_flags(char *buf, size_t len, const char *delim,
  * do not last beyond process_session().
  */
 enum sc_state {
-	SC_ST_INI = 0,           /* SC not sollicitated yet */
+	SC_ST_INI = 0,           /* SC not solicited yet */
 	SC_ST_REQ,               /* [transient] connection initiation desired and not started yet */
 	SC_ST_QUE,               /* SC waiting in queue */
 	SC_ST_TAR,               /* SC in turn-around state after failed connect attempt */

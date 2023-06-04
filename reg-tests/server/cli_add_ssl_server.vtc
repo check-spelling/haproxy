@@ -69,7 +69,7 @@ haproxy h1 -cli {
 }
 
 haproxy h1 -cli {
-	# non existent backend
+	# nonexistent backend
 	send "add server li-ssl/s1 ${h1_feSslTerm_addr}:${h1_feSslTerm_port} ssl ca-file common.pem verify none"
 	expect ~ "New server registered."
 

@@ -11,7 +11,7 @@
 #
 # I guess that this patch fix only a visible part of the problem.
 # If the Lua HTTP parser wait for data, the timeout server or the
-# connectio closed by the client may stop the applet.
+# connection closed by the client may stop the applet.
 
 varnishtest "possible CLOSE-WAIT with '\n' headers"
 #REQUIRE_OPTIONS=LUA

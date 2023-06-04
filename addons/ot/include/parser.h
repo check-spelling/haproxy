@@ -74,7 +74,7 @@
 #endif
 
 /*
- * In case the possibility of working with OpenTracing context via HAProxyu
+ * In case the possibility of working with OpenTracing context via HAProxy
  * variables is not used, args_max member of the structure flt_ot_parse_data
  * should be reduced for 'inject' keyword.  However, this is not critical
  * because in this case the 'use-vars' argument cannot be entered anyway,

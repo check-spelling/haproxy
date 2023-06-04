@@ -228,7 +228,7 @@ static inline int quic_read_uint32(uint32_t *val,
 
 /* Write a 32-bits integer to a buffer with <buf> as address.
  * Make <buf> point to the data after this 32-buts value if succeeded.
- * Note that these 32-bits integers are networkg bytes ordered.
+ * Note that these 32-bits integers are network byte ordered.
  * Returns 0 if failed (not enough room in the buffer), 1 if succeeded.
  */
 static inline int quic_write_uint32(unsigned char **buf,
@@ -326,7 +326,7 @@ static inline size_t max_stream_data_size(size_t sz, size_t ilen, size_t dlen)
 }
 
 /* Return the length in bytes of <pn> packet number depending on
- * <largest_acked_pn> the largest ackownledged packet number.
+ * <largest_acked_pn> the largest acknowledged packet number.
  */
 static inline size_t quic_packet_number_length(int64_t pn,
                                                int64_t largest_acked_pn)

@@ -107,7 +107,7 @@ struct peers {
 	int applet_count[MAX_THREADS];  /* applet count per thread */
 };
 
-/* LRU cache for dictionaies */
+/* LRU cache for dictionaries */
 struct dcache_tx {
 	/* The last recently used key */
 	unsigned int lru_key;

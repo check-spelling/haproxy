@@ -7,7 +7,7 @@
 # This regtests loads a multi-certificates bundle "cert1-example.com.pem"
 # composed of a .rsa and a .ecdsa
 #
-# After verifying that the RSA and ECDSA algorithms were avalailble with the
+# After verifying that the RSA and ECDSA algorithms were available with the
 # right certificate, the test changes the certificates and try new requests.
 #
 # If this test does not work anymore:

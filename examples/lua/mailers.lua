@@ -41,7 +41,7 @@ function smtp_send_email(server, domain, from, to, data)
                         -- read line
                         ret = tcp:receive("*l")
                         if ret == nil then
-                                return false, "Connection unexpectly closed"
+                                return false, "Connection unexpectedly closed"
                         end
                         -- expected code
                         if string.match(ret, code) ~= nil then
@@ -67,7 +67,7 @@ function smtp_send_email(server, domain, from, to, data)
 
         if tcp:send("HELO " .. domain .. "\r\n") == nil then
                 tcp:close()
-                return false, "Connection unexpectly closed"
+                return false, "Connection unexpectedly closed"
         end
 
         ret, reason = smtp_wait_code(tcp, '^250 ')
@@ -78,7 +78,7 @@ function smtp_send_email(server, domain, from, to, data)
 
         if tcp:send("MAIL FROM: <" .. from .. ">\r\n") == nil then
                 tcp:close()
-                return false, "Connection unexpectly closed"
+                return false, "Connection unexpectedly closed"
         end
 
         ret, reason = smtp_wait_code(tcp, '^250 ')
@@ -89,7 +89,7 @@ function smtp_send_email(server, domain, from, to, data)
 
         if tcp:send("RCPT TO: <" .. to .. ">\r\n") == nil then
                 tcp:close()
-                return false, "Connection unexpectly closed"
+                return false, "Connection unexpectedly closed"
         end
 
         ret, reason = smtp_wait_code(tcp, '^250 ')
@@ -100,7 +100,7 @@ function smtp_send_email(server, domain, from, to, data)
 
         if tcp:send("DATA\r\n") == nil then
                 tcp:close()
-                return false, "Connection unexpectly closed"
+                return false, "Connection unexpectedly closed"
         end
 
         ret, reason = smtp_wait_code(tcp, '^354 ')
@@ -111,7 +111,7 @@ function smtp_send_email(server, domain, from, to, data)
 
         if tcp:send(data .. "\r\n.\r\n") == nil then
                 tcp:close()
-                return false, "Connection unexpectly closed"
+                return false, "Connection unexpectedly closed"
         end
 
         ret, reason = smtp_wait_code(tcp, '^250 ')
@@ -122,7 +122,7 @@ function smtp_send_email(server, domain, from, to, data)
 
         if tcp:send("QUIT\r\n") == nil then
                 tcp:close()
-                return false, "Connection unexpectly closed"
+                return false, "Connection unexpectedly closed"
         end
 
         ret, reason = smtp_wait_code(tcp, '^221 ')

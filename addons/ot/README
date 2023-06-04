@@ -96,14 +96,14 @@ then the path to the directory where the include files and libraries are
 located can be explicitly specified.
 
 Below are examples of the two ways to compile HAProxy with the OT filter, the
-first using the pkg-congfig tool and the second explicitly specifying the path
+first using the pkg-config tool and the second explicitly specifying the path
 to the OpenTracing C Wrapper include and library.
 
 Note: prompt '%' indicates that the command is executed under a unprivileged
       user, while prompt '#' indicates that the command is executed under the
       root user.
 
-Example of compiling HAProxy using the pkg-congfig tool (assuming the
+Example of compiling HAProxy using the pkg-config tool (assuming the
 OpenTracing C Wrapper library is installed in the /opt directory):
 
   % PKG_CONFIG_PATH=/opt/lib/pkgconfig make USE_OT=1 TARGET=linux-glibc
@@ -395,7 +395,7 @@ baggage <name> <sample> ...
   the context that can be transferred between processes that are part of
   a server architecture.
 
-  This kewyord allows setting the baggage for the currently active span.  The
+  This keyword allows setting the baggage for the currently active span.  The
   data type is always a string, ie any sample type is converted to a string.
   The exception is a binary value that is not supported by the OT filter.
 
@@ -545,7 +545,7 @@ inject <name-prefix> [use-vars] [use-headers]
 
 
 log <name> <sample> ...
-  This kewyord allows setting the log for the currently active span.  The
+  This keyword allows setting the log for the currently active span.  The
   data type is always a string, ie any sample type is converted to a string.
   The exception is a binary value that is not supported by the OT filter.
 
@@ -563,7 +563,7 @@ span <name> [<reference>]
   referenced span, or be root 'span'.  In case we did not specify a reference
   to the previously created span, the new span will become the root span.
   We need to pay attention to the fact that in one trace there can be only
-  one root span.  In case we have specified a non-existent span as a reference,
+  one root span.  In case we have specified a nonexistent span as a reference,
   a new span will not be created.
 
   Arguments :
@@ -573,7 +573,7 @@ span <name> [<reference>]
 
 
 tag <name> <sample> ...
-  This kewyord allows setting a tag for the currently active span.  The first
+  This keyword allows setting a tag for the currently active span.  The first
   argument is the name of the tag (tag ID) and the second its value.  A value
   can consist of one or more data.  If the value is only one data, then the
   type of that data depends on the type of the HAProxy sample.  If the value

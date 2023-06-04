@@ -54,7 +54,7 @@ unsigned long long __channel_forward(struct channel *chn, unsigned long long byt
 	if (!budget)
 		return forwarded;
 
-	/* Now we must ensure chn->to_forward sats below CHN_INFINITE_FORWARD,
+	/* Now we must ensure chn->to_forward sits below CHN_INFINITE_FORWARD,
 	 * which also implies it won't overflow. It's less operations in 64-bit.
 	 */
 	bytes = (unsigned long long)chn->to_forward + budget;

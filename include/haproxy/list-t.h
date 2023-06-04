@@ -23,7 +23,7 @@
 #define _HAPROXY_LIST_T_H
 
 
-/* these are circular or bidirectionnal lists only. Each list pointer points to
+/* these are circular or bidirectional lists only. Each list pointer points to
  * another list pointer in a structure, and not the structure itself. The
  * pointer to the next element MUST be the first one so that the list is easily
  * cast as a single linked list or pointer.
@@ -34,8 +34,8 @@ struct list {
 };
 
 /* This is similar to struct list, but we want to be sure the compiler will
- * yell at you if you use macroes for one when you're using the other. You have
- * to expicitely cast if that's really what you want to do.
+ * yell at you if you use macros for one when you're using the other. You have
+ * to explicitly cast if that's really what you want to do.
  */
 struct mt_list {
     struct mt_list *next;

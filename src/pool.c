@@ -582,7 +582,7 @@ void pool_evict_from_local_caches()
 /* Frees an object to the local cache, possibly pushing oldest objects to the
  * shared cache, which itself may decide to release some of them to the OS.
  * While it is unspecified what the object becomes past this point, it is
- * guaranteed to be released from the users' perpective. A caller address may
+ * guaranteed to be released from the users' perspective. A caller address may
  * be passed and stored into the area when DEBUG_POOL_TRACING is set. Must not
  * be used with pools disabled.
  */
@@ -612,7 +612,7 @@ void pool_put_to_cache(struct pool_head *pool, void *ptr, const void *caller)
 
 /* Tries to refill the local cache <pch> from the shared one for pool <pool>.
  * This is only used when pools are in use and shared pools are enabled. No
- * malloc() is attempted, and poisonning is never performed. The purpose is to
+ * malloc() is attempted, and poisoning is never performed. The purpose is to
  * get the fastest possible refilling so that the caller can easily check if
  * the cache has enough objects for its use. Must not be used when pools are
  * disabled.
@@ -1048,7 +1048,7 @@ int pool_parse_debugging(const char *str, char **err)
 	int v;
 
 
-	/* if it's empty or starts with a number, it's the mem poisonning byte */
+	/* if it's empty or starts with a number, it's the mem poisoning byte */
 	v = strtol(str, &end, 0);
 	if (!*end || *end == ',') {
 		mem_poison_byte = *str ? v : 'P';
@@ -1070,7 +1070,7 @@ int pool_parse_debugging(const char *str, char **err)
 		if (isteq(feat, ist("help"))) {
 			ha_free(err);
 			memprintf(err,
-				  "-dM alone enables memory poisonning with byte 0x50 on allocation. A numeric\n"
+				  "-dM alone enables memory poisoning with byte 0x50 on allocation. A numeric\n"
 				  "value may be appended immediately after -dM to use another value (0 supported).\n"
 				  "Then an optional list of comma-delimited keywords may be appended to set or\n"
 				  "clear some debugging options ('*' marks the current setting):\n\n"
@@ -1090,7 +1090,7 @@ int pool_parse_debugging(const char *str, char **err)
 			memprintf(err,
 			          "%s  -----------------+-----------------+-----------------------------------------\n"
 				  "Examples:\n"
-				  "  Disable merging and enable poisonning with byte 'P': -dM0x50,no-merge\n"
+				  "  Disable merging and enable poisoning with byte 'P': -dM0x50,no-merge\n"
 				  "  Randomly fail allocations: -dMfail\n"
 				  "  Detect out-of-bound corruptions: -dMno-merge,tag\n"
 				  "  Detect post-free cache corruptions: -dMno-merge,cold-first,integrity,caller\n"

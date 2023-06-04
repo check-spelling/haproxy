@@ -35,7 +35,7 @@ struct appctx;
 struct htx;
 
 /* These two structs contains all field names and descriptions according to
- * the the number of entries in "enum stat_field" and "enum info_field"
+ * the number of entries in "enum stat_field" and "enum info_field"
  */
 extern const struct name_desc stat_fields[];
 extern const struct name_desc info_fields[];

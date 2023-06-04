@@ -880,7 +880,7 @@ void sock_conn_iocb(int fd)
  leave:
 	/* we may have to finish to install a mux or to wake it up based on
 	 * what was just done above. It may kill the connection so we have to
-	 * be prpared not to use it anymore.
+	 * be prepared not to use it anymore.
 	 */
 	if (conn_notify_mux(conn, flags, need_wake) < 0)
 		return;

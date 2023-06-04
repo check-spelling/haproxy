@@ -1,5 +1,5 @@
 /*
- * include/haprox/cbuf-t.h
+ * include/haproxy/cbuf-t.h
  * This file contains definition for circular buffers.
  *
  * Copyright 2021 HAProxy Technologies, Frederic Lecaille <flecaille@haproxy.com>

@@ -341,7 +341,7 @@ int sc_attach_strm(struct stconn *sc, struct stream *strm)
 	return 0;
 }
 
-/* Detaches the stconn from the endpoint, if any. For a connecrion, if a
+/* Detaches the stconn from the endpoint, if any. For a connection, if a
  * mux owns the connection ->detach() callback is called. Otherwise, it means
  * the stream connector owns the connection. In this case the connection is closed
  * and released. For an applet, the appctx is released. If still allocated, the
@@ -1314,7 +1314,7 @@ static int sc_conn_recv(struct stconn *sc)
 
 	/* For an HTX stream, if the buffer is stuck (no output data with some
 	 * input data) and if the HTX message is fragmented or if its free space
-	 * wraps, we force an HTX deframentation. It is a way to have a
+	 * wraps, we force an HTX defragmentation. It is a way to have a
 	 * contiguous free space nad to let the mux to copy as much data as
 	 * possible.
 	 *

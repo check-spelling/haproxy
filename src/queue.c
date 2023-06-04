@@ -59,7 +59,7 @@ s *     queue's lock.
  *     the server's lock depending on the queue the pendconn is attached to.
  *
  *   - no single operation except the pendconn initialisation prior to the
- *     insertion are performed without eithre a queue lock held or the element
+ *     insertion are performed without either a queue lock held or the element
  *     being unlinked and visible exclusively to its stream.
  *
  *   - pendconn_grab_from_px() and pendconn_process_next_strm() assign ->target

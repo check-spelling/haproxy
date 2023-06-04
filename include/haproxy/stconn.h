@@ -58,7 +58,7 @@ void sc_conn_commit_endp_upgrade(struct stconn *sc);
 
 /* The se_fl_*() set of functions manipulate the stream endpoint flags from
  * the stream endpoint itself. The sc_ep_*() set of functions manipulate the
- * stream endpoint flags from the the stream connector (ex. stconn).
+ * stream endpoint flags from the stream connector (ex. stconn).
  * _zero() clears all flags, _clr() clears a set of flags (&=~), _set() sets
  * a set of flags (|=), _test() tests the presence of a set of flags, _get()
  * retrieves the exact flags, _setall() replaces the flags with the new value.
@@ -452,7 +452,7 @@ static inline void sc_have_room(struct stconn *sc)
  *
  * The caller is responsible to specified the amount of free space required to
  * progress. However, to be sure the SC can be unblocked a max value cannot be
- * eceeded : (BUFSIZE - RESERVE - HTX OVERHEAD)
+ * exceeded : (BUFSIZE - RESERVE - HTX OVERHEAD)
  */
 static inline void sc_need_room(struct stconn *sc, ssize_t room_needed)
 {

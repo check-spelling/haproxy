@@ -685,7 +685,7 @@ enum tcpcheck_eval_ret tcpcheck_ldap_expect_bindrsp(struct check *check, struct 
 		/* For message size encoded on several bytes, we only handle
 		 * size encoded on 2 or 4 bytes. There is no reason to make this
 		 * part to complex because only Active Directory is known to
-		 * encode BindReponse length on 4 bytes.
+		 * encode BindResponse length on 4 bytes.
 		 */
 		nbytes = (*ptr & 0x7f);
 		if (b_data(&check->bi) < 1 + nbytes)
@@ -1865,7 +1865,7 @@ enum tcpcheck_eval_ret tcpcheck_eval_expect_http(struct check *check, struct tcp
 			status = ((status != HCHK_STATUS_UNKNOWN) ? status : HCHK_STATUS_L7RSP);
 			if (LIST_ISEMPTY(&expect->onerror_fmt))
 				desc = ist("HTTP content check could not find a response body");
-			TRACE_ERROR("no response boduy found while expected", CHK_EV_TCPCHK_EXP|CHK_EV_TCPCHK_ERR, check);
+			TRACE_ERROR("no response body found while expected", CHK_EV_TCPCHK_EXP|CHK_EV_TCPCHK_ERR, check);
 			goto error;
 		}
 
@@ -3579,7 +3579,7 @@ int tcpcheck_add_http_rule(struct tcpcheck_rule *chk, struct tcpcheck_rules *rul
 	struct tcpcheck_rule *r;
 
 	/* the implicit send rule coming from an "option httpchk" line must be
-	 * merged with the first explici http-check send rule, if
+	 * merged with the first explicit http-check send rule, if
 	 * any. Depending on the declaration order some tests are required.
 	 *
 	 * Some tests are also required for other kinds of http-check rules to be
@@ -4153,7 +4153,7 @@ int proxy_parse_ssl_hello_chk_opt(char **args, int cur_arg, struct proxy *curpx,
 		"16"                        /* ContentType         : 0x16 = Handshake          */
 		"0300"                      /* ProtocolVersion     : 0x0300 = SSLv3            */
 		"0079"                      /* ContentLength       : 0x79 bytes after this one */
-		"01"                        /* HanshakeType        : 0x01 = CLIENT HELLO       */
+		"01"                        /* HandshakeType        : 0x01 = CLIENT HELLO       */
 		"000075"                    /* HandshakeLength     : 0x75 bytes after this one */
 		"0300"                      /* Hello Version       : 0x0300 = v3               */
 		"%[date(),htonl,hex]"       /* Unix GMT Time (s)   : filled with <now> (@0x0B) */
@@ -5005,7 +5005,7 @@ static struct tcpcheck_rule *proxy_parse_httpchk_req(char **args, int cur_arg, s
 	return NULL;
 }
 
-/* Parses the "option httpchck" proxy keyword */
+/* Parses the "option httpcheck" proxy keyword */
 int proxy_parse_httpchk_opt(char **args, int cur_arg, struct proxy *curpx, const struct proxy *defpx,
 			    const char *file, int line)
 {

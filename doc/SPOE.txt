@@ -93,7 +93,7 @@ spoe" line in a proxy section (frontend/backend/listen) :
       filter spoe [engine <name>] config <file>
       ...
 
-The "config" parameter is mandatory. It specififies the SPOE configuration
+The "config" parameter is mandatory. It specifies the SPOE configuration
 file. The engine name is optional. It can be set to declare the scope to use in
 the SPOE configuration. So it is possible to use the same SPOE configuration
 for several engines. If no name is provided, the SPOE configuration must not
@@ -119,7 +119,7 @@ scope in the SPOE configuration with the same name. You can have several SPOE
 scope in the same file. In each scope, you must define one and only one
 "spoe-agent" section to configure the SPOA linked to your SPOE and several
 "spoe-message" and "spoe-group" sections to describe, respectively, messages and
-group of messages sent to servers mananged by your SPOA.
+group of messages sent to servers managed by your SPOA.
 
 A SPOE scope starts with this kind of line :
 
@@ -230,7 +230,7 @@ max-frame-size <number>
 
 max-waiting-frames <number>
   Set the maximum number of frames waiting for an acknowledgement on the same
-  connection. This value is only used when the pipelinied or asynchronous
+  connection. This value is only used when the pipelined or asynchronous
   exchanges between HAProxy and SPOA are enabled. By default, it is set to 20.
 
 messages <msg-name> ...
@@ -356,7 +356,7 @@ option set-process-time <var name>
   latency added by the SPOE processing for the last handled event or group.
 
   If several events or groups are processed for the same stream, this value
-  will be overrideen.
+  will be overridden.
 
   See also: "option set-total-time".
 
@@ -718,7 +718,7 @@ actions.
 
     ABORT: Indicates that the processing of the current frame must be
            cancelled. This bit should be set on frames with a fragmented
-           payload. It can be ignore for frames with an unfragemnted
+           payload. It can be ignore for frames with an unfragmented
            payload. When it is set, the FIN bit must also be set.
 
 
@@ -726,12 +726,12 @@ Frames cannot exceed a maximum size negotiated between HAProxy and agents
 during the HELLO handshake. Most of time, payload will be small enough to send
 it in one frame. But when supported by the peer, it will be possible to
 fragment huge payload on many frames. This ability is announced during the
-HELLO handshake and it can be asynmetric (supported by agents but not by
+HELLO handshake and it can be asymmetric (supported by agents but not by
 HAProxy or the opposite). The following rules apply to fragmentation:
 
-  * An unfragemnted payload consists of a single frame with the FIN bit set.
+  * An unfragmented payload consists of a single frame with the FIN bit set.
 
-  * A fragemented payload consists of several frames with the FIN bit clear and
+  * A fragmented payload consists of several frames with the FIN bit clear and
     terminated by a single frame with the FIN bit set. All these frames must
     share the same STREAM-ID and FRAME-ID. The first frame must set the right
     FRAME-TYPE (e.g, NOTIFY). The following frames must have an unset type (0).
@@ -748,13 +748,13 @@ than or equal to 256 bytes.
 Here are the list of official capabilities that HAProxy and agents can support:
 
   * fragmentation: This is the ability for a peer to support fragmented
-                   payload in received frames. This is an asymmectical
+                   payload in received frames. This is an asymmetrical
                    capability, it only concerns the peer that announces
                    it. This is the responsibility to the other peer to use it
                    or not.
 
   * pipelining: This is the ability for a peer to decouple NOTIFY and ACK
-                frames. This is a symmectical capability. To be used, it must
+                frames. This is a symmetrical capability. To be used, it must
                 be supported by HAProxy and agents. Unlike HTTP pipelining, the
                 ACK frames can be send in any order, but always on the same TCP
                 connection used for the corresponding NOTIFY frame.
@@ -769,7 +769,7 @@ Unsupported or unknown capabilities are silently ignored, when possible.
 
 NOTE: HAProxy does not support the fragmentation for now. This means it is not
       able to handle fragmented frames. However, if an agent announces the
-      fragmentation support, HAProxy may choose to send fragemented frames.
+      fragmentation support, HAProxy may choose to send fragmented frames.
 
 3.2.2. Frame types overview
 ----------------------------
@@ -1178,7 +1178,7 @@ Here is the list of all known errors:
      11           | invalid interlaced frames
      12           | frame-id not found (it does not match any referenced frame)
      13           | resource allocation error
-     99           | an unknown error occurrde
+     99           | an unknown error occurred
   ----------------+--------------------------------------------------------
 
 An agent can define its own errors using a not yet assigned status code.
@@ -1191,9 +1191,9 @@ IMPORTANT NOTE: By default, for a specific stream, when an abnormal/unexpected
                 will disable it for the transaction (request and response).
                 See 'option continue-on-error' to bypass this limitation.
 
-To avoid a stream to wait undefinetly, you must carefully choose the
+To avoid a stream to wait indefinitely, you must carefully choose the
 acknowledgement timeout. In most of cases, it will be quiet low. But it depends
-on the responsivness of your service.
+on the responsiveness of your service.
 
 You must also choose idle timeout carefully. Because connection with your
 service depends on the backend configuration used by the SPOA, it is important

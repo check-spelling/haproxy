@@ -1311,7 +1311,7 @@ struct sockaddr_storage *str2sa_range(const char *str, int *port, int *low, int 
 	if (proto || (opts & PA_O_CONNECT)) {
 		/* Note: if the caller asks for a proto, we must find one,
 		 * except if we inherit from a raw FD (family == AF_CUST_EXISTING_FD)
-		 * orif we return with an fqdn that will resolve later,
+		 * or if we return with an fqdn that will resolve later,
 		 * in which case the address is not known yet (this is only
 		 * for servers actually).
 		 */
@@ -1360,7 +1360,7 @@ struct sockaddr_storage *str2sa_range(const char *str, int *port, int *low, int 
 
 /* converts <addr> and <port> into a string representation of the address and port. This is sort
  * of an inverse of str2sa_range, with some restrictions. The supported families are AF_INET,
- * AF_INET6, AF_UNIX, and AF_CUST_SOCKPAIR. If the family is unsopported NULL is returned.
+ * AF_INET6, AF_UNIX, and AF_CUST_SOCKPAIR. If the family is unsupported NULL is returned.
  * If map_ports is true, then the sign of the port is included in the output, to indicate it is
  * relative to the incoming port. AF_INET and AF_INET6 will be in the form "<addr>:<port>".
  * AF_UNIX will either be just the path (if using a pathname) or "abns@<path>" if it is abstract.
@@ -2649,7 +2649,7 @@ size_t my_memspn(const void *str, size_t len, const void *accept, size_t acceptl
 	return ret;
 }
 
-/* get length of the initial segment consisting entirely of bytes not in <rejcet> */
+/* get length of the initial segment consisting entirely of bytes not in <reject> */
 size_t my_memcspn(const void *str, size_t len, const void *reject, size_t rejectlen)
 {
 	size_t ret = 0;
@@ -4085,7 +4085,7 @@ int parse_asctime_date(const char *date, int len, struct tm *tm)
  * obs-date     = rfc850-date / asctime-date
  *
  * parses an HTTP date in the RFC format and is accepted
- * alternatives. <date> is the strinf containing the date,
+ * alternatives. <date> is the string containing the date,
  * len is the len of the string. <tm> is filled with the
  * parsed time. We must considers this time as GMT.
  */
@@ -5898,7 +5898,7 @@ const char *hash_anon(uint32_t scramble, const char *string2hash, const char *pr
 
 /* This function hashes or not an ip address ipstring, scramble is the anonymizing
  * key, returns the hashed ip with his port or ipstring when there is nothing to hash.
- * Put hasport equal 0 to point out ipstring has no port, else put an other int.
+ * Put hasport equal 0 to point out ipstring has no port, else put another int.
  * Without port, return a simple hash or ipstring.
  */
 const char *hash_ipanon(uint32_t scramble, char *ipstring, int hasport)

@@ -481,7 +481,7 @@ cache_store_check(struct proxy *px, struct flt_conf *fconf)
 	/* Check all filters for proxy <px> to know if the compression is
 	 * enabled and if it is after the cache. When the compression is before
 	 * the cache, an error is returned. Also check if the cache filter must
-	 * be explicitly declaired or not. */
+	 * be explicitly declared or not. */
 	list_for_each_entry(f, &px->filter_configs, list) {
 		if (f == fconf) {
 			/* The compression filter must be evaluated after the cache. */
@@ -980,7 +980,7 @@ static int set_secondary_key_encoding(struct htx *htx, char *secondary_key)
 		resp_encoding_bitmap |= VARY_ENCODING_IDENTITY;
 
 	/* Rewrite the bitmap part of the hash with the new bitmap that only
-	 * corresponds the the response's encoding. */
+	 * corresponds to the response's encoding. */
 	write_u32(secondary_key + offset, resp_encoding_bitmap);
 
 	return 0;
@@ -2307,7 +2307,7 @@ static int accept_encoding_normalizer(struct htx *htx, struct ist hdr_name,
 	encoding_bitmap |= VARY_ENCODING_IDENTITY;
 
 	/* Iterate over all the ACCEPT_ENCODING_MAX_ENTRIES first accept-encoding
-	 * values that might span acrosse multiple accept-encoding headers. */
+	 * values that might span across multiple accept-encoding headers. */
 	while (http_find_header(htx, hdr_name, &ctx, 0) && count < ACCEPT_ENCODING_MAX_ENTRIES) {
 		count++;
 

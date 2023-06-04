@@ -1,4 +1,4 @@
-varnishtest "H1 authority validation and host normalizarion based on the scheme (rfc3982 6.3.2) or the method (connect)"
+varnishtest "H1 authority validation and host normalization based on the scheme (rfc3982 6.3.2) or the method (connect)"
 
 feature cmd "$HAPROXY_PROGRAM -cc 'version_atleast(2.6-dev0)'"
 feature ignore_unknown_macro
@@ -354,7 +354,7 @@ client c13 -connect ${h1_fe_sock} {
     expect resp.status == 400
 } -run
 
-# CONNECT authoriy without port => error
+# CONNECT authority without port => error
 client c14 -connect ${h1_fe_sock} {
     txreq \
       -req "CONNECT" \

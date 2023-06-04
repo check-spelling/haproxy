@@ -193,7 +193,7 @@ haproxy h1 -conf {
 
     frontend fe-gzip-deflate
         bind "fd@${fe_gzip_deflate}"
-        default_backend be-gzip-defalte
+        default_backend be-gzip-deflate
 
     backend be-gzip
         compression algo gzip
@@ -204,7 +204,7 @@ haproxy h1 -conf {
         compression algo identity
         server www ${s1_addr}:${s1_port}
 
-    backend be-gzip-defalte
+    backend be-gzip-deflate
         compression algo gzip deflate
 	compression offload
         server www ${s1_addr}:${s1_port}
@@ -271,7 +271,7 @@ client c1 -connect ${h1_fe_gzip_sock} {
         expect resp.http.transfer-encoding == "<undef>"
         expect resp.bodylen == 100
 
-        # 7. Response alerady compressed by the server (with "Accept-Encoding")
+        # 7. Response already compressed by the server (with "Accept-Encoding")
         txreq -url "/c1.7" \
           -hdr "Accept-Encoding: gzip"
         rxresp
@@ -291,7 +291,7 @@ client c1 -connect ${h1_fe_gzip_sock} {
         expect resp.http.cache-control == "no-transform"
         expect resp.bodylen == 100
 
-        # 9. Response with uncompressable content-type
+        # 9. Response with uncompressible content-type
         txreq -url "/c1.9" \
           -hdr "Accept-Encoding: gzip"
         rxresp
@@ -301,7 +301,7 @@ client c1 -connect ${h1_fe_gzip_sock} {
         expect resp.http.content-type == "text/css"
         expect resp.bodylen == 100
 
-        # 10. Response with uncompressable content-type
+        # 10. Response with uncompressible content-type
         txreq -url "/c1.10" \
           -hdr "Accept-Encoding: gzip"
         rxresp

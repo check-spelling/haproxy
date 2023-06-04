@@ -406,7 +406,7 @@ void sample_register_fetches(struct sample_fetch_kw_list *kwl)
 }
 
 /*
- * Registers the sample format coverstion keyword list <pckl> as a list of valid keywords for next
+ * Registers the sample format conversion keyword list <pckl> as a list of valid keywords for next
  * parsing sessions.
  */
 void sample_register_convs(struct sample_conv_kw_list *pckl)
@@ -569,7 +569,7 @@ struct sample_fetch *sample_fetch_getnext(struct sample_fetch *current, int *idx
 		kwl = LIST_NEXT(&sample_fetches.list, struct sample_fetch_kw_list *, list);
 		(*idx) = 0;
 	} else {
-		/* Get kwl corresponding to the curret entry. */
+		/* Get kwl corresponding to the current entry. */
 		base = current + 1 - (*idx);
 		kwl = container_of(base, struct sample_fetch_kw_list, kw);
 	}
@@ -612,7 +612,7 @@ struct sample_conv *sample_conv_getnext(struct sample_conv *current, int *idx)
 		kwl = LIST_NEXT(&sample_convs.list, struct sample_conv_kw_list *, list);
 		(*idx) = 0;
 	} else {
-		/* Get kwl corresponding to the curret entry. */
+		/* Get kwl corresponding to the current entry. */
 		base = current + 1 - (*idx);
 		kwl = container_of(base, struct sample_conv_kw_list, kw);
 	}
@@ -2146,7 +2146,7 @@ static int sample_conv_wt6(const struct arg *arg_p, struct sample *smp, void *pr
 }
 
 /* hashes the binary input into a 32-bit unsigned int using xxh.
- * The seed of the hash defaults to 0 but can be changd in argument 1.
+ * The seed of the hash defaults to 0 but can be changed in argument 1.
  */
 static int sample_conv_xxh32(const struct arg *arg_p, struct sample *smp, void *private)
 {
@@ -2166,7 +2166,7 @@ static int sample_conv_xxh32(const struct arg *arg_p, struct sample *smp, void *
  * In fact, the function returns a 64 bit unsigned, but the sample
  * storage of haproxy only proposes 64-bits signed, so the value is
  * cast as signed. This cast doesn't impact the hash repartition.
- * The seed of the hash defaults to 0 but can be changd in argument 1.
+ * The seed of the hash defaults to 0 but can be changed in argument 1.
  */
 static int sample_conv_xxh64(const struct arg *arg_p, struct sample *smp, void *private)
 {
@@ -3202,7 +3202,7 @@ static int smp_check_concat(struct arg *args, struct sample_conv *conv,
 }
 
 /* Append delimiter (only to a non empty input) followed by the optional
- * variable contents concatenated with the optional sufix.
+ * variable contents concatenated with the optional suffix.
  */
 static int sample_conv_add_item(const struct arg *arg_p, struct sample *smp, void *private)
 {
@@ -3333,7 +3333,7 @@ static int sample_conv_strcmp(const struct arg *arg_p, struct sample *smp, void 
 /*
  * This converter can takes a Host header value as defined by rfc9110#section-7.2
  * Host = uri-host [ ":" port ] ;
- * It returns the uri-host value in lowecase with the port stripped.
+ * It returns the uri-host value in lowercase with the port stripped.
  */
 static int sample_conv_host_only(const struct arg *arg_p, struct sample *smp, void *private)
 {
@@ -4321,7 +4321,7 @@ static int smp_check_const_meth(struct arg *args, char **err)
 		args[0].type = ARGT_SINT;
 		args[0].data.sint = meth;
 	} else {
-		/* Check method avalaibility. A method is a token defined as :
+		/* Check method availability. A method is a token defined as :
 		 * tchar = "!" / "#" / "$" / "%" / "&" / "'" / "*" / "+" / "-" / "." /
 		 *         "^" / "_" / "`" / "|" / "~" / DIGIT / ALPHA
 		 * token = 1*tchar

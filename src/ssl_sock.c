@@ -1096,7 +1096,7 @@ static int tlskeys_finalize_config(void)
  * status extension, the issuer's certificate is mandatory.  It should be
  * present in ckch->ocsp_issuer.
  *
- * In addition, the ckch->ocsp_reponse buffer is loaded as a DER format of an
+ * In addition, the ckch->ocsp_response buffer is loaded as a DER format of an
  * OCSP response. If file is empty or content is not a valid OCSP response,
  * OCSP status extension is enabled but OCSP response is ignored (a warning is
  * displayed).
@@ -1140,7 +1140,7 @@ static int ssl_sock_load_ocsp(const char *path, SSL_CTX *ctx, struct ckch_data *
 	}
 
 	issuer = data->ocsp_issuer;
-	/* take issuer from chain over ocsp_issuer, is what is done historicaly */
+	/* take issuer from chain over ocsp_issuer, is what is done historically */
 	if (chain) {
 		/* check if one of the certificate of the chain is the issuer */
 		for (i = 0; i < sk_X509_num(chain); i++) {
@@ -1548,7 +1548,7 @@ static void ssl_sock_parse_heartbeat(struct connection *conn, int write_p, int v
 		 * So instead, we prevent the response from being sent by
 		 * setting the max_send_fragment to 0 and we report an SSL
 		 * error, which will kill this connection. It will be reported
-		 * above as SSL_ERROR_SSL while an other handshake failure with
+		 * above as SSL_ERROR_SSL while another handshake failure with
 		 * a heartbeat message will be reported as SSL_ERROR_SYSCALL.
 		 */
 		ssl->max_send_fragment = 0;
@@ -1596,7 +1596,7 @@ static void ssl_sock_parse_clienthello(struct connection *conn, int write_p, int
 	 *  - handshake(22)
 	 *  - application_data(23)
 	 *  - (255)
-	 * We are interessed by the handshake and specially the client
+	 * We are interested by the handshake and specially the client
 	 * hello.
 	 */
 	if (content_type != 22)
@@ -3252,7 +3252,7 @@ struct eb_root crtlists_tree = EB_ROOT_UNIQUE;
  *  DH parameters are applied on the SSL_CTX.
  * Returns a bitfield containing the flags:
  *     ERR_FATAL in any fatal error case
- *     ERR_ALERT if a reason of the error is availabine in err
+ *     ERR_ALERT if a reason of the error is available in err
  *     ERR_WARN if a warning is available into err
  * The value 0 means there is no error nor warning and
  * the operation succeed.
@@ -4320,7 +4320,7 @@ int sh_ssl_sess_new_cb(SSL *ssl, SSL_SESSION *sess)
 	unsigned int sid_length;
 	const unsigned char *sid_data;
 
-	/* Session id is already stored in to key and session id is known
+	/* Session id is already stored in key and session id is known
 	 * so we don't store it to keep size.
 	 * note: SSL_SESSION_set1_id is using
 	 * a memcpy so we need to use a different pointer
@@ -4330,7 +4330,7 @@ int sh_ssl_sess_new_cb(SSL *ssl, SSL_SESSION *sess)
 
 	sid_data = SSL_SESSION_get_id(sess, &sid_length);
 
-	/* copy value in an other buffer */
+	/* copy value in another buffer */
 	memcpy(encid, sid_data, sid_length);
 
 	/* pad with 0 */
@@ -4409,7 +4409,7 @@ SSL_SESSION *sh_ssl_sess_get_cb(SSL *ssl, __OPENSSL_110_CONST__ unsigned char *k
 	/* decode ASN1 session */
 	p = data;
 	sess = d2i_SSL_SESSION(NULL, (const unsigned char **)&p, first->len-sizeof(struct sh_ssl_sess_hdr));
-	/* Reset session id and session id contenxt */
+	/* Reset session id and session id context */
 	if (sess) {
 		SSL_SESSION_set1_id(sess, key, key_len);
 		SSL_SESSION_set1_id_context(sess, (const unsigned char *)SHCTX_APPNAME, strlen(SHCTX_APPNAME));
@@ -7147,7 +7147,7 @@ static int cli_io_handler_tlskeys_files(struct appctx *appctx)
 		/* Now, we start the browsing of the references lists.
 		 * Note that the following call to LIST_ELEM return bad pointer. The only
 		 * available field of this pointer is <list>. It is used with the function
-		 * tlskeys_list_get_next() for retruning the first available entry
+		 * tlskeys_list_get_next() for returning the first available entry
 		 */
 		if (ctx->next_ref == NULL)
 			ctx->next_ref = tlskeys_list_get_next(&tlskeys_reference, &tlskeys_reference);
@@ -7258,7 +7258,7 @@ static int cli_parse_set_tlskeys(char **args, char *payload, struct appctx *appc
 	struct tls_keys_ref *ref;
 	int ret;
 
-	/* Expect two parameters: the filename and the new new TLS key in encoding */
+	/* Expect two parameters: the filename and the new TLS key in encoding */
 	if (!*args[3] || !*args[4])
 		return cli_err(appctx, "'set ssl tls-key' expects a filename and the new TLS key in base64 encoding.\n");
 

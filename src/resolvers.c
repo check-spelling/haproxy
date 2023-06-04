@@ -843,7 +843,7 @@ srv_found:
 					srv->flags |= SRV_F_NO_RESOLUTION;
 
 					/* Unlink A/AAAA resolution for this server if there is an AR item.
-					 * It is usless to perform an extra resolution
+					 * It is useless to perform an extra resolution
 					 */
 					_resolv_unlink_resolution(srv->resolv_requester);
 				}
@@ -2070,7 +2070,7 @@ void resolv_detach_from_resolution_answer_items(struct resolv_resolution *res,  
 	leave_resolver_code();
 }
 
-/* Removes a requester from a DNS resolution. It takes takes care of all the
+/* Removes a requester from a DNS resolution. It takes care of all the
  * consequences. It also cleans up some parameters from the requester.
  */
 static void _resolv_unlink_resolution(struct resolv_requester *requester)
@@ -2429,7 +2429,7 @@ struct task *process_resolvers(struct task *t, void *context, unsigned int state
 			}
 
 			if (!must_run) {
-				/* Skip the reolsution. reset it and wait for the next wakeup */
+				/* Skip the resolution. reset it and wait for the next wakeup */
 				resolv_reset_resolution(res);
 				continue;
 			}

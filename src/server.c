@@ -2638,7 +2638,7 @@ static int _srv_parse_tmpl_init(struct server *srv, struct proxy *px)
 		/* Set this new server ID. */
 		_srv_parse_set_id_from_prefix(newsrv, srv->tmpl_info.prefix, i);
 
-		/* Linked backwards first. This will be restablished after parsing. */
+		/* Linked backwards first. This will be reestablished after parsing. */
 		newsrv->next = px->srv;
 		px->srv = newsrv;
 	}
@@ -3784,7 +3784,7 @@ int snr_resolution_cb(struct resolv_requester *requester, struct dns_counters *c
 /*
  * SRV record error management callback
  * returns:
- *  0 if we can trash answser items.
+ *  0 if we can trash answer items.
  *  1 when safely ignored and we must kept answer items
  *
  * Grabs the server's lock.
@@ -3843,7 +3843,7 @@ int srvrq_resolution_error_cb(struct resolv_requester *requester, int error_code
 /*
  * Server Name Resolution error management callback
  * returns:
- *  0 if we can trash answser items.
+ *  0 if we can trash answer items.
  *  1 when safely ignored and we must kept answer items
  *
  * Grabs the server's lock.
@@ -3945,7 +3945,7 @@ int srv_set_addr_via_libc(struct server *srv, int *err_code)
 	return 0;
 }
 
-/* Set the server's FDQN (->hostname) from <hostname>.
+/* Set the server's FQDN (->hostname) from <hostname>.
  * Returns -1 if failed, 0 if not.
  *
  * Must be called with the server lock held.
@@ -4155,7 +4155,7 @@ const char *srv_update_fqdn(struct server *server, const char *fqdn, const char 
 	chunk_reset(msg);
 
 	if (server->hostname && strcmp(fqdn, server->hostname) == 0) {
-		chunk_appendf(msg, "no need to change the FDQN");
+		chunk_appendf(msg, "no need to change the FQDN");
 		goto out;
 	}
 
@@ -5812,7 +5812,7 @@ static void srv_update_status(struct server *s, int type, int cause)
 	 */
 	srv_lb_commit_status(s);
 
-	/* check if server stats must be updated due the the server state change */
+	/* check if server stats must be updated due to the server state change */
 	if (srv_prev_state != s->cur_state) {
 		if (srv_prev_state == SRV_ST_STOPPED) {
 			/* server was down and no longer is */

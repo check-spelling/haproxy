@@ -1135,7 +1135,7 @@ int cfg_parse_mailers(const char *file, int linenum, char **args, int kwm)
 		curmailers->id = strdup(args[1]);
 		curmailers->timeout.mail = DEF_MAILALERTTIME;/* XXX: Would like to Skip to the next alert, if any, ASAP.
 			* But need enough time so that timeouts don't occur
-			* during tcp procssing. For now just us an arbitrary default. */
+			* during tcp processing. For now just us an arbitrary default. */
 	}
 	else if (strcmp(args[0], "mailer") == 0) { /* mailer definition */
 		struct sockaddr_storage *sk;
@@ -3776,7 +3776,7 @@ out_uri_auth_compat:
 
 			/* this will also properly set the transport layer for
 			 * prod and checks
-			 * if default-server have use_ssl, prerare ssl init
+			 * if default-server have use_ssl, prepare ssl init
 			 * without activating it */
 			if (newsrv->use_ssl == 1 || newsrv->check.use_ssl == 1 ||
 			    (newsrv->proxy->options & PR_O_TCPCHK_SSL) ||
@@ -4453,7 +4453,7 @@ init_proxies_list_stage2:
 			 */
 			free(curpeers->id);
 			curpeers = curpeers->next;
-			/* Reset any refereance to this peers section in the list of stick-tables */
+			/* Reset any reference to this peers section in the list of stick-tables */
 			for (t = stktables_list; t; t = t->next) {
 				if (t->peers.p && t->peers.p == *last)
 					t->peers.p = NULL;

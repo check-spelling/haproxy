@@ -140,7 +140,7 @@ struct tcpcheck_http_hdr {
 };
 
 struct tcpcheck_codes {
-	unsigned int (*codes)[2]; /* an array of roange of codes: [0]=min [1]=max */
+	unsigned int (*codes)[2]; /* an array of range of codes: [0]=min [1]=max */
 	size_t num;               /* number of entry in the array */
 };
 
@@ -188,7 +188,7 @@ struct tcpcheck_expect {
 		} hdr;                       /* Matching a header pattern */
 
 
-		/* custom function to eval epxect rule */
+		/* custom function to eval expect rule */
 		enum tcpcheck_eval_ret (*custom)(struct check *, struct tcpcheck_rule *, int);
 	};
 	struct tcpcheck_rule *head;     /* first expect of a chain. */

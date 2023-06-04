@@ -135,7 +135,7 @@ int const pat_match_types[PAT_MATCH_NUM] = {
 static THREAD_LOCAL struct pattern static_pattern;
 static THREAD_LOCAL struct sample_data static_sample_data;
 
-/* This is the root of the list of all pattern_ref avalaibles. */
+/* This is the root of the list of all available pattern_references. */
 struct list pattern_reference = LIST_HEAD_INIT(pattern_reference);
 
 static THREAD_LOCAL struct lru64_head *pat_lru_tree;
@@ -904,7 +904,7 @@ struct pattern *pat_match_dir(struct sample *smp, struct pattern_expr *expr, int
 }
 
 /* Checks that the pattern is included inside the tested string, but enclosed
- * between the delmiters '/', '?', '.' or ":" or at the beginning or end of
+ * between the delimiters '/', '?', '.' or ":" or at the beginning or end of
  * the string. Delimiters at the beginning or end of the pattern are ignored.
  */
 struct pattern *pat_match_dom(struct sample *smp, struct pattern_expr *expr, int fill)
@@ -1558,7 +1558,7 @@ void pattern_init_head(struct pattern_head *head)
  * acl.
  *
  * The unique_id identify inline acl. The unique id is unique for each acl.
- * You cannot force the same id in the configuration file, because this repoort
+ * You cannot force the same id in the configuration file, because this report
  * an error.
  *
  * A particular case appears if the filename is a number. In this case, the
@@ -2244,13 +2244,13 @@ int pat_ref_read_from_file_smp(struct pat_ref *ref, const char *filename, char *
 
 	/* now parse all patterns. The file may contain only one pattern
 	 * followed by one value per line. The start spaces, separator spaces
-	 * and and spaces are stripped. Each can contain comment started by '#'
+	 * and trailing spaces are stripped. Each can contain comment started by '#'
 	 */
 	while (fgets(trash.area, trash.size, file) != NULL) {
 		line++;
 		c = trash.area;
 
-		/* ignore lines beginning with a dash */
+		/* ignore lines beginning with a hash */
 		if (*c == '#')
 			continue;
 
@@ -2332,7 +2332,7 @@ int pat_ref_read_from_file(struct pat_ref *ref, const char *filename, char **err
 		line++;
 		c = trash.area;
 
-		/* ignore lines beginning with a dash */
+		/* ignore lines beginning with a hash */
 		if (*c == '#')
 			continue;
 

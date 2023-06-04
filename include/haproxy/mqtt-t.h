@@ -111,13 +111,13 @@ enum {
 #define MQTT_PROP_MAXIMUM_PACKET_SIZE                0x27
 #define MQTT_PROP_WILDCARD_SUBSCRIPTION_AVAILABLE    0x28
 #define MQTT_PROP_SUBSCRIPTION_IDENTIFIERS_AVAILABLE 0x29
-#define MQTT_PROP_SHARED_SUBSRIPTION_AVAILABLE       0x2A
+#define MQTT_PROP_SHARED_SUBSCRIPTION_AVAILABLE       0x2A
 #define MQTT_PROP_REASON_STRING                      0x1F
 #define MQTT_PROP_LAST                               0xFF
 
 /* MQTT minimal packet size */
 #define MQTT_MIN_PKT_SIZE              2
-#define MQTT_REMAINING_LENGHT_MAX_SIZE 4
+#define MQTT_REMAINING_LENGTH_MAX_SIZE 4
 
 /* list of supported capturable Field Names and configuration file string */
 enum {
@@ -277,7 +277,7 @@ struct connack {
 			} user_props[MQTT_PROP_USER_PROPERTY_ENTRIES];
 			uint8_t  wildcard_subscription_available;
 			uint8_t  subscription_identifiers_available;
-			uint8_t  shared_subsription_available;
+			uint8_t  shared_subscription_available;
 			uint16_t server_keepalive;
 			struct ist response_information;
 			struct ist server_reference;

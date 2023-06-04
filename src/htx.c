@@ -156,7 +156,7 @@ static struct htx_blk *htx_reserve_nxblk(struct htx *htx, uint32_t blksz)
 	/* Find the block's position. First, we try to get the next position in
 	 * the message, increasing the tail by one. If this position is not
 	 * available with some holes, we try to defrag the blocks without
-	 * touching their paylood. If it is impossible, we fully defrag the
+	 * touching their payload. If it is impossible, we fully defrag the
 	 * message.
 	 */
 	tail = htx->tail + 1;
@@ -229,12 +229,12 @@ static struct htx_blk *htx_reserve_nxblk(struct htx *htx, uint32_t blksz)
  *
  *  1: the expansion must be performed in place, there is enough space after
  *      the block's payload to handle it. This is especially true if it is a
- *      compression and not an expension.
+ *      compression and not an expansion.
  *
  *  2: the block's payload must be moved at the new block address before doing
  *     the expansion.
  *
- *  3: the HTX message message must be defragmented
+ *  3: the HTX message must be defragmented
  */
 static int htx_prepare_blk_expansion(struct htx *htx, struct htx_blk *blk, int32_t delta)
 {
@@ -649,7 +649,7 @@ struct htx_blk *htx_replace_blk_value(struct htx *htx, struct htx_blk *blk,
 		htx_set_blk_value_len(blk, v.len + delta);
 		htx->data += delta;
 	}
-	else { /* Do a degrag first (it is always an expansion) */
+	else { /* Do a defrag first (it is always an expansion) */
 		struct htx_blk tmpblk;
 		int32_t offset;
 

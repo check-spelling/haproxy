@@ -4,7 +4,7 @@ local mailsreceived = 0
 local mailconnectionsmade = 0
 local healthcheckcounter = 0
 
-function RecieveAndCheck(applet, expect)
+function ReceiveAndCheck(applet, expect)
 	data = applet:getline()
 	if data:sub(1,expect:len()) ~= expect then
 		core.Info("Expected: "..expect.." but got:"..data:sub(1,expect:len()))
@@ -20,22 +20,22 @@ core.register_service("mailservice", "tcp", function(applet)
 	applet:send("220 Welcome\r\n")
 	local data
 
-	if RecieveAndCheck(applet, "HELO") == false then
+	if ReceiveAndCheck(applet, "HELO") == false then
 	   applet:set_var("txn.result", "ERROR (step: HELO)")
 	   return
 	end
 	applet:send("250 OK\r\n")
-	if RecieveAndCheck(applet, "MAIL FROM:") == false then
+	if ReceiveAndCheck(applet, "MAIL FROM:") == false then
 	   applet:set_var("txn.result", "ERROR (step: MAIL FROM)")
 	   return
 	end
 	applet:send("250 OK\r\n")
-	if RecieveAndCheck(applet, "RCPT TO:") == false then
+	if ReceiveAndCheck(applet, "RCPT TO:") == false then
 	   applet:set_var("txn.result", "ERROR (step: RCPT TO)")
 	   return
 	end
 	applet:send("250 OK\r\n")
-	if RecieveAndCheck(applet, "DATA") == false then
+	if ReceiveAndCheck(applet, "DATA") == false then
 	   applet:set_var("txn.result", "ERROR (step: DATA)")
 	   return
 	end
@@ -60,7 +60,7 @@ core.register_service("mailservice", "tcp", function(applet)
 	core.Info("#### Body received OK")
 	applet:send("250 OK\r\n")
 
-	if RecieveAndCheck(applet, "QUIT") == false then
+	if ReceiveAndCheck(applet, "QUIT") == false then
 	   applet:set_var("txn.result", "ERROR (step: QUIT)")
 	   return
 	end

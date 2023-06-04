@@ -716,7 +716,7 @@ static int trace_parse_statement(char **args, const char **msg)
 					break;
 
 			if (!nd->name || !nd->desc) {
-				*msg = "No such verbosiry level";
+				*msg = "No such verbosity level";
 				return LOG_ERR;
 			}
 

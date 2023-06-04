@@ -292,7 +292,7 @@ static void srv_state_srv_update(struct server *srv, int version, char **params)
 		else
 			srv_adm_set_ready(srv);
 	}
-	/* configuration is the same, let's compate old running state and new conf state */
+	/* configuration is the same, let's compare old running state and new conf state */
 	else {
 		if (srv_admin_state & SRV_ADMF_FMAINT && !(srv->next_admin & SRV_ADMF_CMAINT))
 			srv_adm_set_maint(srv);
@@ -375,7 +375,7 @@ static void srv_state_srv_update(struct server *srv, int version, char **params)
 			srv->next_admin &= ~SRV_ADMF_HMAINT;
 		}
 		else {
-			/* If the FDQN has been changed from stats socket,
+			/* If the FQDN has been changed from stats socket,
 			 * apply fqdn state file value (which is the value set
 			 * from stats socket).
 			 * Also ensure the runtime resolver will process this resolution.

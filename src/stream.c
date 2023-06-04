@@ -81,8 +81,8 @@ static void strm_trace(enum trace_level level, uint64_t mask,
 /* The event representation is split like this :
  *   strm  - stream
  *   sc    - stream connector
- *   http  - http analyzis
- *   tcp   - tcp analyzis
+ *   http  - http analysis
+ *   tcp   - tcp analysis
  *
  * STRM_EV_* macros are defined in <proto/stream.h>
  */
@@ -96,13 +96,13 @@ static const struct trace_event strm_trace_events[] = {
 	{ .mask = STRM_EV_CS_ST,        .name = "sc_state",     .desc = "processing connector states" },
 
 	{ .mask = STRM_EV_HTTP_ANA,     .name = "http_ana",     .desc = "HTTP analyzers" },
-	{ .mask = STRM_EV_HTTP_ERR,     .name = "http_err",     .desc = "error during HTTP analyzis" },
+	{ .mask = STRM_EV_HTTP_ERR,     .name = "http_err",     .desc = "error during HTTP analysis" },
 
 	{ .mask = STRM_EV_TCP_ANA,      .name = "tcp_ana",      .desc = "TCP analyzers" },
-	{ .mask = STRM_EV_TCP_ERR,      .name = "tcp_err",      .desc = "error during TCP analyzis" },
+	{ .mask = STRM_EV_TCP_ERR,      .name = "tcp_err",      .desc = "error during TCP analysis" },
 
 	{ .mask = STRM_EV_FLT_ANA,      .name = "flt_ana",      .desc = "Filter analyzers" },
-	{ .mask = STRM_EV_FLT_ERR,      .name = "flt_err",      .desc = "error during filter analyzis" },
+	{ .mask = STRM_EV_FLT_ERR,      .name = "flt_err",      .desc = "error during filter analysis" },
 	{}
 };
 
@@ -312,7 +312,7 @@ int stream_upgrade_from_sc(struct stconn *sc, struct buffer *input)
 /* Callback used to wake up a stream when an input buffer is available. The
  * stream <s>'s stream connectors are checked for a failed buffer allocation
  * as indicated by the presence of the SC_FL_NEED_BUFF flag and the lack of a
- * buffer, and and input buffer is assigned there (at most one). The function
+ * buffer, and input buffer is assigned there (at most one). The function
  * returns 1 and wakes the stream up if a buffer was taken, otherwise zero.
  * It's designed to be called from __offer_buffer().
  */
@@ -1490,7 +1490,7 @@ int stream_set_http_mode(struct stream *s, const struct mux_proto_list *mux_prot
 	conn = sc_conn(sc);
 	if (conn) {
 		se_have_more_data(s->scf->sedesc);
-		/* Make sure we're unsubscribed, the the new
+		/* Make sure we're unsubscribed, the new
 		 * mux will probably want to subscribe to
 		 * the underlying XPRT
 		 */
@@ -1667,9 +1667,9 @@ void stream_update_timings(struct task *t, uint64_t lat, uint64_t cpu)
 			continue;					\
 }
 
-/* These 2 following macros call an analayzer for the specified channel if the
+/* These 2 following macros call an analyzer for the specified channel if the
  * right flag is set. The first one is used for "filterable" analyzers. If a
- * stream has some registered filters, pre and post analyaze callbacks are
+ * stream has some registered filters, pre and post analyze callbacks are
  * called. The second are used for other analyzers (AN_REQ/RES_FLT_* and
  * AN_REQ/RES_HTTP_XFER_BODY) */
 #define FLT_ANALYZE(strm, chn, fun, list, back, flag, ...)			\
@@ -2576,7 +2576,7 @@ struct task *process_stream(struct task *t, void *context, unsigned int state)
 
 		if (unlikely(tick_is_expired(t->expire, now_ms))) {
 			/* Some events prevented the timeouts to be handled but nothing evolved.
-			   So do it now and resyunc the stconns
+			   So do it now and resync the stconns
 			 */
 			stream_handle_timeouts(s);
 			goto resync_stconns;

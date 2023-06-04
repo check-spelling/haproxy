@@ -59,7 +59,7 @@ struct conf_errors {
 	struct list list;                           /* next conf_errors */
 };
 
-/* Returns the next unporocessed start line in the HTX message. It returns NULL
+/* Returns the next unprocessed start line in the HTX message. It returns NULL
  * if the start-line is undefined (first == -1). Otherwise, it returns the
  * pointer on the htx_sl structure.
  */
@@ -401,7 +401,7 @@ int http_replace_req_uri(struct htx *htx, const struct ist uri)
 }
 
 /* Replace the request path in the HTX message <htx> by <path>. The host part is
- * preserverd. if <with_qs> is set, the query string is evaluated as part of the
+ * preserved. if <with_qs> is set, the query string is evaluated as part of the
  * path and replaced. Otherwise, it is preserved too. It returns 1 on success,
  * otherwise 0.
  */
@@ -833,7 +833,7 @@ int http_update_authority(struct htx *htx, struct htx_sl *sl, const struct ist h
 }
 
 /* Update the header host by extracting the authority of the uri <uri>. flags of
- * the start-line are also updated accordingly. For orgin-form and asterisk-form
+ * the start-line are also updated accordingly. For origin-form and asterisk-form
  * uri, the header host is not changed and the flag HTX_SL_F_HAS_AUTHORITY is
  * removed from the flags of the start-line. Otherwise, this flag is set and the
  * authority is used to set the value of the header host. This function returns
@@ -1771,13 +1771,13 @@ struct http_reply *http_parse_http_reply(const char **args, int *orig_arg, struc
 
 		if (reply->ctype) {
 			ha_warning("parsing [%s:%d] : content-type '%s' ignored by the http reply when used "
-				   "with an erorrfile.\n",
+				   "with an errorfile.\n",
 				   px->conf.args.file, px->conf.args.line, reply->ctype);
 			ha_free(&reply->ctype);
 		}
 		if (!LIST_ISEMPTY(&reply->hdrs)) {
 			ha_warning("parsing [%s:%d] : hdr parameters ignored by the http reply when used "
-				   "with an erorrfile.\n",
+				   "with an errorfile.\n",
 				   px->conf.args.file, px->conf.args.line);
 			list_for_each_entry_safe(hdr, hdrb, &reply->hdrs, list) {
 				LIST_DELETE(&hdr->list);

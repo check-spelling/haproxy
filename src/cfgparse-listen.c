@@ -410,7 +410,7 @@ int cfg_parse_listen(const char *file, int linenum, char **args, int kwm)
 
 		if ((rc & PR_CAP_BE) && curr_defproxy && (curr_defproxy->nb_req_cap || curr_defproxy->nb_rsp_cap)) {
 			ha_alert("parsing [%s:%d]: backend or defaults sections cannot inherit from a defaults section defining"
-				 " capptures (defaults section at %s:%d).\n",
+				 " captures (defaults section at %s:%d).\n",
 				 file, linenum, curr_defproxy->conf.file, curr_defproxy->conf.line);
 			err_code |= ERR_ALERT | ERR_ABORT;
 		}
@@ -1843,7 +1843,7 @@ int cfg_parse_listen(const char *file, int linenum, char **args, int kwm)
 
 				if (!i || args[2][i]) {
 					ha_alert("parsing [%s:%d]: '%s %s' invalid node name - should be a string"
-						 "with digits(0-9), letters(A-Z, a-z), hyphen(-) or underscode(_).\n",
+						 "with digits(0-9), letters(A-Z, a-z), hyphen(-) or underscore(_).\n",
 						 file, linenum, args[0], args[1]);
 					err_code |= ERR_ALERT | ERR_FATAL;
 					goto out;
@@ -2035,7 +2035,7 @@ stats_error_parsing:
 		}
 
 		/* Redispatch can take an integer argument that control when the
-		 * resispatch occurs. All values are relative to the retries option.
+		 * redispatch occurs. All values are relative to the retries option.
 		 * This can be cancelled using "no option xxx".
 		 */
 		if (strcmp(args[1], "redispatch") == 0) {

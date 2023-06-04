@@ -97,7 +97,7 @@ static inline void write_ptr(void *p, const void *ptr)
  * caller is always responsible for providing enough bytes. Note: the function
  * is purposely *not* marked inline to let the compiler decide what to do with
  * it, because it's around 34 bytes long, placed on critical path but rarely
- * called, and uses uses a lot of arguments if not inlined. The compiler will
+ * called, and uses a lot of arguments if not inlined. The compiler will
  * thus decide what's best to do with it depending on the context.
  */
 static void readv_bytes(void *dst, const size_t bytes, const void *p1, size_t s1, const void *p2)
@@ -123,7 +123,7 @@ static void readv_bytes(void *dst, const size_t bytes, const void *p1, size_t s1
  * The caller is always responsible for providing enough room. Note: the
  * function is purposely *not* marked inline to let the compiler decide what to
  * do with it, because it's around 34 bytes long, placed on critical path but
- * rarely called, and uses uses a lot of arguments if not inlined. The compiler
+ * rarely called, and uses a lot of arguments if not inlined. The compiler
  * will thus decide what's best to do with it depending on the context.
  */
 static void writev_bytes(const void *src, const size_t bytes, void *p1, size_t s1, void *p2)

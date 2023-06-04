@@ -518,7 +518,7 @@ static inline void h1_release_buf(struct h1c *h1c, struct buffer *bptr)
 }
 
 /* Returns 1 if the H1 connection is alive (IDLE, EMBRYONIC, RUNNING or
- * RUNNING). Ortherwise 0 is returned.
+ * RUNNING). Otherwise 0 is returned.
  */
 static inline int h1_is_alive(const struct h1c *h1c)
 {
@@ -1014,7 +1014,7 @@ static void h1_release(struct h1c *h1c)
 
 	TRACE_POINT(H1_EV_H1C_END);
 
-	/* The connection must be aattached to this mux to be released */
+	/* The connection must be attached to this mux to be released */
 	if (h1c->conn && h1c->conn->ctx == h1c)
 		conn = h1c->conn;
 
@@ -1255,7 +1255,7 @@ static void h1_update_req_conn_value(struct h1s *h1s, struct h1m *h1m, struct is
 {
 	struct proxy *px = h1s->h1c->px;
 
-	/* Don't update "Connection:" header in TUNNEL mode or if "Upgrage"
+	/* Don't update "Connection:" header in TUNNEL mode or if "Upgrade"
 	 * token is found
 	 */
 	if (h1s->flags & H1S_F_WANT_TUN || h1m->flags & H1_MF_CONN_UPG)
@@ -1277,7 +1277,7 @@ static void h1_update_req_conn_value(struct h1s *h1s, struct h1m *h1m, struct is
 
 static void h1_update_res_conn_value(struct h1s *h1s, struct h1m *h1m, struct ist *conn_val)
 {
-	/* Don't update "Connection:" header in TUNNEL mode or if "Upgrage"
+	/* Don't update "Connection:" header in TUNNEL mode or if "Upgrade"
 	 * token is found
 	 */
 	if (h1s->flags & H1S_F_WANT_TUN || h1m->flags & H1_MF_CONN_UPG)
@@ -1564,7 +1564,7 @@ static size_t h1_handle_headers(struct h1s *h1s, struct h1m *h1m, struct htx *ht
 
 	/* Reject HTTP/1.0 GET/HEAD/DELETE requests with a payload except if
 	 * accept_payload_with_any_method global option is set.
-	 *There is a payload if the c-l is not null or the the payload is
+	 *There is a payload if the c-l is not null or the payload is
 	 * chunk-encoded.  A parsing error is reported but a A
 	 * 413-Payload-Too-Large is returned instead of a 400-Bad-Request.
 	 */
@@ -4084,7 +4084,7 @@ static int add_hdr_case_adjust(const char *from, const char *to, char **err)
 
 	/* Be sure only the case differs between <from> and <to> */
 	if (strcasecmp(from, to) != 0) {
-		memprintf(err, "<from> and <to> must not differ execpt the case");
+		memprintf(err, "<from> and <to> must not differ except the case");
 		return -1;
 	}
 
@@ -4114,7 +4114,7 @@ static int add_hdr_case_adjust(const char *from, const char *to, char **err)
 	return 0;
 }
 
-/* Migrate the the connection to the current thread.
+/* Migrate the connection to the current thread.
  * Return 0 if successful, non-zero otherwise.
  * Expected to be called with the old thread lock held.
  */

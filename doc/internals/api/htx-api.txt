@@ -225,12 +225,12 @@ Every HTX message starts with a start-line. Its payload is a "struct htx_sl". In
 addition to the parts of the HTTP start-line, this structure contains some
 information about the represented HTTP message, mainly in the form of flags
 (HTX_SL_F_*). For instance, if an HTTP message contains the header
-"conten-length", then the flag HTX_SL_F_CLEN is set.
+"content-length", then the flag HTX_SL_F_CLEN is set.
 
 Each HTTP message has its own start-line. So an HTX request has one and only one
 start-line because it must contain only one HTTP request at a time. But an HTX
 response may have more than one start-line if the final HTTP response is
-precedeed by some 1xx informational responses.
+preceded by some 1xx informational responses.
 
 In HTTP/2, there is no start-line. So the H2 multiplexer must create one when it
 converts an H2 message to HTX :
@@ -336,7 +336,7 @@ Once with an HTX message, following functions may help to process it :
 
 4.3. HTX Blocks manipulations
 
-Once the available sapce in an HTX message is known, the next step is to add HTX
+Once the available space in an HTX message is known, the next step is to add HTX
 blocks. First of all the function htx_nbblks() returns the number of blocks
 allocated in an HTX message. Then, there is an add function per block's type :
 

@@ -417,7 +417,7 @@ static const struct sedesc closed_ep = {
 	.flags     = SE_FL_DETACHED,
 };
 
-/* a dmumy closed stream */
+/* a dummy closed stream */
 static const struct h2s *h2_closed_stream = &(const struct h2s){
 	.sd        = (struct sedesc *)&closed_ep,
 	.h2c       = NULL,
@@ -427,7 +427,7 @@ static const struct h2s *h2_closed_stream = &(const struct h2s){
 	.id        = 0,
 };
 
-/* a dmumy closed stream returning a PROTOCOL_ERROR error */
+/* a dummy closed stream returning a PROTOCOL_ERROR error */
 static const struct h2s *h2_error_stream = &(const struct h2s){
 	.sd        = (struct sedesc *)&closed_ep,
 	.h2c       = NULL,
@@ -437,7 +437,7 @@ static const struct h2s *h2_error_stream = &(const struct h2s){
 	.id        = 0,
 };
 
-/* a dmumy closed stream returning a REFUSED_STREAM error */
+/* a dummy closed stream returning a REFUSED_STREAM error */
 static const struct h2s *h2_refused_stream = &(const struct h2s){
 	.sd        = (struct sedesc *)&closed_ep,
 	.h2c       = NULL,
@@ -2931,7 +2931,7 @@ static struct h2s *h2c_bck_handle_headers(struct h2c *h2c, struct h2s *h2s)
 	}
 
 	/* Unblock busy server h2s waiting for the response headers to validate
-	 * the tunnel establishment or the end of the response of an oborted
+	 * the tunnel establishment or the end of the response of an aborted
 	 * tunnel
 	 */
 	if ((h2s->flags & (H2_SF_BODY_TUNNEL|H2_SF_BLK_MBUSY)) == (H2_SF_BODY_TUNNEL|H2_SF_BLK_MBUSY) ||
@@ -4811,7 +4811,7 @@ next_frame:
 			goto fail;
 		}
 
-		/* detect when we must stop aggragating frames */
+		/* detect when we must stop aggregating frames */
 		h2c->dff |= hdr.ff & H2_F_HEADERS_END_HEADERS;
 
 		/* Take as much as we can of the CONTINUATION frame's payload */
@@ -4821,7 +4821,7 @@ next_frame:
 
 		/* Move the frame's payload over the padding, hole and frame
 		 * header. At least one of hole or dpl is null (see diagrams
-		 * above). The hole moves after the new aggragated frame.
+		 * above). The hole moves after the new aggregate frame.
 		 */
 		b_move(&h2c->dbuf, b_peek_ofs(&h2c->dbuf, h2c->dfl + hole + 9), clen, -(h2c->dpl + hole + 9));
 		h2c->dfl += hdr.len - h2c->dpl;
@@ -6053,7 +6053,7 @@ static size_t h2s_make_data(struct h2s *h2s, struct buffer *buf, size_t count)
 	if (fsize > h2c->mws)
 		fsize = h2c->mws;
 
-	/* now let's copy this this into the output buffer */
+	/* now let's copy it into the output buffer */
 	memcpy(outbuf.area + 9, htx_get_blk_ptr(htx, blk), fsize);
 	h2s->sws -= fsize;
 	h2c->mws -= fsize;
@@ -6555,7 +6555,7 @@ static size_t h2_snd_buf(struct stconn *sc, struct buffer *buf, size_t count, in
 	if (!(h2s->flags & H2_SF_OUTGOING_DATA) && count)
 		h2s->flags |= H2_SF_OUTGOING_DATA;
 
-	if (htx->extra && htx->extra != HTX_UNKOWN_PAYLOAD_LENGTH)
+	if (htx->extra && htx->extra != HTX_UNKNOWN_PAYLOAD_LENGTH)
 		h2s->flags |= H2_SF_MORE_HTX_DATA;
 	else
 		h2s->flags &= ~H2_SF_MORE_HTX_DATA;
@@ -6850,7 +6850,7 @@ static int h2_show_sd(struct buffer *msg, struct sedesc *sd, const char *pfx)
 	return ret;
 }
 
-/* Migrate the the connection to the current thread.
+/* Migrate the connection to the current thread.
  * Return 0 if successful, non-zero otherwise.
  * Expected to be called with the old thread lock held.
  */

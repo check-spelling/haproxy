@@ -91,7 +91,7 @@ struct promex_ctx {
 	int obj_state;             /* current state among PROMEX_{FRONT|BACK|SRV|LI}_STATE_* */
 };
 
-/* Promtheus metric type (gauge or counter) */
+/* Prometheus metric type (gauge or counter) */
 enum promex_mt_type {
 	PROMEX_MT_GAUGE   = 1,
 	PROMEX_MT_COUNTER = 2,
@@ -414,7 +414,7 @@ enum promex_srv_state promex_srv_status(struct server *sv)
 
 /* Convert a field to its string representation and write it in <out>, followed
  * by a newline, if there is enough space. non-numeric value are converted in
- * "NaN" because Prometheus only support numerical values (but it is unexepceted
+ * "NaN" because Prometheus only support numerical values (but it is unexpected
  * to process this kind of value). It returns 1 on success. Otherwise, it
  * returns 0. The buffer's length must not exceed <max> value.
  */

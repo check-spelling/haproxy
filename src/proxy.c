@@ -641,7 +641,7 @@ static int proxy_parse_rate_limit(char **args, int section, struct proxy *proxy,
 	}
 
 	if (*args[2] == 0) {
-		memprintf(err, "'%s %s' expects expects an integer value (in sessions/second)", args[0], args[1]);
+		memprintf(err, "'%s %s' expects an integer value (in sessions/second)", args[0], args[1]);
 		return -1;
 	}
 
@@ -683,7 +683,7 @@ static int proxy_parse_max_ka_queue(char **args, int section, struct proxy *prox
 	retval = 0;
 
 	if (*args[1] == 0) {
-		memprintf(err, "'%s' expects expects an integer value (or -1 to disable)", args[0]);
+		memprintf(err, "'%s' expects an integer value (or -1 to disable)", args[0]);
 		return -1;
 	}
 
@@ -2041,7 +2041,7 @@ struct task *manage_proxy(struct task *t, void *context, unsigned int state)
 			/* We purposely enforce a budget limitation since we don't want
 			 * to spend too much time purging old entries
 			 *
-			 * This is known to cause the watchdog to occasionnaly trigger if
+			 * This is known to cause the watchdog to occasionally trigger if
 			 * the table is huge and all entries become available for purge
 			 * at the same time
 			 *
@@ -2488,7 +2488,7 @@ int stream_set_backend(struct stream *s, struct proxy *be)
 			return 0;
 	}
 	else if (IS_HTX_STRM(s) && be->mode != PR_MODE_HTTP) {
-		/* If a TCP backend is assgiend to an HTX stream, return an
+		/* If a TCP backend is assigned to an HTX stream, return an
 		 * error. It may happens for a new stream on a previously
 		 * upgraded connections. */
 		if (!(s->flags & SF_ERR_MASK))

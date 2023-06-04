@@ -40,7 +40,7 @@ DECLARE_STATIC_POOL(pool_head_fcgi_param_rule, "fcgi_param_rule", sizeof(struct 
 DECLARE_STATIC_POOL(pool_head_fcgi_hdr_rule, "fcgi_hdr_rule", sizeof(struct fcgi_hdr_rule));
 
 /**************************************************************************/
-/***************************** Uitls **************************************/
+/***************************** Utils **************************************/
 /**************************************************************************/
 /* Makes a fcgi parameter name (prefixed by ':fcgi-') with <name> (in
  * lowercase). All non alphanumeric character are replaced by an underscore

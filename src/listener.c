@@ -1645,7 +1645,7 @@ struct task *manage_global_listener_queue(struct task *t, void *context, unsigne
 }
 
 /* Applies the thread mask, shards etc to the bind_conf. It normally returns 0
- * otherwie the number of errors. Upon error it may set error codes (ERR_*) in
+ * otherwise the number of errors. Upon error it may set error codes (ERR_*) in
  * err_code. It is supposed to be called only once very late in the boot process
  * after the bind_conf's thread_set is fixed. The function may emit warnings and
  * alerts. Extra listeners may be created on the fly.

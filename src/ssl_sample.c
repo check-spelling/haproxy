@@ -1336,7 +1336,7 @@ smp_fetch_ssl_fc_cipher(const struct arg *args, struct sample *smp, const char *
 	return 1;
 }
 
-/* integer, returns the algoritm's keysize if front conn. transport layer
+/* integer, returns the algorithm's keysize if front conn. transport layer
  * is SSL.
  * This function is also usable on backend conn if the fetch keyword 5th
  * char is 'b'.

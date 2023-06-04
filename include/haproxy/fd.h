@@ -108,7 +108,7 @@ void deinit_pollers(void);
  * Some pollers may lose their connection after a fork(). It may be necessary
  * to create initialize part of them again. Returns 0 in case of failure,
  * otherwise 1. The fork() function may be NULL if unused. In case of error,
- * the the current poller is destroyed and the caller is responsible for trying
+ * the current poller is destroyed and the caller is responsible for trying
  * another one by calling init_pollers() again.
  */
 int fork_poller(void);

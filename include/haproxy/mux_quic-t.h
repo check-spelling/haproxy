@@ -125,7 +125,7 @@ struct qcc {
  * A bidirectional stream has two channels which can be closed separately. The
  * local channel is closed when the STREAM frame with FIN or a RESET_STREAM has
  * been emitted. The remote channel is closed as soon as all data from the peer
- * has been received. The stream goes instantely to the close state once both
+ * has been received. The stream goes instantly to the close state once both
  * channels are closed.
  *
  * A unidirectional stream has only one channel of communication. Thus, it does

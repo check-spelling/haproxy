@@ -341,7 +341,7 @@ struct quic_arngs {
 /* Flag the packet number space as needing probing */
 #define QUIC_FL_PKTNS_PROBE_NEEDED  (1UL << 2)
 /* Flag the packet number space as having received a packet with a new largest
- * packet number, to be acknowledege
+ * packet number, to be acknowledge
  */
 #define QUIC_FL_PKTNS_NEW_LARGEST_PN (1UL << 3)
 
@@ -392,7 +392,7 @@ struct quic_dgram {
 	struct sockaddr_storage daddr;
 	struct quic_conn *qc;
 
-	struct list recv_list; /* elemt to quic_receiver_buf <dgram_list>. */
+	struct list recv_list; /* element to quic_receiver_buf <dgram_list>. */
 	struct mt_list handler_list; /* elem to quic_dghdlr <dgrams>. */
 };
 
@@ -419,7 +419,7 @@ struct quic_rx_packet {
 	const struct quic_version *version;
 
 	unsigned char type;
-	/* Initial desctination connection ID. */
+	/* Initial destination connection ID. */
 	struct quic_cid dcid;
 	struct quic_cid scid;
 	/* Packet number offset : only valid for Initial/Handshake/0-RTT/1-RTT. */
@@ -489,7 +489,7 @@ struct quic_tx_packet {
 	struct list frms;
 	/* The time this packet was sent (ms). */
 	unsigned int time_sent;
-	/* Packet number spakce. */
+	/* Packet number space. */
 	struct quic_pktns *pktns;
 	/* Flags. */
 	unsigned int flags;
@@ -543,7 +543,7 @@ struct quic_enc_level {
 		/* The packets received by the listener I/O handler
 		   with header protection removed. */
 		struct eb_root pkts;
-		/* Liste of QUIC packets with protected header. */
+		/* List of QUIC packets with protected header. */
 		struct list pqpkts;
 	} rx;
 	struct {

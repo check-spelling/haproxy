@@ -275,7 +275,7 @@ list of options is :
    also enumerated, unless the quiet mode is in use (-q).
 
   -dM[<byte>[,]][help|options,...] : forces memory poisoning, and/or changes
-    memory other debugging options. Memory poisonning means that each and every
+    memory other debugging options. Memory poisoning means that each and every
     memory region allocated with malloc() or pool_alloc() will be filled with
     <byte> before being passed to the caller. When <byte> is not specified, it
     defaults to 0x50 ('P'). While this slightly slows down operations, it is
@@ -531,7 +531,7 @@ you will systematically be asked for when posting a bug report :
 
 The relevant information that many non-developer users can verify here are :
   - the version : 1.6-dev7-a088d3-4 above means the code is currently at commit
-    ID "a088d3" which is the 4th one after after official version "1.6-dev7".
+    ID "a088d3" which is the 4th one after the official version "1.6-dev7".
     Version 1.6-dev7 would show as "1.6-dev7-8c1ad7". What matters here is in
     fact "1.6-dev7". This is the 7th development version of what will become
     version 1.6 in the future. A development version not suitable for use in
@@ -1537,7 +1537,7 @@ Limitations do exist: the length of the whole buffer passed to the CLI must
 not be greater than tune.bfsize and the pattern "<<" must not be glued to the
 last word of the line.
 
-When entering a paylod while in interactive mode, the prompt will change from
+When entering a payload while in interactive mode, the prompt will change from
 "> " to "+ ".
 
 It is important to understand that when multiple haproxy processes are started
@@ -2416,7 +2416,7 @@ set ssl cert <filename> <payload>
   <filename> in memory to a temporary transaction, then update this
   transaction with the PEM file in the payload. If a transaction exists with
   the same filename, it will update this transaction. It's also possible to
-  update the files linked to a certificate (.issuer, .sctl, .oscp etc.)
+  update the files linked to a certificate (.issuer, .sctl, .ocsp etc.)
   Once the modification are done, you have to "commit ssl cert" the
   transaction.
 
@@ -3002,7 +3002,7 @@ show resolvers [<resolvers section id>]
     cname: number of CNAME responses
     cname_error: CNAME errors encountered with this server
     any_err: number of empty response (IE: server does not support ANY type)
-    nx: non existent domain response received from this server
+    nx: nonexistent domain response received from this server
     timeout: how many time this server did not answer in time
     refused: number of requests refused by this server
     other: any other DNS errors
@@ -4051,7 +4051,7 @@ reload
   return a reload status, once the reload was performed. Be careful with the
   timeout if a tool is used to parse it, it is only returned once the
   configuration is parsed and the new worker is forked. The "socat" command uses
-  a timeout of 0.5s by default so it will quits before showing the message if
+  a timeout of 0.5s by default so it will quit before showing the message if
   the reload is too long. "ncat" does not have a timeout by default.
   When compiled with USE_SHM_OPEN=1, the reload command is also able to dump
   the startup-logs of the master.
@@ -4085,8 +4085,8 @@ reload
   Note that a reload will close all connections to the master CLI.
 
 show proc
-  The master CLI introduces a 'show proc' command to surpervise the
-  processe.
+  The master CLI introduces a 'show proc' command to supervise the
+  processes.
 
   Example:
 
@@ -4136,7 +4136,7 @@ using regular expressions involving the dollar symbol).
 
 Environment variables also make it convenient to write configurations which are
 expected to work on various sites where only the address changes. It can also
-permit to remove passwords from some configs. Example below where the the file
+permit to remove passwords from some configs. Example below where the file
 "site1.env" file is sourced by the init script upon startup :
 
   $ cat site1.env

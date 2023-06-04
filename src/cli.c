@@ -730,7 +730,7 @@ static int cli_get_severity_output(struct appctx *appctx)
  * 1 if the request was understood, otherwise zero (in which case an error
  * message will be displayed). It is called with appctx->st0
  * set to CLI_ST_GETREQ and presets ->st2 to 0 so that parsers don't have to do
- * it. It will possilbly leave st0 to CLI_ST_CALLBACK if the keyword needs to
+ * it. It will possibly leave st0 to CLI_ST_CALLBACK if the keyword needs to
  * have its own I/O handler called again. Most of the time, parsers will only
  * set st0 to CLI_ST_PRINT and put their message to be displayed into cli.msg.
  * If a keyword parser is NULL and an I/O handler is declared, the I/O handler
@@ -1212,7 +1212,7 @@ static void cli_release_handler(struct appctx *appctx)
 	}
 }
 
-/* This function dumps all environmnent variables to the buffer. It returns 0
+/* This function dumps all environment variables to the buffer. It returns 0
  * if the output buffer is full and it needs to be called again, otherwise
  * non-zero. It takes its context from the show_env_ctx in svcctx, and will
  * start from ->var and dump only one variable if ->show_one is set.
@@ -1866,7 +1866,7 @@ static int cli_parse_set_anon(char **args, char *payload, struct appctx *appctx,
 	return 1;
 }
 
-/* This function set the global anonyzing key, restricted to level 'admin' */
+/* This function set the global anonymizing key, restricted to level 'admin' */
 static int cli_parse_set_global_key(char **args, char *payload, struct appctx *appctx, void *private)
 {
 	long long key;

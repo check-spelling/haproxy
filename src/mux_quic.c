@@ -208,7 +208,7 @@ static inline int qcc_is_dead(const struct qcc *qcc)
 		return 0;
 
 	/* Connection considered dead if either :
-	 * - remote error detected at tranport level
+	 * - remote error detected at transport level
 	 * - error detected locally
 	 * - MUX timeout expired or unset
 	 */
@@ -2553,7 +2553,7 @@ static int qmux_init(struct connection *conn, struct proxy *prx,
 
 	qcc->wait_event.tasklet = tasklet_new();
 	if (!qcc->wait_event.tasklet) {
-		TRACE_ERROR("taslket alloc failure", QMUX_EV_QCC_NEW);
+		TRACE_ERROR("tasklet alloc failure", QMUX_EV_QCC_NEW);
 		goto fail_no_tasklet;
 	}
 

@@ -1,6 +1,6 @@
 /*
  * include/haproxy/arg-t.h
- * This file contains structure declarations for generaic argument parsing.
+ * This file contains structure declarations for generic argument parsing.
  *
  * Copyright 2012 Willy Tarreau <w@1wt.eu>
  *

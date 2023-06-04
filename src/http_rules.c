@@ -168,7 +168,7 @@ struct act_rule *parse_http_req_cond(const char **args, const char *file, int li
 	return NULL;
 }
 
-/* parse an "http-respose" rule */
+/* parse an "http-response" rule */
 struct act_rule *parse_http_res_cond(const char **args, const char *file, int linenum, struct proxy *proxy)
 {
 	struct act_rule *rule;

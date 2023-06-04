@@ -139,10 +139,10 @@ static const struct trace_event quic_trace_events[] = {
 	{ .mask = QUIC_EV_CONN_WSEC,     .name = "write_secs",       .desc = "write secrets derivation" },
 	{ .mask = QUIC_EV_CONN_LPKT,     .name = "lstnr_packet",     .desc = "new listener received packet" },
 	{ .mask = QUIC_EV_CONN_SPKT,     .name = "srv_packet",       .desc = "new server received packet" },
-	{ .mask = QUIC_EV_CONN_ENCPKT,   .name = "enc_hdshk_pkt",    .desc = "handhshake packet encryption" },
+	{ .mask = QUIC_EV_CONN_ENCPKT,   .name = "enc_hdshk_pkt",    .desc = "handshake packet encryption" },
 	{ .mask = QUIC_EV_CONN_TXPKT,    .name = "tx_pkt",           .desc = "TX packet" },
-	{ .mask = QUIC_EV_CONN_PAPKT,    .name = "phdshk_apkt",      .desc = "post handhshake application packet preparation" },
-	{ .mask = QUIC_EV_CONN_PAPKTS,   .name = "phdshk_apkts",     .desc = "post handhshake application packets preparation" },
+	{ .mask = QUIC_EV_CONN_PAPKT,    .name = "phdshk_apkt",      .desc = "post handshake application packet preparation" },
+	{ .mask = QUIC_EV_CONN_PAPKTS,   .name = "phdshk_apkts",     .desc = "post handshake application packets preparation" },
 	{ .mask = QUIC_EV_CONN_IO_CB,    .name = "qc_io_cb",         .desc = "QUIC conn. I/O processing" },
 	{ .mask = QUIC_EV_CONN_RMHP,     .name = "rm_hp",            .desc = "Remove header protection" },
 	{ .mask = QUIC_EV_CONN_PRSHPKT,  .name = "parse_hpkt",       .desc = "parse handshake packet" },
@@ -150,7 +150,7 @@ static const struct trace_event quic_trace_events[] = {
 	{ .mask = QUIC_EV_CONN_PRSFRM,   .name = "parse_frm",        .desc = "parse frame" },
 	{ .mask = QUIC_EV_CONN_PRSAFRM,  .name = "parse_ack_frm",    .desc = "parse ACK frame" },
 	{ .mask = QUIC_EV_CONN_BFRM,     .name = "build_frm",        .desc = "build frame" },
-	{ .mask = QUIC_EV_CONN_PHPKTS,   .name = "phdshk_pkts",      .desc = "handhshake packets preparation" },
+	{ .mask = QUIC_EV_CONN_PHPKTS,   .name = "phdshk_pkts",      .desc = "handshake packets preparation" },
 	{ .mask = QUIC_EV_CONN_TRMHP,    .name = "rm_hp_try",        .desc = "header protection removing try" },
 	{ .mask = QUIC_EV_CONN_ELRMHP,   .name = "el_rm_hp",         .desc = "handshake enc. level header protection removing" },
 	{ .mask = QUIC_EV_CONN_RXPKT,    .name = "rx_pkt",           .desc = "RX packet" },
@@ -175,7 +175,7 @@ static const struct trace_event quic_trace_events[] = {
 	{ .mask = QUIC_EV_STATELESS_RST, .name = "stateless_reset",  .desc = "stateless reset sent"},
 	{ .mask = QUIC_EV_TRANSP_PARAMS, .name = "transport_params", .desc = "transport parameters"},
 	{ .mask = QUIC_EV_CONN_IDLE_TIMER, .name = "idle_timer",     .desc = "idle timer task"},
-	{ .mask = QUIC_EV_CONN_SUB,      .name = "xprt_sub",         .desc = "RX/TX subcription or unsubscription to QUIC xprt"},
+	{ .mask = QUIC_EV_CONN_SUB,      .name = "xprt_sub",         .desc = "RX/TX subscription or unsubscription to QUIC xprt"},
 	{ .mask = QUIC_EV_CONN_RCV,      .name = "conn_recv",        .desc = "RX on connection" },
 	{ .mask = QUIC_EV_CONN_SET_AFFINITY, .name = "conn_set_affinity", .desc = "set connection thread affinity" },
 	{ /* end */ }
@@ -2092,7 +2092,7 @@ static void qc_treat_ack_of_ack(struct quic_conn *qc,
 	TRACE_LEAVE(QUIC_EV_CONN_PRSAFRM, qc);
 }
 
-/* Send a packet ack event nofication for each newly acked packet of
+/* Send a packet ack event notification for each newly acked packet of
  * <newly_acked_pkts> list and free them.
  * Always succeeds.
  */
@@ -2577,7 +2577,7 @@ static inline int qc_handle_strm_frm(struct quic_rx_packet *pkt,
 	ret = qcc_recv(qc->qcc, strm_frm->id, strm_frm->len,
 	               strm_frm->offset.key, fin, (char *)strm_frm->data);
 
-	/* frame rejected - packet must not be acknowledeged */
+	/* frame rejected - packet must not be acknowledged */
 	TRACE_LEAVE(QUIC_EV_CONN_PRSFRM, qc);
 	return !ret;
 }
@@ -2924,7 +2924,7 @@ static struct ncbuf *quic_get_ncbuf(struct ncbuf *ncbuf)
 	return ncbuf;
 }
 
-/* Parse <frm> CRYPTO frame coming with <pkt> packet at <qel> <qc> connectionn.
+/* Parse <frm> CRYPTO frame coming with <pkt> packet at <qel> <qc> connection.
  * Returns 1 if succeeded, 0 if not. Also set <*fast_retrans> to 1 if the
  * speed up handshake completion may be run after having received duplicated
  * CRYPTO data.
@@ -3333,7 +3333,7 @@ static int qc_parse_pkt_frms(struct quic_conn *qc, struct quic_rx_packet *pkt,
 			qc->state = QUIC_HS_ST_CONFIRMED;
 			break;
 		default:
-			TRACE_ERROR("unknosw frame type", QUIC_EV_CONN_PRSHPKT, qc);
+			TRACE_ERROR("unknown frame type", QUIC_EV_CONN_PRSHPKT, qc);
 			goto leave;
 		}
 	}
@@ -3398,7 +3398,7 @@ static void qc_txb_release(struct quic_conn *qc)
 	/* For the moment sending function is responsible to purge the buffer
 	 * entirely. It may change in the future but this requires to be able
 	 * to reuse old data.
-	 * For the momemt we do not care to leave data in the buffer for
+	 * For the moment we do not care to leave data in the buffer for
 	 * a connection which is supposed to be killed asap.
 	 */
 	BUG_ON_HOT(buf && b_data(buf));
@@ -5041,7 +5041,7 @@ struct task *quic_conn_app_io_cb(struct task *t, void *context, unsigned int sta
 		quic_build_post_handshake_frames(qc);
 	}
 
-	/* Retranmissions */
+	/* Retransmissions */
 	if (qc->flags & QUIC_FL_CONN_RETRANS_NEEDED) {
 		TRACE_STATE("retransmission needed", QUIC_EV_CONN_IO_CB, qc);
 		qc->flags &= ~QUIC_FL_CONN_RETRANS_NEEDED;
@@ -5106,7 +5106,7 @@ struct task *quic_conn_io_cb(struct task *t, void *context, unsigned int state)
 	st = qc->state;
 	TRACE_PROTO("connection state", QUIC_EV_CONN_IO_CB, qc, &st);
 
-	/* Retranmissions */
+	/* Retransmissions */
 	if (qc->flags & QUIC_FL_CONN_RETRANS_NEEDED) {
 		TRACE_DEVEL("retransmission needed", QUIC_EV_CONN_PHPKTS, qc);
 		qc->flags &= ~QUIC_FL_CONN_RETRANS_NEEDED;
@@ -6832,7 +6832,7 @@ static inline int quic_padding_check(const unsigned char *pos,
  * <l> is the listener instance on which it was received.
  *
  * By default, <new_tid> is set to -1. However, if thread affinity has been
- * chanbed, it will be set to its new thread ID.
+ * changed, it will be set to its new thread ID.
  *
  * Returns the quic-conn instance or NULL if not found or thread affinity
  * changed.
@@ -6856,7 +6856,7 @@ static struct quic_conn *quic_rx_pkt_retrieve_conn(struct quic_rx_packet *pkt,
 
 	qc = retrieve_qc_conn_from_cid(pkt, l, &dgram->saddr, new_tid);
 
-	/* If connection already created or rebinded on another thread. */
+	/* If connection already created or rebound on another thread. */
 	if (!qc && *new_tid != -1 && tid != *new_tid)
 		goto out;
 
@@ -7527,7 +7527,7 @@ void quic_apply_header_protection(struct quic_conn *qc, unsigned char *pos,
  *
  * Update consequently <*len> to reflect the size of these frames built
  * by this function. Also attach these frames to <l> frame list.
- * Return 1 if at least one ack-eleciting frame could be built, 0 if not.
+ * Return 1 if at least one ack-eliciting frame could be built, 0 if not.
  */
 static inline int qc_build_frms(struct list *outlist, struct list *inlist,
                                 size_t room, size_t *len, size_t headlen,
@@ -7644,7 +7644,7 @@ static inline int qc_build_frms(struct list *outlist, struct list *inlist,
 
 				stream_desc = eb64_entry(node, struct qc_stream_desc, by_id);
 				if (strm_frm->offset.key + strm_frm->len <= stream_desc->ack_offset) {
-					TRACE_DEVEL("ignored frame frame in already acked range",
+					TRACE_DEVEL("ignored frame in already acked range",
 					            QUIC_EV_CONN_PRSAFRM, qc, cf);
 					qc_frm_free(&cf);
 					continue;
@@ -8012,7 +8012,7 @@ static int qc_do_build_pkt(unsigned char *pos, const unsigned char *end,
 			dglen += 1;
 			/* Note that only we are in the case where this Initial packet
 			 * is not coalesced to an Handshake packet. We must directly
-			 * pad the datragram.
+			 * pad the datagram.
 			 */
 			if (pkt->type == QUIC_PACKET_TYPE_INITIAL) {
 				if (dglen < QUIC_INITIAL_PACKET_MINLEN) {
@@ -8149,7 +8149,7 @@ static inline void quic_tx_packet_init(struct quic_tx_packet *pkt, int type)
  * Return -2 if the packet could not be allocated or encrypted for any reason,
  * -1 if there was not enough room to build a packet.
  * XXX NOTE XXX
- * If you provide provide qc_build_pkt() with a big enough buffer to build a packet as big as
+ * If you provide qc_build_pkt() with a big enough buffer to build a packet as big as
  * possible (to fill an MTU), the unique reason why this function may fail is the congestion
  * control window limitation.
  */
@@ -8228,7 +8228,7 @@ static struct quic_tx_packet *qc_build_pkt(unsigned char **pos,
 	*pos = last_byte;
 	/* Attach the built packet to its tree. */
 	pkt->pn_node.key = pn;
-	/* Set the packet in fligth length for in flight packet only. */
+	/* Set the packet in flight length for in flight packet only. */
 	if (pkt->flags & QUIC_FL_TX_PACKET_IN_FLIGHT) {
 		pkt->in_flight_len = pkt->len;
 		qc->path->prep_in_flight += pkt->len;
@@ -8560,7 +8560,7 @@ int qc_set_tid_affinity(struct quic_conn *qc, uint new_tid, struct listener *new
 	TRACE_ENTER(QUIC_EV_CONN_SET_AFFINITY, qc);
 
 	/* Pre-allocate all required resources. This ensures we do not left a
-	 * connection with only some of its field rebinded.
+	 * connection with only some of its field rebound.
 	 */
 	if (((t1 = task_new_on(new_tid)) == NULL) ||
 	    (qc->timer_task && (t2 = task_new_on(new_tid)) == NULL) ||

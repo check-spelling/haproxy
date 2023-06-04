@@ -191,7 +191,7 @@ static void xprt_handshake_close(struct connection *conn, void *xprt_ctx)
 			ctx->xprt->close(conn, ctx->xprt_ctx);
 		/* Remove any handshake flag, and if we were the connection
 		 * xprt, get back to XPRT_RAW. If we're here because we
-		 * failed an outoging connection, it will be retried using
+		 * failed an outgoing connection, it will be retried using
 		 * the same struct connection, and as xprt_handshake is a bit
 		 * magic, because it requires a call to add_xprt(), it's better
 		 * to fallback to the original XPRT to re-initiate the

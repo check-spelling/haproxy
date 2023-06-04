@@ -154,7 +154,7 @@ int act_resolution_cb(struct resolv_requester *requester, struct dns_counters *c
 /*
  * Do resolve error management callback
  * returns:
- *  0 if we can trash answser items.
+ *  0 if we can trash answer items.
  *  1 when safely ignored and we must kept answer items
  */
 int act_resolution_error_cb(struct resolv_requester *requester, int error_code)

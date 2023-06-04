@@ -65,7 +65,7 @@
  *
  * Another nice optimisation is to allow a timer to stay at an old place in the
  * queue as long as it's not further than the real expiration date. That way,
- * we use the tree as a place holder for a minorant of the real expiration
+ * we use the tree as a place holder for a minorant [sp?] of the real expiration
  * date. Since we have a very low chance of hitting a timeout anyway, we can
  * bounce the nodes to their right place when we scan the tree if we encounter
  * a misplaced node once in a while. This even allows us not to remove the
@@ -181,7 +181,7 @@ static inline int thread_has_tasks(void)
 
 /* puts the task <t> in run queue with reason flags <f>, and returns <t> */
 /* This will put the task in the local runqueue if the task is only runnable
- * by the current thread, in the global runqueue otherwies. With DEBUG_TASK,
+ * by the current thread, in the global runqueue otherwise. With DEBUG_TASK,
  * the <file>:<line> from the call place are stored into the task for tracing
  * purposes.
  */
@@ -278,7 +278,7 @@ static inline struct task *task_unlink_wq(struct task *t)
  * timer is infinite, do nothing and rely on wake_expired_task to clean up.
  * If the task uses a shared wait queue, it's queued into the global wait queue,
  * protected by the global wq_lock, otherwise by it necessarily belongs to the
- * current thread'sand is queued without locking.
+ * current thread's and is queued without locking.
  */
 static inline void task_queue(struct task *task)
 {
@@ -698,7 +698,7 @@ static inline const char *task_wakeup_type_str(uint t)
 
 /* This function register a new signal. "lua" is the current lua
  * execution context. It contains a pointer to the associated task.
- * "link" is a list head attached to an other task that must be wake
+ * "link" is a list head attached to another task that must be wake
  * the lua task if an event occurs. This is useful with external
  * events like TCP I/O or sleep functions. This function allocate
  * memory for the signal.

@@ -37,7 +37,7 @@ extern int (*const pat_index_fcts[PAT_MATCH_NUM])(struct pattern_expr *, struct 
 extern void (*const pat_prune_fcts[PAT_MATCH_NUM])(struct pattern_expr *);
 extern struct pattern *(*const pat_match_fcts[PAT_MATCH_NUM])(struct sample *, struct pattern_expr *, int);
 
-/* This is the root of the list of all pattern_ref avalaibles. */
+/* This is the root of the list of all available pattern_references. */
 extern struct list pattern_reference;
 
 int pattern_finalize_config(void);
@@ -174,7 +174,7 @@ struct pattern *pat_match_reg(struct sample *smp, struct pattern_expr *expr, int
 struct pattern *pat_match_regm(struct sample *smp, struct pattern_expr *expr, int fill);
 
 /*
- * pattern_ref manipulation.
+ * pattern_reference manipulation.
  */
 struct pat_ref *pat_ref_lookup(const char *reference);
 struct pat_ref *pat_ref_lookupid(int unique_id);

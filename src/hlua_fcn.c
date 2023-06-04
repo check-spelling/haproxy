@@ -271,7 +271,7 @@ void *hlua_checkudata(lua_State *L, int ud, int class_ref)
 	if (!lua_istable(L, ud))
 		luaL_argerror(L, ud, NULL);
 
-	/* pop the metatable of the referencecd object. */
+	/* pop the metatable of the referenced object. */
 	if (!lua_getmetatable(L, ud))
 		luaL_argerror(L, ud, NULL);
 
@@ -446,7 +446,7 @@ static int hlua_concat_dump(lua_State *L)
 	buffer = lua_touserdata(L, -1);
 	lua_pop(L, 1);
 
-	/* Push the soncatenated string in the stack. */
+	/* Push the concatenated string in the stack. */
 	lua_pushlstring(L, buffer, b->len);
 	return 1;
 }
@@ -589,7 +589,7 @@ static int hlua_queue_push(lua_State *L)
 	return 1;
 }
 
-/* internal queue pop helper, returns 1 if it successfuly popped an item
+/* internal queue pop helper, returns 1 if it successfully popped an item
  * from the queue and pushed it on lua stack.
  *
  * Else it returns 0 (nothing is pushed on the stack)
@@ -1112,7 +1112,7 @@ int hlua_fcn_new_listener(lua_State *L, struct listener *lst)
 {
 	lua_newtable(L);
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_listener_ref);
 	lua_setmetatable(L, -2);
 

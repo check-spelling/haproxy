@@ -669,7 +669,7 @@ static struct appctx *sink_forward_session_create(struct sink *sink, struct sink
 }
 
 /*
- * Task to handle connctions to forward servers
+ * Task to handle connections to forward servers
  */
 static struct task *process_sink_forward(struct task * task, void *context, unsigned int state)
 {
@@ -702,7 +702,7 @@ static struct task *process_sink_forward(struct task * task, void *context, unsi
 	return task;
 }
 /*
- * Init task to manage connctions to forward servers
+ * Init task to manage connections to forward servers
  *
  * returns 0 in case of error.
  */
@@ -1136,7 +1136,7 @@ struct sink *sink_new_from_logsrv(struct logsrv *logsrv)
 	if (!sink_init_forward(sink))
 		goto error;
 
-	/* reset familyt of logsrv to consider the ring buffer target */
+	/* reset family of logsrv to consider the ring buffer target */
 	logsrv->addr.ss_family = AF_UNSPEC;
 
 	return sink;
@@ -1296,7 +1296,7 @@ int post_sink_resolve()
 					}
 				}
 				else if (sink->type != SINK_TYPE_BUFFER) {
-					ha_alert("log server declared in proxy section '%s' in file '%s' at line %d uses incomatible ring named '%s'.\n",
+					ha_alert("log server declared in proxy section '%s' in file '%s' at line %d uses incompatible ring named '%s'.\n",
 					         px->id, logsrv->conf.file, logsrv->conf.line, logsrv->ring_name);
 					err_code |= ERR_ALERT | ERR_FATAL;
 				}

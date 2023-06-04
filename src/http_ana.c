@@ -75,7 +75,7 @@ static int http_reply_100_continue(struct stream *s);
 /* This stream analyser waits for a complete HTTP request. It returns 1 if the
  * processing can continue on next analysers, or zero if it either needs more
  * data or wants to immediately abort the request (eg: timeout, error, ...). It
- * is tied to AN_REQ_WAIT_HTTP and may may remove itself from s->req.analysers
+ * is tied to AN_REQ_WAIT_HTTP and may remove itself from s->req.analysers
  * when it has nothing left to do, and may remove any analyser when it wants to
  * abort.
  */
@@ -1169,7 +1169,7 @@ static __inline int do_l7_retry(struct stream *s, struct stconn *sc)
 /* This stream analyser waits for a complete HTTP response. It returns 1 if the
  * processing can continue on next analysers, or zero if it either needs more
  * data or wants to immediately abort the response (eg: timeout, error, ...). It
- * is tied to AN_RES_WAIT_HTTP and may may remove itself from s->res.analysers
+ * is tied to AN_RES_WAIT_HTTP and may remove itself from s->res.analysers
  * when it has nothing left to do, and may remove any analyser when it wants to
  * abort.
  */
@@ -1686,7 +1686,7 @@ int http_process_res_common(struct stream *s, struct channel *rep, int an_bit, s
 	 * Filters are tried with ->be first, then with ->fe if it is
 	 * different from ->be.
 	 *
-	 * Maybe we are in resume condiion. In this case I choose the
+	 * Maybe we are in resume condition. In this case I choose the
 	 * "struct proxy" which contains the rule list matching the resume
 	 * pointer. If none of these "struct proxy" match, I initialise
 	 * the process with the first one.
@@ -3258,7 +3258,7 @@ static void http_manage_client_side_cookies(struct stream *s, struct channel *re
 				 * This allows to share a same cookie between several servers, for example
 				 * to dedicate backup servers to specific servers only.
 				 * However, to prevent clients from sticking to cookie-less backup server
-				 * when they have incidentely learned an empty cookie, we simply ignore
+				 * when they have incidentally learned an empty cookie, we simply ignore
 				 * empty cookies and mark them as invalid.
 				 * The same behaviour is applied when persistence must be ignored.
 				 */

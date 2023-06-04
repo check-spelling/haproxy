@@ -66,4 +66,4 @@ enum {
 #define HC_F_RES_END        0x08
 
 
-#endif /* ! _HAPROXY_HTTCLIENT__T_H */
+#endif /* ! _HAPROXY_HTTPCLIENT__T_H */

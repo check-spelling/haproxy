@@ -833,7 +833,7 @@ static int bind_parse_crl_file(char **args, int cur_arg, struct proxy *px, struc
 	return ssl_bind_parse_crl_file(args, cur_arg, px, &conf->ssl_conf, 0, err);
 }
 
-/* parse the "curves" bind keyword keyword */
+/* parse the "curves" bind keyword */
 static int ssl_bind_parse_curves(char **args, int cur_arg, struct proxy *px, struct ssl_bind_conf *conf, int from_cli, char **err)
 {
 #if defined(SSL_CTX_set1_curves_list)
@@ -894,7 +894,7 @@ static int bind_parse_client_sigalgs(char **args, int cur_arg, struct proxy *px,
 }
 
 
-/* parse the "ecdhe" bind keyword keyword */
+/* parse the "ecdhe" bind keyword */
 static int ssl_bind_parse_ecdhe(char **args, int cur_arg, struct proxy *px, struct ssl_bind_conf *conf, int from_cli, char **err)
 {
 #if !defined(SSL_CTX_set_tmp_ecdh)

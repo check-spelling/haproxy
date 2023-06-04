@@ -557,7 +557,7 @@ of such a task to stay in wait queue in case of wakeup, though that sounds
 difficult. Other approaches would be to set the GID to the current one when
 waking up the task, and to have a flag (or sign on the GID) indicating that the
 task is still queued in the global timers queue. We already have TASK_SHARED_WQ
-so it seems that antoher similar flag such as TASK_WAKE_ANYWHERE could make
+so it seems that another similar flag such as TASK_WAKE_ANYWHERE could make
 sense. But when is TASK_SHARED_WQ really used, except for the "anywhere" case ?
 All calls to task_new() use either 1<<thr, tid_bit, all_threads_mask, or come
 from appctx_new which does exactly the same. The only real user of non-global,

@@ -1383,7 +1383,7 @@ spoe_release_appctx(struct appctx *appctx)
 			    &spoe_appctx->buffer_wait);
 	pool_free(pool_head_spoe_appctx, spoe_appctx);
 
-	/* Update runtinme agent info */
+	/* Update runtime agent info */
 	agent->rt[tid].frame_size = agent->max_frame_size;
 	list_for_each_entry(spoe_appctx, &agent->rt[tid].applets, list)
 		HA_ATOMIC_UPDATE_MIN(&agent->rt[tid].frame_size, spoe_appctx->max_frame_size);
@@ -1497,7 +1497,7 @@ spoe_handle_connecting_appctx(struct appctx *appctx)
 			SPOE_APPCTX(appctx)->node.key = 0;
 			eb32_insert(&agent->rt[tid].idle_applets, &SPOE_APPCTX(appctx)->node);
 
-			/* Update runtinme agent info */
+			/* Update runtime agent info */
 			HA_ATOMIC_UPDATE_MIN(&agent->rt[tid].frame_size, SPOE_APPCTX(appctx)->max_frame_size);
 			goto next;
 	}
@@ -2984,7 +2984,7 @@ spoe_sig_stop(struct sig_handler *sh)
 	while (p) {
 		struct flt_conf *fconf;
 
-		/* SPOE filter are not initialized for disabled proxoes. Move to
+		/* SPOE filter are not initialized for disabled proxies. Move to
 		 * the next one
 		 */
 		if (p->flags & PR_FL_DISABLED) {
@@ -4732,7 +4732,7 @@ static struct flt_kw_list flt_kws = { "SPOE", { }, {
 
 INITCALL1(STG_REGISTER, flt_register_keywords, &flt_kws);
 
-/* Delcate the action parser for "spoe-action" keyword */
+/* Declare the action parser for "spoe-action" keyword */
 static struct action_kw_list tcp_req_action_kws = { { }, {
 		{ "send-spoe-group", parse_send_spoe_group },
 		{ /* END */ },

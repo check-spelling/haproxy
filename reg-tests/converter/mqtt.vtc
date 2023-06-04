@@ -178,7 +178,7 @@ client c2_311_3 -connect ${h1_fe1_sock} {
 } -run
 
 client c2_311_4 -connect ${h1_fe1_sock} {
-    # Invalid MQTT 3.1.1 CONNECT with too long remaing_length ( > 4 bytes)
+    # Invalid MQTT 3.1.1 CONNECT with too long remaining_length ( > 4 bytes)
     sendhex "10ffffffff1400044d5154540402003c0008746573745f737562"
     expect_close
 } -run

@@ -282,7 +282,7 @@ static int hf_happp_stkt_updt_ack_table_id = -1;
 static int hf_happp_stkt_updt_ack_update_id = -1;
 
 struct happp_cv_data_t {
-	/* Same thing for the type of the the stick table keys */
+	/* Same thing for the type of the stick table keys */
 	uint64_t stkt_key_type;
 
 	/* Same thing for the length of the stick table keys.

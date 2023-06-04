@@ -84,7 +84,7 @@
  * At the end, if payload wrapping or blocks defragmentation is not enough, some
  * free space may be get back with a full defragmentation. This way, the holes in
  * the middle are not reusable but count in the available free space. The only
- * way to reuse this lost space is to fully defragmenate the HTX message.
+ * way to reuse this lost space is to fully defragment the HTX message.
  *
  *                                   - * -
  *
@@ -128,7 +128,7 @@
  */
 #define HTX_SL_F_NONE           0x00000000
 #define HTX_SL_F_IS_RESP        0x00000001 /* It is the response start-line (unset means the request one) */
-#define HTX_SL_F_XFER_LEN       0x00000002 /* The message xfer size can be dertermined */
+#define HTX_SL_F_XFER_LEN       0x00000002 /* The message xfer size can be determined */
 #define HTX_SL_F_XFER_ENC       0x00000004 /* The transfer-encoding header was found in message */
 #define HTX_SL_F_CLEN           0x00000008 /* The content-length header was found in message */
 #define HTX_SL_F_CHNK           0x00000010 /* The message payload is chunked */
@@ -247,7 +247,7 @@ struct htx {
 	int32_t head;   /* oldest inserted block. -1 if the HTX message is empty */
 	int32_t first;  /* position of the first block to (re)start the analyse. -1 if unset. */
 
-	uint32_t tail_addr; /* start address of the free space in front of the the blocks table */
+	uint32_t tail_addr; /* start address of the free space in front of the blocks table */
 	uint32_t head_addr; /* start address of the free space at the beginning */
 	uint32_t end_addr;  /* end address of the free space at the beginning */
 

@@ -214,7 +214,7 @@ struct flt_conf {
 };
 
 /*
- * Structure reprensenting a filter instance attached to a stream
+ * Structure representing a filter instance attached to a stream
  *
  * 2D-Array fields are used to store info per channel. The first index stands
  * for the request channel, and the second one for the response channel.
@@ -234,7 +234,7 @@ struct filter {
 };
 
 /*
- * Structure reprensenting the "global" state of filters attached to a stream.
+ * Structure representing the "global" state of filters attached to a stream.
  */
 struct strm_flt {
 	struct list    filters;               /* List of filters attached to a stream */

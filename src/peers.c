@@ -144,7 +144,7 @@ enum {
 /* network key types;
  * network types were directly and mistakenly
  * mapped on sample types, to keep backward
- * compatiblitiy we keep those values but
+ * compatibility we keep those values but
  * we now use a internal/network mapping
  * to avoid further mistakes adding or
  * modifying internals types
@@ -919,7 +919,7 @@ static int peer_prepare_switchmsg(char *msg, size_t size, struct peer_prep_param
 			/* stored data types parameters are all linearly encoded
 			 * at the end of the 'table definition' message.
 			 *
-			 * Currently only array data_types and and data_types
+			 * Currently only array data_types and data_types
 			 * using freq_counter base type have parameters:
 			 *
 			 * - array has always at least one parameter set to the
@@ -1366,8 +1366,8 @@ static inline int peer_send_resync_reqmsg(struct appctx *appctx,
  * any other negative returned value must  be considered as an error with an appctx st0
  * returned value equal to PEER_SESS_ST_END.
  */
-static inline int peer_send_resync_confirmsg(struct appctx *appctx,
-                                             struct peer *peer, struct peers *peers)
+static inline int peer_send_resync_confirmmsg(struct appctx *appctx,
+                                              struct peer *peer, struct peers *peers)
 {
 	struct peer_prep_params p = {
 		.control.head = { PEER_MSG_CLASS_CONTROL, PEER_MSG_CTRL_RESYNCCONFIRM, },
@@ -2222,7 +2222,7 @@ static inline int peer_treat_definemsg(struct appctx *appctx, struct peer *p,
 		goto ignore_msg;
 	}
 
-	/* Check if there there is the additional expire data */
+	/* Check if there is the additional expire data */
 	intdecode(msg_cur, msg_end);
 	if (*msg_cur) {
 		uint64_t data_type;
@@ -2669,7 +2669,7 @@ static inline int peer_send_msgs(struct appctx *appctx,
 
 	/* Confirm finished or partial messages */
 	while (peer->confirm) {
-		repl = peer_send_resync_confirmsg(appctx, peer, peers);
+		repl = peer_send_resync_confirmmsg(appctx, peer, peers);
 		if (repl <= 0)
 			return repl;
 

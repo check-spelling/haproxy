@@ -163,7 +163,7 @@ typedef struct fiftyone_degrees_config_base_t {
 	bool freeData;
 } fiftyoneDegreesConfigBase;
 
-typedef struct fiftyone_degrees_config_device_detecton_t {
+typedef struct fiftyone_degrees_config_device_detection_t {
 	fiftyoneDegreesConfigBase b;
 	bool allowUnmatched;
 } fiftyoneDegreesConfigDeviceDetection;

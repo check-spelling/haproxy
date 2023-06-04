@@ -81,7 +81,7 @@ Filters are designed to be chained. It is possible to declare several filters in
 the same proxy section. The declaration order is important because filters will
 be called one after the other respecting this order. Frontend and backend
 filters are also chained, frontend ones called first. Even if the filters
-processing is serialized, each filter will bahave as it was alone (unless it was
+processing is serialized, each filter will behave as it was alone (unless it was
 developed to be aware of other filters). For all that, some constraints are
 imposed to filters, especially when data exchanged between the client and the
 server are processed. We will discuss again these constraints when we will tackle
@@ -296,7 +296,7 @@ instances attached to a stream :
         unsigned short flags;               /* STRM_FL_* */
         unsigned char  nb_req_data_filters; /* Number of data filters registered on the request channel */
         unsigned char  nb_rsp_data_filters; /* Number of data filters registered on the response channel */
-        unsigned long long offset[2];       /* gloal offset of input data already filtered for a specific channel
+        unsigned long long offset[2];       /* global offset of input data already filtered for a specific channel
                                              * 0: request channel, 1: response channel */
     };
 
@@ -750,7 +750,7 @@ For instance :
 
 
 Pre and post analyzer callbacks of a filter are not automatically called. They
-must be regiesterd explicitly on analyzers, updating the value of
+must be registered explicitly on analyzers, updating the value of
 'filter.pre_analyzers' and 'filter.post_analyzers' bit fields. All analyzer bits
 are listed in 'include/types/channels.h'. Here is an example :
 
@@ -1047,7 +1047,7 @@ it is an HTX stream or a TCP stream.
 ------------------------------------
 
 The HTTP data filtering is a bit more complex because HAProxy data are
-structutred and represented to an internal format, called HTX. So basically
+structured and represented to an internal format, called HTX. So basically
 there is the HTTP counterpart to the previous callback :
 
   * 'flt_ops.http_payload' : This callback is called when input data are

@@ -38,7 +38,7 @@ client c1 -connect ${h1_feS_sock} {
 } -run
 
 haproxy h1 -cli {
-	# non existent backend
+	# nonexistent backend
 	send "add server foo/s1 ${s1_addr}:${s1_port}"
 	expect ~ "No such backend."
 

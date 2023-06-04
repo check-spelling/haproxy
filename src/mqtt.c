@@ -238,7 +238,7 @@ static inline struct ist mqtt_read_4byte_int(struct ist parser, uint32_t *i)
  * Thus each byte encodes 128 values and a "continuation bit".
  *
  * The maximum number of bytes in the Remaining Length field is four
- * (MQTT_REMAINING_LENGHT_MAX_SIZE).
+ * (MQTT_REMAINING_LENGTH_MAX_SIZE).
  *
  * <parser> is supposed to point to the first byte of the integer. On success
  * the integer is stored in <*i> and the new parser state is returned. On
@@ -251,7 +251,7 @@ static inline struct ist mqtt_read_varint(struct ist parser, uint32_t *i)
 	off = m = 0;
 	if (i)
 		*i = 0;
-	for (off = 0; off < MQTT_REMAINING_LENGHT_MAX_SIZE && istlen(parser); off++) {
+	for (off = 0; off < MQTT_REMAINING_LENGTH_MAX_SIZE && istlen(parser); off++) {
 		uint8_t byte = (uint8_t)*istptr(parser);
 
 		if (i) {
@@ -265,7 +265,7 @@ static inline struct ist mqtt_read_varint(struct ist parser, uint32_t *i)
 			break;
 	}
 
-	if (off == MQTT_REMAINING_LENGHT_MAX_SIZE)
+	if (off == MQTT_REMAINING_LENGTH_MAX_SIZE)
 		return IST_NULL;
 	return parser;
 }
@@ -670,7 +670,7 @@ struct ist mqtt_field_value(struct ist msg, int type, int fieldname_id)
 		case MQTT_FN_SHARED_SUBSCRIPTION_AVAILABLE:
 			if (mpkt.data.connack.var_hdr.protocol_version != MQTT_VERSION_5_0)
 				goto not_found_or_invalid;
-			if (!mqtt_uint2str(trash, mpkt.data.connack.var_hdr.props.shared_subsription_available))
+			if (!mqtt_uint2str(trash, mpkt.data.connack.var_hdr.props.shared_subscription_available))
 				goto not_found_or_invalid;
 			res = ist2(trash->area, trash->data);
 			goto end;
@@ -1136,12 +1136,12 @@ static int mqtt_parse_connack(struct ist parser, struct mqtt_pkt *mpkt)
 				fields |= MQTT_FN_BIT_SUBSCRIPTION_IDENTIFIER;
 				break;
 
-			case MQTT_PROP_SHARED_SUBSRIPTION_AVAILABLE:
+			case MQTT_PROP_SHARED_SUBSCRIPTION_AVAILABLE:
 				if (fields & MQTT_FN_BIT_SHARED_SUBSCRIPTION_AVAILABLE)
 					goto end;
-				props = mqtt_read_1byte_int(istnext(props), &mpkt->data.connack.var_hdr.props.shared_subsription_available);
+				props = mqtt_read_1byte_int(istnext(props), &mpkt->data.connack.var_hdr.props.shared_subscription_available);
 				/* can have only 2 values: 0 or 1 */
-				if (mpkt->data.connack.var_hdr.props.shared_subsription_available > 1)
+				if (mpkt->data.connack.var_hdr.props.shared_subscription_available > 1)
 					goto end;
 				fields |= MQTT_FN_BIT_SHARED_SUBSCRIPTION_AVAILABLE;
 				break;

@@ -304,7 +304,7 @@ static const struct sedesc closed_ep = {
 	.flags     = SE_FL_DETACHED,
 };
 
-/* a dmumy management stream */
+/* a dummy management stream */
 static const struct fcgi_strm *fcgi_mgmt_stream = &(const struct fcgi_strm){
 	.sd        = (struct sedesc*)&closed_ep,
 	.fconn     = NULL,
@@ -4137,7 +4137,7 @@ static int fcgi_show_fd(struct buffer *msg, struct connection *conn)
 	return 0;
 }
 
-/* Migrate the the connection to the current thread.
+/* Migrate the connection to the current thread.
  * Return 0 if successful, non-zero otherwise.
  * Expected to be called with the old thread lock held.
  */
