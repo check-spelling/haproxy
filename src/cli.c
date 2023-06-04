@@ -730,7 +730,7 @@ static int cli_get_severity_output(struct appctx *appctx)
  * 1 if the request was understood, otherwise zero (in which case an error
  * message will be displayed). It is called with appctx->st0
  * set to CLI_ST_GETREQ and presets ->st2 to 0 so that parsers don't have to do
- * it. It will possilbly leave st0 to CLI_ST_CALLBACK if the keyword needs to
+ * it. It will possibly leave st0 to CLI_ST_CALLBACK if the keyword needs to
  * have its own I/O handler called again. Most of the time, parsers will only
  * set st0 to CLI_ST_PRINT and put their message to be displayed into cli.msg.
  * If a keyword parser is NULL and an I/O handler is declared, the I/O handler
