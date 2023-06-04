@@ -13055,7 +13055,7 @@ int hlua_post_init()
  * zero. This one verifies that the limits are respected but is optimized
  * for the fast case where limits are not used, hence stats are not updated.
  *
- * Warning: while this API ressembles glibc's realloc() a lot, glibc surpasses
+ * Warning: while this API resembles glibc's realloc() a lot, glibc surpasses
  * POSIX by making realloc(ptr,0) an effective free(), but others do not do
  * that and will simply allocate zero as if it were the result of malloc(0),
  * so mapping this onto realloc() will lead to memory leaks on non-glibc
