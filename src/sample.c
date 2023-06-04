@@ -4321,7 +4321,7 @@ static int smp_check_const_meth(struct arg *args, char **err)
 		args[0].type = ARGT_SINT;
 		args[0].data.sint = meth;
 	} else {
-		/* Check method avalaibility. A method is a token defined as :
+		/* Check method availability. A method is a token defined as :
 		 * tchar = "!" / "#" / "$" / "%" / "&" / "'" / "*" / "+" / "-" / "." /
 		 *         "^" / "_" / "`" / "|" / "~" / DIGIT / ALPHA
 		 * token = 1*tchar
