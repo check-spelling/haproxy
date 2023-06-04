@@ -8149,7 +8149,7 @@ static inline void quic_tx_packet_init(struct quic_tx_packet *pkt, int type)
  * Return -2 if the packet could not be allocated or encrypted for any reason,
  * -1 if there was not enough room to build a packet.
  * XXX NOTE XXX
- * If you provide provide qc_build_pkt() with a big enough buffer to build a packet as big as
+ * If you provide qc_build_pkt() with a big enough buffer to build a packet as big as
  * possible (to fill an MTU), the unique reason why this function may fail is the congestion
  * control window limitation.
  */
