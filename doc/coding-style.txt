@@ -1240,7 +1240,7 @@ problem with use of assembly in haproxy, provided that :
   b) the code is small enough and well commented enough to be maintained
 
 It is important to take care of various incompatibilities between compiler
-versions, for instance regarding output and cloberred registers. There are
+versions, for instance regarding output and clobbered registers. There are
 a number of documentations on the subject on the net. Anyway if you are
 fiddling with assembly, you probably know that already.
 
