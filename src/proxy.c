@@ -641,7 +641,7 @@ static int proxy_parse_rate_limit(char **args, int section, struct proxy *proxy,
 	}
 
 	if (*args[2] == 0) {
-		memprintf(err, "'%s %s' expects expects an integer value (in sessions/second)", args[0], args[1]);
+		memprintf(err, "'%s %s' expects an integer value (in sessions/second)", args[0], args[1]);
 		return -1;
 	}
 
@@ -683,7 +683,7 @@ static int proxy_parse_max_ka_queue(char **args, int section, struct proxy *prox
 	retval = 0;
 
 	if (*args[1] == 0) {
-		memprintf(err, "'%s' expects expects an integer value (or -1 to disable)", args[0]);
+		memprintf(err, "'%s' expects an integer value (or -1 to disable)", args[0]);
 		return -1;
 	}
 
