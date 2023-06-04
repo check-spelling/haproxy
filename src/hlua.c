@@ -1530,7 +1530,7 @@ void hlua_ctx_destroy(struct hlua *lua)
 	 * If the thread is finnish with an error or is currently yielded,
 	 * it seems that the GC applied on the thread doesn't clean anything,
 	 * so e run the GC on the main thread.
-	 * NOTE: maybe this action locks all the Lua threads untiml the en of
+	 * NOTE: maybe this action locks all the Lua threads untiml the end of
 	 * the garbage collection.
 	 */
 	if (lua->gc_count) {
