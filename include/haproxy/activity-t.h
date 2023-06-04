@@ -107,9 +107,9 @@ struct activity {
 	unsigned int buf_wait;     // waited on a buffer allocation
 #if defined(DEBUG_DEV)
 	/* keep these ones at the end */
-	unsigned int ctr0;         // general purposee debug counter
-	unsigned int ctr1;         // general purposee debug counter
-	unsigned int ctr2;         // general purposee debug counter
+	unsigned int ctr0;         // general purpose debug counter
+	unsigned int ctr1;         // general purpose debug counter
+	unsigned int ctr2;         // general purpose debug counter
 #endif
 	char __pad[0]; // unused except to check remaining room
 	char __end[0] __attribute__((aligned(64))); // align size to 64.
