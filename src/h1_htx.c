@@ -405,7 +405,7 @@ int h1_parse_msg_hdrs(struct h1m *h1m, union h1_sl *h1sl, struct htx *dsthtx,
 
 }
 
-/* Copy data from <srbuf> into an DATA block in <dsthtx>. If possible, a
+/* Copy data from <srcbuf> into an DATA block in <dsthtx>. If possible, a
  * zero-copy is performed. It returns the number of bytes copied.
  */
 static size_t h1_copy_msg_data(struct htx **dsthtx, struct buffer *srcbuf, size_t ofs,
