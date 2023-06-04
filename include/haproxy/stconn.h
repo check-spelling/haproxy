@@ -452,7 +452,7 @@ static inline void sc_have_room(struct stconn *sc)
  *
  * The caller is responsible to specified the amount of free space required to
  * progress. However, to be sure the SC can be unblocked a max value cannot be
- * eceeded : (BUFSIZE - RESERVE - HTX OVERHEAD)
+ * exceeded : (BUFSIZE - RESERVE - HTX OVERHEAD)
  */
 static inline void sc_need_room(struct stconn *sc, ssize_t room_needed)
 {
