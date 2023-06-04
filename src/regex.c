@@ -195,7 +195,7 @@ int regex_exec_match(const struct my_regex *preg, const char *subject,
 			pmatch[i].rm_eo = matches[(i*2)+1];
 			continue;
 		}
-		/* Set the unmatvh flag (-1). */
+		/* Set the unmatch flag (-1). */
 		pmatch[i].rm_so = -1;
 		pmatch[i].rm_eo = -1;
 	}
@@ -287,7 +287,7 @@ int regex_exec_match2(const struct my_regex *preg, char *subject, int length,
 			pmatch[i].rm_eo = matches[(i*2)+1];
 			continue;
 		}
-		/* Set the unmatvh flag (-1). */
+		/* Set the unmatch flag (-1). */
 		pmatch[i].rm_so = -1;
 		pmatch[i].rm_eo = -1;
 	}
