@@ -489,7 +489,7 @@ struct quic_tx_packet {
 	struct list frms;
 	/* The time this packet was sent (ms). */
 	unsigned int time_sent;
-	/* Packet number spakce. */
+	/* Packet number space. */
 	struct quic_pktns *pktns;
 	/* Flags. */
 	unsigned int flags;
