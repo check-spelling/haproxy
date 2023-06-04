@@ -230,7 +230,7 @@ static inline int chunk_strcat(struct buffer *chk, const char *str)
  *   pid = chunk_newstr(&trash);
  *   chunk_appendf(&trash, "%d", getpid()));
  *   name = chunk_newstr(&trash);
- *   chunk_appendf(&trash, "%s", gethosname());
+ *   chunk_appendf(&trash, "%s", gethostname());
  *   printf("hostname=<%s>, pid=<%d>\n", name, pid);
  */
 static inline char *chunk_newstr(struct buffer *chk)
