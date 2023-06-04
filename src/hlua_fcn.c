@@ -446,7 +446,7 @@ static int hlua_concat_dump(lua_State *L)
 	buffer = lua_touserdata(L, -1);
 	lua_pop(L, 1);
 
-	/* Push the soncatenated string in the stack. */
+	/* Push the concatenated string in the stack. */
 	lua_pushlstring(L, buffer, b->len);
 	return 1;
 }
