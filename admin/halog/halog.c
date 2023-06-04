@@ -426,7 +426,7 @@ struct timer *insert_timer(struct eb_root *r, struct timer **alloc, int v)
 	return container_of(n, struct timer, node);
 }
 
-/* Insert value value <v> into tree <r>. A pre-allocated node must be passed
+/* Insert value <v> into tree <r>. A pre-allocated node must be passed
  * in <alloc>. It may be NULL, in which case the function will allocate it
  * itself. It will be reset to NULL once consumed. The caller is responsible
  * for freeing the node once not used anymore. The node where the value was
