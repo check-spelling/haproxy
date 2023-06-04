@@ -2416,7 +2416,7 @@ set ssl cert <filename> <payload>
   <filename> in memory to a temporary transaction, then update this
   transaction with the PEM file in the payload. If a transaction exists with
   the same filename, it will update this transaction. It's also possible to
-  update the files linked to a certificate (.issuer, .sctl, .oscp etc.)
+  update the files linked to a certificate (.issuer, .sctl, .ocsp etc.)
   Once the modification are done, you have to "commit ssl cert" the
   transaction.
 
