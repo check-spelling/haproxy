@@ -54,7 +54,7 @@ The pools architecture is selected at build time. The main options are:
     This is the situation on operating systems where a fast and modern memory
     allocator is detected and when it is estimated that the process-wide shared
     pool will not bring any benefit. This detection is automatic at build time,
-    but may also be forced at build tmie by setting CONFIG_HAP_NO_GLOBAL_POOLS
+    but may also be forced at build time by setting CONFIG_HAP_NO_GLOBAL_POOLS
     or at boot time with "-dMno-global".
 
   - pass-through to the standard allocator (3)
