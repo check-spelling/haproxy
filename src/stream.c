@@ -2576,7 +2576,7 @@ struct task *process_stream(struct task *t, void *context, unsigned int state)
 
 		if (unlikely(tick_is_expired(t->expire, now_ms))) {
 			/* Some events prevented the timeouts to be handled but nothing evolved.
-			   So do it now and resyunc the stconns
+			   So do it now and resync the stconns
 			 */
 			stream_handle_timeouts(s);
 			goto resync_stconns;
