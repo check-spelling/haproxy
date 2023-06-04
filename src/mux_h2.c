@@ -4811,7 +4811,7 @@ next_frame:
 			goto fail;
 		}
 
-		/* detect when we must stop aggragating frames */
+		/* detect when we must stop aggregating frames */
 		h2c->dff |= hdr.ff & H2_F_HEADERS_END_HEADERS;
 
 		/* Take as much as we can of the CONTINUATION frame's payload */
