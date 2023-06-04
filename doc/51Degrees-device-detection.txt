@@ -59,7 +59,7 @@ To build with the 51Degrees Device Detection V4 use the following command line.
 
 A data file containing information about devices, browsers, operating systems
 and their associated signatures is then needed. 51Degrees provide a free
-database with Github repo for this purpose. These free data files are located
+database with GitHub repo for this purpose. These free data files are located
 in '51D_REPO_PATH'/data with the extensions .dat for Pattern data and .trie for
 Trie data. Free Hash Trie data file can be obtained by signing up for a licence
 key at https://51degrees.com/products/store/on-premise-device-detection.
