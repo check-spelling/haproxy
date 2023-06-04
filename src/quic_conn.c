@@ -6856,7 +6856,7 @@ static struct quic_conn *quic_rx_pkt_retrieve_conn(struct quic_rx_packet *pkt,
 
 	qc = retrieve_qc_conn_from_cid(pkt, l, &dgram->saddr, new_tid);
 
-	/* If connection already created or rebinded on another thread. */
+	/* If connection already created or rebound on another thread. */
 	if (!qc && *new_tid != -1 && tid != *new_tid)
 		goto out;
 
@@ -8560,7 +8560,7 @@ int qc_set_tid_affinity(struct quic_conn *qc, uint new_tid, struct listener *new
 	TRACE_ENTER(QUIC_EV_CONN_SET_AFFINITY, qc);
 
 	/* Pre-allocate all required resources. This ensures we do not left a
-	 * connection with only some of its field rebinded.
+	 * connection with only some of its field rebound.
 	 */
 	if (((t1 = task_new_on(new_tid)) == NULL) ||
 	    (qc->timer_task && (t2 = task_new_on(new_tid)) == NULL) ||
