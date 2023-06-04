@@ -348,7 +348,7 @@ static inline eb_troot_t *eb_dotag(const struct eb_root *root, const int tag)
 	return (eb_troot_t *)((void *)root + tag);
 }
 
-/* Converts an eb_troot_t pointer pointer to its equivalent eb_root pointer,
+/* Converts an eb_troot_t pointer to its equivalent eb_root pointer,
  * for use with pointers from ->branch[], leaf_p or node_p. NULL is conserved
  * as long as the tree is not corrupted. To be used with EB_LEAF, EB_NODE,
  * EB_LEFT or EB_RGHT in <tag>.
