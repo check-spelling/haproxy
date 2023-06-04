@@ -89,11 +89,11 @@ Arguments "c" are of type "char", and "n" are of type size_t.
   ist0(i1):char*         write a \0 at the end of an IST, return the string
   ist2(cs,l):ist         return a variable IST from a const string and length
   ist2bin(s,i1):ist      copy IST into a buffer, return the result
-  ist2bin_lc(s,i1):ist   like ist2bin() but turning turning to lower case
-  ist2bin_uc(s,i1):ist   like ist2bin() but turning turning to upper case
+  ist2bin_lc(s,i1):ist   like ist2bin() but turning IST to lower case
+  ist2bin_uc(s,i1):ist   like ist2bin() but turning IST to upper case
   ist2str(s,i1):ist      copy IST into a buffer, add NUL and return the result
-  ist2str_lc(s,i1):ist   like ist2str() but turning turning to lower case
-  ist2str_uc(s,i1):ist   like ist2str() but turning turning to upper case
+  ist2str_lc(s,i1):ist   like ist2str() but turning IST to lower case
+  ist2str_uc(s,i1):ist   like ist2str() but turning IST to upper case
   ist_find(i1,c):ist     return first occurrence of char <c> in <i1>
   ist_find_ctl(i1):char* return pointer to first CTL char in <i1> or NULL
   ist_skip(i1,c):ist     return first occurrence of char not <c> in <i1>
