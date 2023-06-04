@@ -228,7 +228,7 @@ static inline int quic_read_uint32(uint32_t *val,
 
 /* Write a 32-bits integer to a buffer with <buf> as address.
  * Make <buf> point to the data after this 32-buts value if succeeded.
- * Note that these 32-bits integers are networkg bytes ordered.
+ * Note that these 32-bits integers are network byte ordered.
  * Returns 0 if failed (not enough room in the buffer), 1 if succeeded.
  */
 static inline int quic_write_uint32(unsigned char **buf,
