@@ -1491,7 +1491,7 @@ static int connect_server(struct stream *s)
 		struct conn_hash_node *conn_node = NULL;
 		struct ebmb_node *node = NULL;
 
-		/* We can't reuse a connection, and e have more FDs than deemd
+		/* We can't reuse a connection, and e have more FDs than deemed
 		 * acceptable, attempt to kill an idling connection
 		 */
 		/* First, try from our own idle list */
