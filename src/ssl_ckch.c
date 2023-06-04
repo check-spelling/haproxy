@@ -1481,7 +1481,7 @@ yield:
 }
 
 /*
- * Extract and format the DNS SAN extensions and copy result into a chuink
+ * Extract and format the DNS SAN extensions and copy result into a chunk
  * Return 0;
  */
 #ifdef SSL_CTRL_SET_TLSEXT_HOSTNAME
