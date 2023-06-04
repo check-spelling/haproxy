@@ -173,7 +173,7 @@ void da_seterrorfunc(da_errorfunc_t callback);
 
 /**
  * @brief Given a specific HTTP header, return the associated ID for that header.
- * When passing evidence to the API, its type is identified using its da_evidince_id_t.
+ * When passing evidence to the API, its type is identified using its da_evidence_id_t.
  * @param atlas atlas instance
  * @param header_name Header's name
  * @return evidence id
