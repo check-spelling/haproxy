@@ -726,7 +726,7 @@ Frames cannot exceed a maximum size negotiated between HAProxy and agents
 during the HELLO handshake. Most of time, payload will be small enough to send
 it in one frame. But when supported by the peer, it will be possible to
 fragment huge payload on many frames. This ability is announced during the
-HELLO handshake and it can be asynmetric (supported by agents but not by
+HELLO handshake and it can be asymmetric (supported by agents but not by
 HAProxy or the opposite). The following rules apply to fragmentation:
 
   * An unfragemnted payload consists of a single frame with the FIN bit set.
