@@ -3838,7 +3838,7 @@ static void stats_dump_html_end()
 	chunk_appendf(&trash_chunk, "</body></html>\n");
 }
 
-/* Dumps the stats JSON header to the local trash buffer buffer which. The
+/* Dumps the stats JSON header to the local trash buffer which. The
  * caller is responsible for clearing it if needed.
  */
 static void stats_dump_json_header()
