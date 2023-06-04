@@ -35,7 +35,7 @@ struct list {
 
 /* This is similar to struct list, but we want to be sure the compiler will
  * yell at you if you use macroes for one when you're using the other. You have
- * to expicitely cast if that's really what you want to do.
+ * to explicitly cast if that's really what you want to do.
  */
 struct mt_list {
     struct mt_list *next;
