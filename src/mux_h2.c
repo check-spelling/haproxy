@@ -417,7 +417,7 @@ static const struct sedesc closed_ep = {
 	.flags     = SE_FL_DETACHED,
 };
 
-/* a dmumy closed stream */
+/* a dummy closed stream */
 static const struct h2s *h2_closed_stream = &(const struct h2s){
 	.sd        = (struct sedesc *)&closed_ep,
 	.h2c       = NULL,
@@ -427,7 +427,7 @@ static const struct h2s *h2_closed_stream = &(const struct h2s){
 	.id        = 0,
 };
 
-/* a dmumy closed stream returning a PROTOCOL_ERROR error */
+/* a dummy closed stream returning a PROTOCOL_ERROR error */
 static const struct h2s *h2_error_stream = &(const struct h2s){
 	.sd        = (struct sedesc *)&closed_ep,
 	.h2c       = NULL,
@@ -437,7 +437,7 @@ static const struct h2s *h2_error_stream = &(const struct h2s){
 	.id        = 0,
 };
 
-/* a dmumy closed stream returning a REFUSED_STREAM error */
+/* a dummy closed stream returning a REFUSED_STREAM error */
 static const struct h2s *h2_refused_stream = &(const struct h2s){
 	.sd        = (struct sedesc *)&closed_ep,
 	.h2c       = NULL,

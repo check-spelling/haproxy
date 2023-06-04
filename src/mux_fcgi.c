@@ -304,7 +304,7 @@ static const struct sedesc closed_ep = {
 	.flags     = SE_FL_DETACHED,
 };
 
-/* a dmumy management stream */
+/* a dummy management stream */
 static const struct fcgi_strm *fcgi_mgmt_stream = &(const struct fcgi_strm){
 	.sd        = (struct sedesc*)&closed_ep,
 	.fconn     = NULL,
