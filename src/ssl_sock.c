@@ -1596,7 +1596,7 @@ static void ssl_sock_parse_clienthello(struct connection *conn, int write_p, int
 	 *  - handshake(22)
 	 *  - application_data(23)
 	 *  - (255)
-	 * We are interessed by the handshake and specially the client
+	 * We are interested by the handshake and specially the client
 	 * hello.
 	 */
 	if (content_type != 22)
