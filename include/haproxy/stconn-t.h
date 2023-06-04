@@ -196,7 +196,7 @@ static forceinline char *sc_show_flags(char *buf, size_t len, const char *delim,
  * do not last beyond process_session().
  */
 enum sc_state {
-	SC_ST_INI = 0,           /* SC not sollicitated yet */
+	SC_ST_INI = 0,           /* SC not solicited yet */
 	SC_ST_REQ,               /* [transient] connection initiation desired and not started yet */
 	SC_ST_QUE,               /* SC waiting in queue */
 	SC_ST_TAR,               /* SC in turn-around state after failed connect attempt */
