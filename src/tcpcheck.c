@@ -5005,7 +5005,7 @@ static struct tcpcheck_rule *proxy_parse_httpchk_req(char **args, int cur_arg, s
 	return NULL;
 }
 
-/* Parses the "option httpchck" proxy keyword */
+/* Parses the "option httpcheck" proxy keyword */
 int proxy_parse_httpchk_opt(char **args, int cur_arg, struct proxy *curpx, const struct proxy *defpx,
 			    const char *file, int line)
 {
