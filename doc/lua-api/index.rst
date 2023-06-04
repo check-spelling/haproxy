@@ -3192,7 +3192,7 @@ Regex class
 
   -- Match the regexes
   print(regex:exec("Looking for a needle in the haystack")) -- true
-  print(regex:exec("Lokking for a cat in the haystack"))    -- false
+  print(regex:exec("Looking for a cat in the haystack"))    -- false
 
   -- Extract words
   st, list = regex:match("Looking for a needle in the haystack")
