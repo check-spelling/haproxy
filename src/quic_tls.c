@@ -230,7 +230,7 @@ int quic_hkdf_expand_label(const EVP_MD *md,
  * ->key is the TLS key to be derived to encrypt/decrypt data at TLS level.
  * ->iv is the initialization vector to be used with ->key.
  * ->hp_key is the key to be derived for header protection.
- * Obviouly these keys have the same size becaused derived with the same TLS cryptographic context.
+ * Obviously these keys have the same size becaused derived with the same TLS cryptographic context.
  */
 int quic_tls_derive_keys(const EVP_CIPHER *aead, const EVP_CIPHER *hp,
                          const EVP_MD *md, const struct quic_version *qv,
