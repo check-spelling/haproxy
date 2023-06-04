@@ -80,7 +80,7 @@ extern struct pool_head *resolv_requester_pool;
 
 /* dns rcode values */
 #define DNS_RCODE_NO_ERROR      0       /* no error */
-#define DNS_RCODE_NX_DOMAIN     3       /* non existent domain */
+#define DNS_RCODE_NX_DOMAIN     3       /* nonexistent domain */
 #define DNS_RCODE_REFUSED       5       /* query refused */
 
 /* dns flags masks */
