@@ -81,7 +81,7 @@ Filters are designed to be chained. It is possible to declare several filters in
 the same proxy section. The declaration order is important because filters will
 be called one after the other respecting this order. Frontend and backend
 filters are also chained, frontend ones called first. Even if the filters
-processing is serialized, each filter will bahave as it was alone (unless it was
+processing is serialized, each filter will behave as it was alone (unless it was
 developed to be aware of other filters). For all that, some constraints are
 imposed to filters, especially when data exchanged between the client and the
 server are processed. We will discuss again these constraints when we will tackle
