@@ -711,7 +711,7 @@ INITCALL1(STG_REGISTER, http_req_keywords_register, &http_req_actions);
 INITCALL1(STG_REGISTER, http_res_keywords_register, &http_res_actions);
 
 
-/* Generic function to parse bandwidth limitation filter configurartion. It
+/* Generic function to parse bandwidth limitation filter configuration. It
  * Returns -1 on error and 0 on success. It handles configuration for per-stream
  * and shared limitations.
  */
