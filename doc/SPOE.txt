@@ -731,7 +731,7 @@ HAProxy or the opposite). The following rules apply to fragmentation:
 
   * An unfragemnted payload consists of a single frame with the FIN bit set.
 
-  * A fragemented payload consists of several frames with the FIN bit clear and
+  * A fragmented payload consists of several frames with the FIN bit clear and
     terminated by a single frame with the FIN bit set. All these frames must
     share the same STREAM-ID and FRAME-ID. The first frame must set the right
     FRAME-TYPE (e.g, NOTIFY). The following frames must have an unset type (0).
@@ -769,7 +769,7 @@ Unsupported or unknown capabilities are silently ignored, when possible.
 
 NOTE: HAProxy does not support the fragmentation for now. This means it is not
       able to handle fragmented frames. However, if an agent announces the
-      fragmentation support, HAProxy may choose to send fragemented frames.
+      fragmentation support, HAProxy may choose to send fragmented frames.
 
 3.2.2. Frame types overview
 ----------------------------
