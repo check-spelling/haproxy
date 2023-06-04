@@ -165,8 +165,8 @@ static inline char *c_ptr(const struct channel *c, ssize_t ofs)
 
 /* c_adv() : advances the channel's buffer by <adv> bytes, which means that the
  * buffer's pointer advances, and that as many bytes from in are transferred
- * from in to out. The caller is responsible for ensuring that adv is always
- * smaller than or equal to b->i.
+ * to out. The caller is responsible for ensuring that adv is always smaller
+ * than or equal to b->i.
  */
 static inline void c_adv(struct channel *c, size_t adv)
 {
