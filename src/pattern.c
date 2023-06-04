@@ -2250,7 +2250,7 @@ int pat_ref_read_from_file_smp(struct pat_ref *ref, const char *filename, char *
 		line++;
 		c = trash.area;
 
-		/* ignore lines beginning with a dash */
+		/* ignore lines beginning with a hash */
 		if (*c == '#')
 			continue;
 
@@ -2332,7 +2332,7 @@ int pat_ref_read_from_file(struct pat_ref *ref, const char *filename, char **err
 		line++;
 		c = trash.area;
 
-		/* ignore lines beginning with a dash */
+		/* ignore lines beginning with a hash */
 		if (*c == '#')
 			continue;
 
