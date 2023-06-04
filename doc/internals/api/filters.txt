@@ -750,7 +750,7 @@ For instance :
 
 
 Pre and post analyzer callbacks of a filter are not automatically called. They
-must be regiesterd explicitly on analyzers, updating the value of
+must be registered explicitly on analyzers, updating the value of
 'filter.pre_analyzers' and 'filter.post_analyzers' bit fields. All analyzer bits
 are listed in 'include/types/channels.h'. Here is an example :
 
