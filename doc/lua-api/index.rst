@@ -1070,7 +1070,7 @@ Proxy class
 
 .. js:attribute:: Proxy.servers
 
-  Contain a table with the attached servers. The table is indexed by server
+  Contains a table with the attached servers. The table is indexed by server
   name, and each server entry is an object of type :ref:`server_class`.
 
 .. js:attribute:: Proxy.stktable
@@ -1079,7 +1079,7 @@ Proxy class
 
 .. js:attribute:: Proxy.listeners
 
-  Contain a table with the attached listeners. The table is indexed by listener
+  Contains a table with the attached listeners. The table is indexed by listener
   name, and each each listeners entry is an object of type
   :ref:`listener_class`.
 
