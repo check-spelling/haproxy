@@ -754,7 +754,7 @@ Here are the list of official capabilities that HAProxy and agents can support:
                    or not.
 
   * pipelining: This is the ability for a peer to decouple NOTIFY and ACK
-                frames. This is a symmectical capability. To be used, it must
+                frames. This is a symmetrical capability. To be used, it must
                 be supported by HAProxy and agents. Unlike HTTP pipelining, the
                 ACK frames can be send in any order, but always on the same TCP
                 connection used for the corresponding NOTIFY frame.
