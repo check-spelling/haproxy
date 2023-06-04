@@ -4085,7 +4085,7 @@ reload
   Note that a reload will close all connections to the master CLI.
 
 show proc
-  The master CLI introduces a 'show proc' command to surpervise the
+  The master CLI introduces a 'show proc' command to supervise the
   processes.
 
   Example:
