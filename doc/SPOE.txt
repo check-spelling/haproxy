@@ -718,7 +718,7 @@ actions.
 
     ABORT: Indicates that the processing of the current frame must be
            cancelled. This bit should be set on frames with a fragmented
-           payload. It can be ignore for frames with an unfragemnted
+           payload. It can be ignore for frames with an unfragmented
            payload. When it is set, the FIN bit must also be set.
 
 
@@ -729,7 +729,7 @@ fragment huge payload on many frames. This ability is announced during the
 HELLO handshake and it can be asymmetric (supported by agents but not by
 HAProxy or the opposite). The following rules apply to fragmentation:
 
-  * An unfragemnted payload consists of a single frame with the FIN bit set.
+  * An unfragmented payload consists of a single frame with the FIN bit set.
 
   * A fragmented payload consists of several frames with the FIN bit clear and
     terminated by a single frame with the FIN bit set. All these frames must
