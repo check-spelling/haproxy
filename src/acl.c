@@ -628,7 +628,7 @@ struct acl_expr *parse_acl_expr(const char **args, char **err, struct arg_list *
 			}
 		}
 
-		/* Add sample to the reference, and try to compile it fior each pattern
+		/* Add sample to the reference, and try to compile it for each pattern
 		 * using this value.
 		 */
 		if (!pat_ref_add(ref, arg, NULL, err))
