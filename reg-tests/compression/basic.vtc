@@ -193,7 +193,7 @@ haproxy h1 -conf {
 
     frontend fe-gzip-deflate
         bind "fd@${fe_gzip_deflate}"
-        default_backend be-gzip-defalte
+        default_backend be-gzip-deflate
 
     backend be-gzip
         compression algo gzip
@@ -204,7 +204,7 @@ haproxy h1 -conf {
         compression algo identity
         server www ${s1_addr}:${s1_port}
 
-    backend be-gzip-defalte
+    backend be-gzip-deflate
         compression algo gzip deflate
 	compression offload
         server www ${s1_addr}:${s1_port}
