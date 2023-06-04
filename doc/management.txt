@@ -4051,7 +4051,7 @@ reload
   return a reload status, once the reload was performed. Be careful with the
   timeout if a tool is used to parse it, it is only returned once the
   configuration is parsed and the new worker is forked. The "socat" command uses
-  a timeout of 0.5s by default so it will quits before showing the message if
+  a timeout of 0.5s by default so it will quit before showing the message if
   the reload is too long. "ncat" does not have a timeout by default.
   When compiled with USE_SHM_OPEN=1, the reload command is also able to dump
   the startup-logs of the master.
