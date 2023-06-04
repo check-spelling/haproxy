@@ -4732,7 +4732,7 @@ static struct flt_kw_list flt_kws = { "SPOE", { }, {
 
 INITCALL1(STG_REGISTER, flt_register_keywords, &flt_kws);
 
-/* Delcate the action parser for "spoe-action" keyword */
+/* Declare the action parser for "spoe-action" keyword */
 static struct action_kw_list tcp_req_action_kws = { { }, {
 		{ "send-spoe-group", parse_send_spoe_group },
 		{ /* END */ },
