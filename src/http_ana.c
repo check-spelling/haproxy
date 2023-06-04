@@ -75,7 +75,7 @@ static int http_reply_100_continue(struct stream *s);
 /* This stream analyser waits for a complete HTTP request. It returns 1 if the
  * processing can continue on next analysers, or zero if it either needs more
  * data or wants to immediately abort the request (eg: timeout, error, ...). It
- * is tied to AN_REQ_WAIT_HTTP and may may remove itself from s->req.analysers
+ * is tied to AN_REQ_WAIT_HTTP and may remove itself from s->req.analysers
  * when it has nothing left to do, and may remove any analyser when it wants to
  * abort.
  */
@@ -1169,7 +1169,7 @@ static __inline int do_l7_retry(struct stream *s, struct stconn *sc)
 /* This stream analyser waits for a complete HTTP response. It returns 1 if the
  * processing can continue on next analysers, or zero if it either needs more
  * data or wants to immediately abort the response (eg: timeout, error, ...). It
- * is tied to AN_RES_WAIT_HTTP and may may remove itself from s->res.analysers
+ * is tied to AN_RES_WAIT_HTTP and may remove itself from s->res.analysers
  * when it has nothing left to do, and may remove any analyser when it wants to
  * abort.
  */
