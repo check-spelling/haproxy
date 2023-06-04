@@ -3738,7 +3738,7 @@ __LJMP static int hlua_channel_getline(lua_State *L)
 }
 
 /* Retrieves a given amount of input data at the given offset. By default all
- * available input data are returned. The offset may be negactive to start from
+ * available input data are returned. The offset may be negative to start from
  * the end of input data. The length may be -1 to set it to the maximum buffer
  * size.
  */
@@ -3757,7 +3757,7 @@ __LJMP static int hlua_channel_get_data(lua_State *L)
 }
 
 /* Retrieves a given amount of input data at the given offset. By default all
- * available input data are returned. The offset may be negactive to start from
+ * available input data are returned. The offset may be negative to start from
  * the end of input data. The length may be -1 to set it to the maximum buffer
  * size.
  */
