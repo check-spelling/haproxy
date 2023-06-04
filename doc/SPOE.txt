@@ -748,7 +748,7 @@ than or equal to 256 bytes.
 Here are the list of official capabilities that HAProxy and agents can support:
 
   * fragmentation: This is the ability for a peer to support fragmented
-                   payload in received frames. This is an asymmectical
+                   payload in received frames. This is an asymmetrical
                    capability, it only concerns the peer that announces
                    it. This is the responsibility to the other peer to use it
                    or not.
