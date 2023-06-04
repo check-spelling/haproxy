@@ -118,7 +118,7 @@ option set on a TUN mode connection :
 
 This part becomes trickier. It is possible that the server responds with a
 version that the client does not necessarily understand. Obviously, 1.1 clients
-are asusmed to understand 1.0 responses. The problematic case is a 1.0 client
+are assumed to understand 1.0 responses. The problematic case is a 1.0 client
 receiving a 1.1 response without any Connection header. Some 1.0 clients might
 know that in 1.1 this means "keep-alive" while others might ignore the version
 and assume a "close". Since we know the version on both sides, we may have to
