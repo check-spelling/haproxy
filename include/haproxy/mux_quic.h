@@ -43,7 +43,7 @@ void qcc_streams_sent_done(struct qcs *qcs, uint64_t data, uint64_t offset);
 #define QCS_ID_TYPE_MASK         0x3
 #define QCS_ID_TYPE_SHIFT          2
 /* The less significant bit of a stream ID is set for a server initiated stream */
-#define QCS_ID_SRV_INTIATOR_BIT  0x1
+#define QCS_ID_SRV_INITIATOR_BIT  0x1
 /* This bit is set for unidirectional streams */
 #define QCS_ID_DIR_BIT           0x2
 
@@ -55,7 +55,7 @@ static inline enum qcs_type qcs_id_type(uint64_t id)
 /* Return true if stream has been opened locally. */
 static inline int quic_stream_is_local(struct qcc *qcc, uint64_t id)
 {
-	return conn_is_back(qcc->conn) == !(id & QCS_ID_SRV_INTIATOR_BIT);
+	return conn_is_back(qcc->conn) == !(id & QCS_ID_SRV_INITIATOR_BIT);
 }
 
 /* Return true if stream is opened by peer. */

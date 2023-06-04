@@ -341,7 +341,7 @@ static int h3_is_frame_valid(struct h3c *h3c, struct qcs *qcs, uint64_t ftype)
 
 	case H3_FT_PUSH_PROMISE:
 		return h3s->type != H3S_T_CTRL &&
-		       (id & QCS_ID_SRV_INTIATOR_BIT);
+		       (id & QCS_ID_SRV_INITIATOR_BIT);
 
 	default:
 		/* draft-ietf-quic-http34 9. Extensions to HTTP/3
