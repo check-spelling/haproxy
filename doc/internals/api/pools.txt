@@ -54,7 +54,7 @@ The pools architecture is selected at build time. The main options are:
     This is the situation on operating systems where a fast and modern memory
     allocator is detected and when it is estimated that the process-wide shared
     pool will not bring any benefit. This detection is automatic at build time,
-    but may also be forced at build tmie by setting CONFIG_HAP_NO_GLOBAL_POOLS
+    but may also be forced at build time by setting CONFIG_HAP_NO_GLOBAL_POOLS
     or at boot time with "-dMno-global".
 
   - pass-through to the standard allocator (3)
@@ -366,13 +366,13 @@ void *__pool_alloc(struct pool_head *pool, uint flags)
         allocator. NULL is returned if the object couldn't be allocated (due to
         configured limits or lack of memory). Object allocated this way have to
         be released using pool_free(). Like with malloc(), by default the
-        contents of the returned object are undefined. If memory poisonning is
-        enabled, the object will be filled with the poisonning byte. If the
+        contents of the returned object are undefined. If memory poisoning is
+        enabled, the object will be filled with the poisoning byte. If the
         global "pool.fail-alloc" setting is non-zero and DEBUG_FAIL_ALLOC is
         enabled, a random number generator will be called to randomly return a
         NULL. The allocator's behavior may be adjusted using a few flags passed
         in <flags>:
-           - POOL_F_NO_POISON : when set, disables memory poisonning (e.g. when
+           - POOL_F_NO_POISON : when set, disables memory poisoning (e.g. when
              pointless and expensive, like for buffers)
            - POOL_F_MUST_ZERO : when set, the memory area will be zeroed before
              being returned, similar to what calloc() does
@@ -579,7 +579,7 @@ CONFIG_HAP_POOL_CACHE_SIZE
 
 CONFIG_HAP_POOL_CLUSTER_SIZE
         This allows one to define the maximum number of objects that will be
-        groupped together in an allocation from the shared pool. Values 4 to 8
+        grouped together in an allocation from the shared pool. Values 4 to 8
         have experimentally shown good results with 16 threads. On systems with
         more cores or loosely coupled caches exhibiting slow atomic operations,
         it could possibly make sense to slightly increase this value.

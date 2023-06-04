@@ -3,7 +3,7 @@
 
 A number of contributors are often embarrassed with coding style issues, they
 don't always know if they're doing it right, especially since the coding style
-has elvoved along the years. What is explained here is not necessarily what is
+has evolved along the years. What is explained here is not necessarily what is
 applied in the code, but new code should as much as possible conform to this
 style. Coding style fixes happen when code is replaced. It is useless to send
 patches to fix coding style only, they will be rejected, unless they belong to
@@ -680,7 +680,7 @@ Right :
   |         return 0;
   | }
 
-Parenthesisis are also found in type casts. Type casting should be avoided as
+Parenthesis are also found in type casts. Type casting should be avoided as
 much as possible, especially when it concerns pointer types. Casting a pointer
 disables the compiler's type checking and is the best way to get caught doing
 wrong things with data not the size you expect. If you need to manipulate
@@ -1240,7 +1240,7 @@ problem with use of assembly in haproxy, provided that :
   b) the code is small enough and well commented enough to be maintained
 
 It is important to take care of various incompatibilities between compiler
-versions, for instance regarding output and cloberred registers. There are
+versions, for instance regarding output and clobbered registers. There are
 a number of documentations on the subject on the net. Anyway if you are
 fiddling with assembly, you probably know that already.
 
