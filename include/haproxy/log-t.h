@@ -185,9 +185,9 @@ enum {
 	LF_SEPARATOR,  // a single separator
 	LF_VAR,        // variable name, after '%' or '%{..}'
 	LF_STARTVAR,   // % in text
-	LF_STARG,      // after '%{' and berore '}'
+	LF_STARG,      // after '%{' and before '}'
 	LF_EDARG,      // '}' after '%{'
-	LF_STEXPR,     // after '%[' or '%{..}[' and berore ']'
+	LF_STEXPR,     // after '%[' or '%{..}[' and before ']'
 	LF_EDEXPR,     // ']' after '%['
 	LF_END,        // \0 found
 };
