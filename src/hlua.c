@@ -1529,7 +1529,7 @@ void hlua_ctx_destroy(struct hlua *lua)
 	 * the unused memory.
 	 * If the thread is finished with an error or is currently yielded,
 	 * it seems that the GC applied on the thread doesn't clean anything,
-	 * so e run the GC on the main thread.
+	 * so we run the GC on the main thread.
 	 * NOTE: maybe this action locks all the Lua threads until the end of
 	 * the garbage collection.
 	 */
