@@ -680,7 +680,7 @@ Right :
   |         return 0;
   | }
 
-Parenthesisis are also found in type casts. Type casting should be avoided as
+Parenthesis are also found in type casts. Type casting should be avoided as
 much as possible, especially when it concerns pointer types. Casting a pointer
 disables the compiler's type checking and is the best way to get caught doing
 wrong things with data not the size you expect. If you need to manipulate
