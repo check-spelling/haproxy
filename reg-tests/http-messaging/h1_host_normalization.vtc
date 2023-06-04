@@ -354,7 +354,7 @@ client c13 -connect ${h1_fe_sock} {
     expect resp.status == 400
 } -run
 
-# CONNECT authoriy without port => error
+# CONNECT authority without port => error
 client c14 -connect ${h1_fe_sock} {
     txreq \
       -req "CONNECT" \
