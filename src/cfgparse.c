@@ -1135,7 +1135,7 @@ int cfg_parse_mailers(const char *file, int linenum, char **args, int kwm)
 		curmailers->id = strdup(args[1]);
 		curmailers->timeout.mail = DEF_MAILALERTTIME;/* XXX: Would like to Skip to the next alert, if any, ASAP.
 			* But need enough time so that timeouts don't occur
-			* during tcp procssing. For now just us an arbitrary default. */
+			* during tcp processing. For now just us an arbitrary default. */
 	}
 	else if (strcmp(args[0], "mailer") == 0) { /* mailer definition */
 		struct sockaddr_storage *sk;
