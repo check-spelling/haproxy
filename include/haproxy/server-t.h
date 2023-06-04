@@ -402,7 +402,7 @@ struct server {
 	struct quic_transport_params quic_params; /* QUIC transport parameters */
 	struct eb_root cids;        /* QUIC connections IDs. */
 #endif
-	struct resolv_srvrq *srvrq;		/* Pointer representing the DNS SRV requeest, if any */
+	struct resolv_srvrq *srvrq;		/* Pointer representing the DNS SRV request, if any */
 	struct list srv_rec_item;		/* to attach server to a srv record item */
 	struct list ip_rec_item;		/* to attach server to a A or AAAA record item */
 	struct ebpt_node host_dn;		/* hostdn store for srvrq and state file matching*/
