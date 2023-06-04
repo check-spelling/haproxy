@@ -1817,7 +1817,7 @@ skip_reuse:
 
 	/* Now handle synchronously connected sockets. We know the stream connector
 	 * is at least in state SC_ST_CON. These ones typically are UNIX
-	 * sockets, socket pairs, andoccasionally TCP connections on the
+	 * sockets, socket pairs, and occasionally TCP connections on the
 	 * loopback on a heavily loaded system.
 	 */
 	if (srv_conn->flags & CO_FL_ERROR)
