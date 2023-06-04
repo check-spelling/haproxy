@@ -47,7 +47,7 @@ void pendconn_unlink(struct pendconn *p);
  * which may run concurrently with pendconn_process_next_strm() which can be
  * dequeuing the entry. The function must not return until the pendconn is
  * guaranteed not to be known, which means that we must check its presence
- * in the tree under the queue's lock so that penconn_process_next_strm()
+ * in the tree under the queue's lock so that pendconn_process_next_strm()
  * finishes before we return in case it would have grabbed this pendconn. See
  * github bugs #880 and #908, and the commit log for this fix for more details.
  */
