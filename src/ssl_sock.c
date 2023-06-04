@@ -4409,7 +4409,7 @@ SSL_SESSION *sh_ssl_sess_get_cb(SSL *ssl, __OPENSSL_110_CONST__ unsigned char *k
 	/* decode ASN1 session */
 	p = data;
 	sess = d2i_SSL_SESSION(NULL, (const unsigned char **)&p, first->len-sizeof(struct sh_ssl_sess_hdr));
-	/* Reset session id and session id contenxt */
+	/* Reset session id and session id context */
 	if (sess) {
 		SSL_SESSION_set1_id(sess, key, key_len);
 		SSL_SESSION_set1_id_context(sess, (const unsigned char *)SHCTX_APPNAME, strlen(SHCTX_APPNAME));
