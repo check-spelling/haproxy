@@ -144,7 +144,7 @@ enum {
 /* network key types;
  * network types were directly and mistakenly
  * mapped on sample types, to keep backward
- * compatiblitiy we keep those values but
+ * compatibility we keep those values but
  * we now use a internal/network mapping
  * to avoid further mistakes adding or
  * modifying internals types
