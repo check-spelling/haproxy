@@ -5138,7 +5138,7 @@ static int hlua_applet_http_new(lua_State *L, struct appctx *ctx)
 		if (type == HTX_BLK_DATA)
 			len += htx_get_blksz(blk);
 	}
-	if (htx->extra != HTX_UNKOWN_PAYLOAD_LENGTH)
+	if (htx->extra != HTX_UNKNOWN_PAYLOAD_LENGTH)
 		len += htx->extra;
 
 	/* Stores the request path. */

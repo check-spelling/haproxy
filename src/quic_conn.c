@@ -3333,7 +3333,7 @@ static int qc_parse_pkt_frms(struct quic_conn *qc, struct quic_rx_packet *pkt,
 			qc->state = QUIC_HS_ST_CONFIRMED;
 			break;
 		default:
-			TRACE_ERROR("unknosw frame type", QUIC_EV_CONN_PRSHPKT, qc);
+			TRACE_ERROR("unknown frame type", QUIC_EV_CONN_PRSHPKT, qc);
 			goto leave;
 		}
 	}
