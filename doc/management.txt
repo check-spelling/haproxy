@@ -4086,7 +4086,7 @@ reload
 
 show proc
   The master CLI introduces a 'show proc' command to surpervise the
-  processe.
+  processes.
 
   Example:
 
