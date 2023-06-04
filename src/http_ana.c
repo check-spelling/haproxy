@@ -1686,7 +1686,7 @@ int http_process_res_common(struct stream *s, struct channel *rep, int an_bit, s
 	 * Filters are tried with ->be first, then with ->fe if it is
 	 * different from ->be.
 	 *
-	 * Maybe we are in resume condiion. In this case I choose the
+	 * Maybe we are in resume condition. In this case I choose the
 	 * "struct proxy" which contains the rule list matching the resume
 	 * pointer. If none of these "struct proxy" match, I initialise
 	 * the process with the first one.
