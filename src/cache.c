@@ -481,7 +481,7 @@ cache_store_check(struct proxy *px, struct flt_conf *fconf)
 	/* Check all filters for proxy <px> to know if the compression is
 	 * enabled and if it is after the cache. When the compression is before
 	 * the cache, an error is returned. Also check if the cache filter must
-	 * be explicitly declaired or not. */
+	 * be explicitly declared or not. */
 	list_for_each_entry(f, &px->filter_configs, list) {
 		if (f == fconf) {
 			/* The compression filter must be evaluated after the cache. */
