@@ -1596,7 +1596,7 @@ int conn_recv_socks4_proxy_response(struct connection *conn)
 	}
 
 	/*
-	 * Base on the SOCSK4 protocol:
+	 * Base on the SOCKS4 protocol:
 	 *
 	 *			+----+----+----+----+----+----+----+----+
 	 *			| VN | CD | DSTPORT |      DSTIP        |
