@@ -8806,7 +8806,7 @@ __LJMP static int hlua_coroutine_create(lua_State *L)
 
 /* This function is used as a callback of a task. It is called by the
  * HAProxy task subsystem when the task is awaked. The LUA runtime can
- * return an E_AGAIN signal, the emmiter of this signal must set a
+ * return an E_AGAIN signal, the emitter of this signal must set a
  * signal to wake the task.
  *
  * Task wrapper are longjmp safe because the only one Lua code
