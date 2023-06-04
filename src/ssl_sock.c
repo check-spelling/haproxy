@@ -7258,7 +7258,7 @@ static int cli_parse_set_tlskeys(char **args, char *payload, struct appctx *appc
 	struct tls_keys_ref *ref;
 	int ret;
 
-	/* Expect two parameters: the filename and the new new TLS key in encoding */
+	/* Expect two parameters: the filename and the new TLS key in encoding */
 	if (!*args[3] || !*args[4])
 		return cli_err(appctx, "'set ssl tls-key' expects a filename and the new TLS key in base64 encoding.\n");
 

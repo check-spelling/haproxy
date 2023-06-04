@@ -131,7 +131,7 @@ struct eb32sc_node *eb32sc_insert(struct eb_root *root, struct eb32sc_node *new,
 	 *  - first, check if we have reached a leaf node
 	 *  - second, check if we have gone too far
 	 *  - third, reiterate
-	 * Everywhere, we use <new> for the node node we are inserting, <root>
+	 * Everywhere, we use <new> for the new node we are inserting, <root>
 	 * for the node we attach it to, and <old> for the node we are
 	 * displacing below <new>. <troot> will always point to the future node
 	 * (tagged with its type). <side> carries the side the node <new> is
