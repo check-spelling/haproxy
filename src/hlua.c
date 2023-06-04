@@ -10234,7 +10234,7 @@ static enum act_return hlua_action(struct act_rule *rule, struct proxy *px,
 		/* Restore the function in the stack. */
 		hlua_pushref(s->hlua->T, rule->arg.hlua_rule->fcn->function_ref[s->hlua->state_id]);
 
-		/* Create and and push object stream in the stack. */
+		/* Create and push object stream in the stack. */
 		if (!hlua_txn_new(s->hlua->T, s, px, dir, hflags)) {
 			SEND_ERR(px, "Lua function '%s': full stack.\n",
 			         rule->arg.hlua_rule->fcn->name);
@@ -10420,7 +10420,7 @@ static int hlua_applet_tcp_init(struct appctx *ctx)
 	/* Restore the function in the stack. */
 	hlua_pushref(hlua->T, ctx->rule->arg.hlua_rule->fcn->function_ref[hlua->state_id]);
 
-	/* Create and and push object stream in the stack. */
+	/* Create and push object stream in the stack. */
 	if (!hlua_applet_tcp_new(hlua->T, ctx)) {
 		SEND_ERR(strm->be, "Lua applet tcp '%s': full stack.\n",
 		         ctx->rule->arg.hlua_rule->fcn->name);
@@ -10611,7 +10611,7 @@ static int hlua_applet_http_init(struct appctx *ctx)
 	/* Restore the function in the stack. */
 	hlua_pushref(hlua->T, ctx->rule->arg.hlua_rule->fcn->function_ref[hlua->state_id]);
 
-	/* Create and and push object stream in the stack. */
+	/* Create and push object stream in the stack. */
 	if (!hlua_applet_http_new(hlua->T, ctx)) {
 		SEND_ERR(strm->be, "Lua applet http '%s': full stack.\n",
 		         ctx->rule->arg.hlua_rule->fcn->name);

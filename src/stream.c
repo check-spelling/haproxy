@@ -312,7 +312,7 @@ int stream_upgrade_from_sc(struct stconn *sc, struct buffer *input)
 /* Callback used to wake up a stream when an input buffer is available. The
  * stream <s>'s stream connectors are checked for a failed buffer allocation
  * as indicated by the presence of the SC_FL_NEED_BUFF flag and the lack of a
- * buffer, and and input buffer is assigned there (at most one). The function
+ * buffer, and input buffer is assigned there (at most one). The function
  * returns 1 and wakes the stream up if a buffer was taken, otherwise zero.
  * It's designed to be called from __offer_buffer().
  */

@@ -919,7 +919,7 @@ static int peer_prepare_switchmsg(char *msg, size_t size, struct peer_prep_param
 			/* stored data types parameters are all linearly encoded
 			 * at the end of the 'table definition' message.
 			 *
-			 * Currently only array data_types and and data_types
+			 * Currently only array data_types and data_types
 			 * using freq_counter base type have parameters:
 			 *
 			 * - array has always at least one parameter set to the
