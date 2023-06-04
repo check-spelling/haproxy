@@ -181,7 +181,7 @@ static inline int thread_has_tasks(void)
 
 /* puts the task <t> in run queue with reason flags <f>, and returns <t> */
 /* This will put the task in the local runqueue if the task is only runnable
- * by the current thread, in the global runqueue otherwies. With DEBUG_TASK,
+ * by the current thread, in the global runqueue otherwise. With DEBUG_TASK,
  * the <file>:<line> from the call place are stored into the task for tracing
  * purposes.
  */

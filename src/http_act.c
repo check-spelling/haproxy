@@ -90,7 +90,7 @@ static int check_act_http_reply(struct act_rule *rule, struct proxy *px, char **
  * parse_set_req_line(). The replacement action is executed by the function
  * http_action_set_req_line(). On success, it returns ACT_RET_CONT. If an error
  * occurs while soft rewrites are enabled, the action is canceled, but the rule
- * processing continue. Otherwsize ACT_RET_ERR is returned.
+ * processing continue. Otherwise ACT_RET_ERR is returned.
  */
 static enum act_return http_action_set_req_line(struct act_rule *rule, struct proxy *px,
                                                 struct session *sess, struct stream *s, int flags)
@@ -205,7 +205,7 @@ static enum act_parse_ret parse_set_req_line(const char **args, int *orig_arg, s
  *
  * On success, it returns ACT_RET_CONT. If an error
  * occurs while soft rewrites are enabled, the action is canceled, but the rule
- * processing continue. Otherwsize ACT_RET_ERR is returned.
+ * processing continue. Otherwise ACT_RET_ERR is returned.
  */
 static enum act_return http_action_normalize_uri(struct act_rule *rule, struct proxy *px,
                                                  struct session *sess, struct stream *s, int flags)
@@ -514,7 +514,7 @@ static enum act_parse_ret parse_http_normalize_uri(const char **args, int *orig_
  * contains 1 for the path or 3 for the URI (values used by
  * http_req_replace_stline()). On success, it returns ACT_RET_CONT. If an error
  * occurs while soft rewrites are enabled, the action is canceled, but the rule
- * processing continue. Otherwsize ACT_RET_ERR is returned.
+ * processing continue. Otherwise ACT_RET_ERR is returned.
  */
 static enum act_return http_action_replace_uri(struct act_rule *rule, struct proxy *px,
                                                struct session *sess, struct stream *s, int flags)
@@ -1341,7 +1341,7 @@ static enum act_parse_ret parse_http_auth(const char **args, int *orig_arg, stru
  * the next rule is not an early-hint rule or if it is the last rule, the EOH
  * block is added to terminate the response. On success, it returns
  * ACT_RET_CONT. If an error occurs while soft rewrites are enabled, the action
- * is canceled, but the rule processing continue. Otherwsize ACT_RET_ERR is
+ * is canceled, but the rule processing continue. Otherwise ACT_RET_ERR is
  * returned.
  */
 static enum act_return http_action_early_hint(struct act_rule *rule, struct proxy *px,
@@ -1413,7 +1413,7 @@ static enum act_return http_action_early_hint(struct act_rule *rule, struct prox
  * performed in <.action>, previously filled by function parse_set_header(). The
  * replacement action is executed by the function http_action_set_header(). On
  * success, it returns ACT_RET_CONT. If an error occurs while soft rewrites are
- * enabled, the action is canceled, but the rule processing continue. Otherwsize
+ * enabled, the action is canceled, but the rule processing continue. Otherwise
  * ACT_RET_ERR is returned.
  */
 static enum act_return http_action_set_header(struct act_rule *rule, struct proxy *px,
@@ -1560,7 +1560,7 @@ static enum act_parse_ret parse_http_set_header(const char **args, int *orig_arg
  * parse_replace_header(). The replacement action is executed by the function
  * http_action_replace_header(). On success, it returns ACT_RET_CONT. If an error
  * occurs while soft rewrites are enabled, the action is canceled, but the rule
- * processing continue. Otherwsize ACT_RET_ERR is returned.
+ * processing continue. Otherwise ACT_RET_ERR is returned.
  */
 static enum act_return http_action_replace_header(struct act_rule *rule, struct proxy *px,
 						  struct session *sess, struct stream *s, int flags)
@@ -1814,7 +1814,7 @@ static enum act_parse_ret parse_http_redirect(const char **args, int *orig_arg, 
 }
 
 /* This function executes a add-acl, del-acl, set-map or del-map actions. On
- * success, it returns ACT_RET_CONT. Otherwsize ACT_RET_ERR is returned.
+ * success, it returns ACT_RET_CONT. Otherwise ACT_RET_ERR is returned.
  */
 static enum act_return http_action_set_map(struct act_rule *rule, struct proxy *px,
 					   struct session *sess, struct stream *s, int flags)
@@ -1999,7 +1999,7 @@ static enum act_parse_ret parse_http_set_map(const char **args, int *orig_arg, s
 }
 
 /* This function executes a track-sc* actions. On success, it returns
- * ACT_RET_CONT. Otherwsize ACT_RET_ERR is returned.
+ * ACT_RET_CONT. Otherwise ACT_RET_ERR is returned.
  */
 static enum act_return http_action_track_sc(struct act_rule *rule, struct proxy *px,
 					    struct session *sess, struct stream *s, int flags)

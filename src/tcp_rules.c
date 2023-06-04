@@ -713,7 +713,7 @@ static int tcp_parse_response_rule(char **args, int arg, int section_type,
 
 
 /* This function executes a track-sc* actions. On success, it returns
- * ACT_RET_CONT. If it must yield, it return ACT_RET_YIELD. Otherwsize
+ * ACT_RET_CONT. If it must yield, it return ACT_RET_YIELD. Otherwise
  * ACT_RET_ERR is returned.
  */
 static enum act_return tcp_action_track_sc(struct act_rule *rule, struct proxy *px,
@@ -761,7 +761,7 @@ static enum act_return tcp_action_track_sc(struct act_rule *rule, struct proxy *
 
 /* This function executes a capture actions. It executes a fetch expression,
  * turns the result into a string and puts it in a capture slot. On success, it
- * returns ACT_RET_CONT. If it must yield, it return ACT_RET_YIELD. Otherwsize
+ * returns ACT_RET_CONT. If it must yield, it return ACT_RET_YIELD. Otherwise
  * ACT_RET_ERR is returned.
  */
 static enum act_return tcp_action_capture(struct act_rule *rule, struct proxy *px,

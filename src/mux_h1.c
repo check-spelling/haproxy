@@ -518,7 +518,7 @@ static inline void h1_release_buf(struct h1c *h1c, struct buffer *bptr)
 }
 
 /* Returns 1 if the H1 connection is alive (IDLE, EMBRYONIC, RUNNING or
- * RUNNING). Ortherwise 0 is returned.
+ * RUNNING). Otherwise 0 is returned.
  */
 static inline int h1_is_alive(const struct h1c *h1c)
 {
