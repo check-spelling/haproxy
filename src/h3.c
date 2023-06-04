@@ -764,7 +764,7 @@ static ssize_t h3_trailers_to_htx(struct qcs *qcs, const struct buffer *buf,
 	if (!h3s->data_len) {
 		/* Notify that no body is present. This can only happens if
 		 * there is H3 HEADERS as trailers without or empty H3 DATA
-		 * frame. So this is probably not realistice ?
+		 * frame. So this is probably not realistic ?
 		 *
 		 * TODO if sl is NULL because already consumed there is no way
 		 * to notify about missing body.
