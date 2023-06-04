@@ -1400,7 +1400,7 @@ void filter_extract_capture(const char *accept_field, const char *time_field, un
 			return;
 		}
 
-		/* e points the the opening brace of the capture block. */
+		/* e points to the opening brace of the capture block. */
 
 		e++;
 	}

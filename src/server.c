@@ -5812,7 +5812,7 @@ static void srv_update_status(struct server *s, int type, int cause)
 	 */
 	srv_lb_commit_status(s);
 
-	/* check if server stats must be updated due the the server state change */
+	/* check if server stats must be updated due to the server state change */
 	if (srv_prev_state != s->cur_state) {
 		if (srv_prev_state == SRV_ST_STOPPED) {
 			/* server was down and no longer is */

@@ -980,7 +980,7 @@ static int set_secondary_key_encoding(struct htx *htx, char *secondary_key)
 		resp_encoding_bitmap |= VARY_ENCODING_IDENTITY;
 
 	/* Rewrite the bitmap part of the hash with the new bitmap that only
-	 * corresponds the the response's encoding. */
+	 * corresponds to the response's encoding. */
 	write_u32(secondary_key + offset, resp_encoding_bitmap);
 
 	return 0;
