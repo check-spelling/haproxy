@@ -1047,7 +1047,7 @@ it is an HTX stream or a TCP stream.
 ------------------------------------
 
 The HTTP data filtering is a bit more complex because HAProxy data are
-structutred and represented to an internal format, called HTX. So basically
+structured and represented to an internal format, called HTX. So basically
 there is the HTTP counterpart to the previous callback :
 
   * 'flt_ops.http_payload' : This callback is called when input data are
