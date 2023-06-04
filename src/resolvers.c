@@ -2429,7 +2429,7 @@ struct task *process_resolvers(struct task *t, void *context, unsigned int state
 			}
 
 			if (!must_run) {
-				/* Skip the reolsution. reset it and wait for the next wakeup */
+				/* Skip the resolution. reset it and wait for the next wakeup */
 				resolv_reset_resolution(res);
 				continue;
 			}
