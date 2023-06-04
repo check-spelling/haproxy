@@ -721,7 +721,7 @@ them all in the DEFINE variable. Example:
 
 The ADDINC variable may be used to add some extra include paths; this is
 sometimes needed when cross-compiling. Similarly the ADDLIB variable may be
-used to specifify extra paths to library files. Example :
+used to specify extra paths to library files. Example :
 
   $ make TARGET=generic ADDINC=-I/opt/cross/include ADDLIB=-L/opt/cross/lib64
 
