@@ -4883,7 +4883,7 @@ __LJMP static int hlua_applet_tcp_recv_yield(lua_State *L, int status, lua_KCont
 
 	if (len == -1) {
 
-		/* If len == -1, catenate all the data avalaile and
+		/* If len == -1, catenate all the data available and
 		 * yield because we want to get all the data until
 		 * the end of data stream.
 		 */

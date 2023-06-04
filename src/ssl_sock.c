@@ -3252,7 +3252,7 @@ struct eb_root crtlists_tree = EB_ROOT_UNIQUE;
  *  DH parameters are applied on the SSL_CTX.
  * Returns a bitfield containing the flags:
  *     ERR_FATAL in any fatal error case
- *     ERR_ALERT if a reason of the error is availabine in err
+ *     ERR_ALERT if a reason of the error is available in err
  *     ERR_WARN if a warning is available into err
  * The value 0 means there is no error nor warning and
  * the operation succeed.
