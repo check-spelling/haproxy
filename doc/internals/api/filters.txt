@@ -296,7 +296,7 @@ instances attached to a stream :
         unsigned short flags;               /* STRM_FL_* */
         unsigned char  nb_req_data_filters; /* Number of data filters registered on the request channel */
         unsigned char  nb_rsp_data_filters; /* Number of data filters registered on the response channel */
-        unsigned long long offset[2];       /* gloal offset of input data already filtered for a specific channel
+        unsigned long long offset[2];       /* global offset of input data already filtered for a specific channel
                                              * 0: request channel, 1: response channel */
     };
 
