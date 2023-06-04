@@ -308,7 +308,7 @@ void set_thread_cpu_affinity()
  * hard to export for post-mortem analysis. For this reason we copy it into a
  * union and will use the smallest scalar type at least as large as its size,
  * which will keep endianness and alignment for all regular sizes. As a last
- * resort we end up with a long long ligned to the first bytes in memory, which
+ * resort we end up with a long long aligned to the first bytes in memory, which
  * will be endian-dependent if pthread_t is larger than a long long (not seen
  * yet).
  */
