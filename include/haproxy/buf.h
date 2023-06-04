@@ -494,7 +494,7 @@ static inline void b_slow_realign(struct buffer *b, char *swap, size_t output)
 /* b_slow_realign_ofs() : this function realigns a possibly wrapping buffer
  * setting its new head at <ofs>. Depending of the <ofs> value, the resulting
  * buffer may also wrap. A temporary swap area at least as large as b->size must
- * be provided in <swap>. It's up to the caller to ensuze <ofs> is not larger
+ * be provided in <swap>. It's up to the caller to ensure <ofs> is not larger
  * than b->size.
  */
 static inline void b_slow_realign_ofs(struct buffer *b, char *swap, size_t ofs)
