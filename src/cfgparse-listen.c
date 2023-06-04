@@ -410,7 +410,7 @@ int cfg_parse_listen(const char *file, int linenum, char **args, int kwm)
 
 		if ((rc & PR_CAP_BE) && curr_defproxy && (curr_defproxy->nb_req_cap || curr_defproxy->nb_rsp_cap)) {
 			ha_alert("parsing [%s:%d]: backend or defaults sections cannot inherit from a defaults section defining"
-				 " capptures (defaults section at %s:%d).\n",
+				 " captures (defaults section at %s:%d).\n",
 				 file, linenum, curr_defproxy->conf.file, curr_defproxy->conf.line);
 			err_code |= ERR_ALERT | ERR_ABORT;
 		}
