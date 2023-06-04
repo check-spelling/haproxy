@@ -2244,7 +2244,7 @@ int pat_ref_read_from_file_smp(struct pat_ref *ref, const char *filename, char *
 
 	/* now parse all patterns. The file may contain only one pattern
 	 * followed by one value per line. The start spaces, separator spaces
-	 * and and spaces are stripped. Each can contain comment started by '#'
+	 * and trailing spaces are stripped. Each can contain comment started by '#'
 	 */
 	while (fgets(trash.area, trash.size, file) != NULL) {
 		line++;
