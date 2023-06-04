@@ -169,7 +169,7 @@ unregister_data_filter(struct stream *s, struct channel *chn, struct filter *fil
  * offsets of all previous filters. Do not call this function when a filter
  * change the size of payload data leads to an undefined behavior.
  *
- * This is the filter's responsiblitiy to update data itself.
+ * This is the filter's responsibility to update data itself.
  */
 static inline void
 flt_update_offsets(struct filter *filter, struct channel *chn, int len)

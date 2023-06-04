@@ -577,7 +577,7 @@ int quic_tls_decrypt(unsigned char *buf, size_t len,
 
 /* Similar to quic_tls_decrypt(), except that this function does not decrypt
  * in place its ciphertest if <out> output buffer ciphertest with <len> as length
- * is different from <in> input buffer. This is the responbality of the caller
+ * is different from <in> input buffer. This is the responsibility of the caller
  * to check that the output buffer has at least the same size as the input buffer.
  * Note that for CCM mode, we must set the the ciphertext length if AAD data
  * are provided from <aad> buffer with <aad_len> as length. This is always the
