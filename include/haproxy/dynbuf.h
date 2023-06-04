@@ -59,7 +59,7 @@ static inline int buffer_almost_full(const struct buffer *buf)
 /* Ensures that <buf> is allocated, or allocates it. If no memory is available,
  * ((char *)1) is assigned instead with a zero size. The allocated buffer is
  * returned, or NULL in case no memory is available. Since buffers only contain
- * user data, poisonning is always disabled as it brings no benefit and impacts
+ * user data, poisoning is always disabled as it brings no benefit and impacts
  * performance. Due to the difficult buffer_wait management, they are not
  * subject to forced allocation failures either.
  */
