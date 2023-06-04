@@ -8726,7 +8726,7 @@ __LJMP static int hlua_msleep(lua_State *L)
 	return 0;
 }
 
-/* This functionis an LUA binding. it permits to give back
+/* This function is an LUA binding. it permits to give back
  * the hand at the HAProxy scheduler. It is used when the
  * LUA processing consumes a lot of time.
  */
