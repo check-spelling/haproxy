@@ -65,7 +65,7 @@
  *
  * Another nice optimisation is to allow a timer to stay at an old place in the
  * queue as long as it's not further than the real expiration date. That way,
- * we use the tree as a place holder for a minorant of the real expiration
+ * we use the tree as a place holder for a minorant [sp?] of the real expiration
  * date. Since we have a very low chance of hitting a timeout anyway, we can
  * bounce the nodes to their right place when we scan the tree if we encounter
  * a misplaced node once in a while. This even allows us not to remove the
