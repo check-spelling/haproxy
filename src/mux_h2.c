@@ -6053,7 +6053,7 @@ static size_t h2s_make_data(struct h2s *h2s, struct buffer *buf, size_t count)
 	if (fsize > h2c->mws)
 		fsize = h2c->mws;
 
-	/* now let's copy this this into the output buffer */
+	/* now let's copy it into the output buffer */
 	memcpy(outbuf.area + 9, htx_get_blk_ptr(htx, blk), fsize);
 	h2s->sws -= fsize;
 	h2c->mws -= fsize;
