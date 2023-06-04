@@ -1140,7 +1140,7 @@ static int ssl_sock_load_ocsp(const char *path, SSL_CTX *ctx, struct ckch_data *
 	}
 
 	issuer = data->ocsp_issuer;
-	/* take issuer from chain over ocsp_issuer, is what is done historicaly */
+	/* take issuer from chain over ocsp_issuer, is what is done historically */
 	if (chain) {
 		/* check if one of the certificate of the chain is the issuer */
 		for (i = 0; i < sk_X509_num(chain); i++) {
