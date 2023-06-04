@@ -843,7 +843,7 @@ srv_found:
 					srv->flags |= SRV_F_NO_RESOLUTION;
 
 					/* Unlink A/AAAA resolution for this server if there is an AR item.
-					 * It is usless to perform an extra resolution
+					 * It is useless to perform an extra resolution
 					 */
 					_resolv_unlink_resolution(srv->resolv_requester);
 				}

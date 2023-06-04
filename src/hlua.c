@@ -4678,7 +4678,7 @@ __LJMP static int hlua_applet_tcp_set_var(lua_State *L)
 	if (lua_gettop(L) < 3 || lua_gettop(L) > 4)
 		WILL_LJMP(luaL_error(L, "'set_var' needs between 3 and 4 arguments"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_tcp(L, 1));
@@ -4712,7 +4712,7 @@ __LJMP static int hlua_applet_tcp_unset_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "unset_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_tcp(L, 1));
@@ -4735,7 +4735,7 @@ __LJMP static int hlua_applet_tcp_get_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "get_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_tcp(L, 1));
@@ -5169,7 +5169,7 @@ __LJMP static int hlua_applet_http_set_var(lua_State *L)
 	if (lua_gettop(L) < 3 || lua_gettop(L) > 4)
 		WILL_LJMP(luaL_error(L, "'set_var' needs between 3 and 4 arguments"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_http(L, 1));
@@ -5203,7 +5203,7 @@ __LJMP static int hlua_applet_http_unset_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "unset_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_http(L, 1));
@@ -5226,7 +5226,7 @@ __LJMP static int hlua_applet_http_get_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "get_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	luactx = MAY_LJMP(hlua_checkapplet_http(L, 1));
@@ -7777,7 +7777,7 @@ __LJMP static int hlua_set_var(lua_State *L)
 	if (lua_gettop(L) < 3 || lua_gettop(L) > 4)
 		WILL_LJMP(luaL_error(L, "'set_var' needs between 3 and 4 arguments"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	htxn = MAY_LJMP(hlua_checktxn(L, 1));
@@ -7809,7 +7809,7 @@ __LJMP static int hlua_unset_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "unset_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	htxn = MAY_LJMP(hlua_checktxn(L, 1));
@@ -7830,7 +7830,7 @@ __LJMP static int hlua_get_var(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "get_var"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	htxn = MAY_LJMP(hlua_checktxn(L, 1));
@@ -7851,7 +7851,7 @@ __LJMP static int hlua_set_priv(lua_State *L)
 
 	MAY_LJMP(check_args(L, 2, "set_priv"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	MAY_LJMP(hlua_checktxn(L, 1));
@@ -7877,7 +7877,7 @@ __LJMP static int hlua_get_priv(lua_State *L)
 
 	MAY_LJMP(check_args(L, 1, "get_priv"));
 
-	/* It is useles to retrieve the stream, but this function
+	/* It is useless to retrieve the stream, but this function
 	 * runs only in a stream context.
 	 */
 	MAY_LJMP(hlua_checktxn(L, 1));
