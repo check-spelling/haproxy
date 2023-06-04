@@ -4821,7 +4821,7 @@ next_frame:
 
 		/* Move the frame's payload over the padding, hole and frame
 		 * header. At least one of hole or dpl is null (see diagrams
-		 * above). The hole moves after the new aggragated frame.
+		 * above). The hole moves after the new aggregate frame.
 		 */
 		b_move(&h2c->dbuf, b_peek_ofs(&h2c->dbuf, h2c->dfl + hole + 9), clen, -(h2c->dpl + hole + 9));
 		h2c->dfl += hdr.len - h2c->dpl;
