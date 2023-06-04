@@ -80,7 +80,7 @@ struct stream;
  * time.
  */
 #define HLUA_TXN_SMP_NONE 0x00000000 /* No specific execution context */
-#define HLUA_TXN_SMP_CTX  0x00000010 /* Executed from a sample fecth context */
+#define HLUA_TXN_SMP_CTX  0x00000010 /* Executed from a sample fetch context */
 #define HLUA_TXN_ACT_CTX  0x00000020 /* Executed from a action context */
 #define HLUA_TXN_FLT_CTX  0x00000030 /* Executed from a filter context */
 #define HLUA_TXN_CTX_MASK 0x00000030 /* Mask to get the execution context */
