@@ -96,14 +96,14 @@ then the path to the directory where the include files and libraries are
 located can be explicitly specified.
 
 Below are examples of the two ways to compile HAProxy with the OT filter, the
-first using the pkg-congfig tool and the second explicitly specifying the path
+first using the pkg-config tool and the second explicitly specifying the path
 to the OpenTracing C Wrapper include and library.
 
 Note: prompt '%' indicates that the command is executed under a unprivileged
       user, while prompt '#' indicates that the command is executed under the
       root user.
 
-Example of compiling HAProxy using the pkg-congfig tool (assuming the
+Example of compiling HAProxy using the pkg-config tool (assuming the
 OpenTracing C Wrapper library is installed in the /opt directory):
 
   % PKG_CONFIG_PATH=/opt/lib/pkgconfig make USE_OT=1 TARGET=linux-glibc
