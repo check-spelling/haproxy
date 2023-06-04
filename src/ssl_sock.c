@@ -1548,7 +1548,7 @@ static void ssl_sock_parse_heartbeat(struct connection *conn, int write_p, int v
 		 * So instead, we prevent the response from being sent by
 		 * setting the max_send_fragment to 0 and we report an SSL
 		 * error, which will kill this connection. It will be reported
-		 * above as SSL_ERROR_SSL while an other handshake failure with
+		 * above as SSL_ERROR_SSL while another handshake failure with
 		 * a heartbeat message will be reported as SSL_ERROR_SYSCALL.
 		 */
 		ssl->max_send_fragment = 0;
@@ -4330,7 +4330,7 @@ int sh_ssl_sess_new_cb(SSL *ssl, SSL_SESSION *sess)
 
 	sid_data = SSL_SESSION_get_id(sess, &sid_length);
 
-	/* copy value in an other buffer */
+	/* copy value in another buffer */
 	memcpy(encid, sid_data, sid_length);
 
 	/* pad with 0 */
