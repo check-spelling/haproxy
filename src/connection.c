@@ -717,7 +717,7 @@ int conn_unsubscribe(struct connection *conn, void *xprt_ctx, int event_type, st
 /* Called from the upper layer, to subscribe <es> to events <event_type>.
  * The <es> struct is not allowed to differ from the one passed during a
  * previous call to subscribe(). If the connection's ctrl layer is ready,
- * the wait_event is immediately woken up and the subcription is cancelled.
+ * the wait_event is immediately woken up and the subscription is cancelled.
  * It always returns zero.
  */
 int conn_subscribe(struct connection *conn, void *xprt_ctx, int event_type, struct wait_event *es)

@@ -9033,7 +9033,7 @@ static void hlua_event_subscription_destroy(struct hlua_event_sub *hlua_sub)
  * Strictly speaking, there is no runtime limit for the callback function
  * (timeout set to default task timeout), but if the event queue goes past
  * the limit of unconsumed events an error will be reported and the
- * susbscription will pause itself for as long as it takes for the handler to
+ * subscription will pause itself for as long as it takes for the handler to
  * catch up (events will be lost as a result).
  * If the event handler does not need the sequential ordering and wants to
  * process multiple events at a time, it may spawn a new side-task using
