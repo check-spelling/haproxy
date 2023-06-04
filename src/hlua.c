@@ -3068,7 +3068,7 @@ __LJMP static int hlua_socket_connect_yield(struct lua_State *L, int status, lua
 	return 0;
 }
 
-/* This function fail or initite the connection. */
+/* This function fail or initiate the connection. */
 __LJMP static int hlua_socket_connect(struct lua_State *L)
 {
 	struct hlua_socket *socket;
