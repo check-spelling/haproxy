@@ -156,7 +156,7 @@ static struct htx_blk *htx_reserve_nxblk(struct htx *htx, uint32_t blksz)
 	/* Find the block's position. First, we try to get the next position in
 	 * the message, increasing the tail by one. If this position is not
 	 * available with some holes, we try to defrag the blocks without
-	 * touching their paylood. If it is impossible, we fully defrag the
+	 * touching their payload. If it is impossible, we fully defrag the
 	 * message.
 	 */
 	tail = htx->tail + 1;
