@@ -2307,7 +2307,7 @@ static int accept_encoding_normalizer(struct htx *htx, struct ist hdr_name,
 	encoding_bitmap |= VARY_ENCODING_IDENTITY;
 
 	/* Iterate over all the ACCEPT_ENCODING_MAX_ENTRIES first accept-encoding
-	 * values that might span acrosse multiple accept-encoding headers. */
+	 * values that might span across multiple accept-encoding headers. */
 	while (http_find_header(htx, hdr_name, &ctx, 0) && count < ACCEPT_ENCODING_MAX_ENTRIES) {
 		count++;
 
