@@ -164,7 +164,7 @@ or:
          ---+-+----------------------------+-----------------+--
 
 
-2) Linked lists before the the area leave room for tracer and pool before
+2) Linked lists before the area leave room for tracer and pool before
    the area, but the canary must remain at the end, however the area will
    be more difficult to keep aligned:
 
