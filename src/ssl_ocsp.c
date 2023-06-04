@@ -1073,7 +1073,7 @@ static void ssl_ocsp_send_log()
  * http_client. The task is then sent to sleep with an expire time set to
  * infinity. The http_client will wake it back up once the response is received
  * (or a timeout occurs). Just note that during this whole process the
- * cetificate_ocsp object corresponding to the entry being updated is taken out
+ * certificate_ocsp object corresponding to the entry being updated is taken out
  * of the update tree and only stored in the ssl_ocsp_task_ctx context.
  *
  * Once the task is waken up by the http_client, it branches on the response
