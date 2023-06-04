@@ -2035,7 +2035,7 @@ stats_error_parsing:
 		}
 
 		/* Redispatch can take an integer argument that control when the
-		 * resispatch occurs. All values are relative to the retries option.
+		 * redispatch occurs. All values are relative to the retries option.
 		 * This can be cancelled using "no option xxx".
 		 */
 		if (strcmp(args[1], "redispatch") == 0) {
