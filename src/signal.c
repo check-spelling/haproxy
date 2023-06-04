@@ -262,7 +262,7 @@ void signal_unregister_target(int sig, void *target)
 }
 
 /*
- * Immedialtely unregister every handler assigned to a signal <sig>.
+ * Immediately unregister every handler assigned to a signal <sig>.
  * Once the handler list is empty, the signal is ignored with SIG_IGN.
  */
 
