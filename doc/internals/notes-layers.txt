@@ -110,7 +110,7 @@ It becomes visible that the mux will not always be welcome to decode incoming
 data because it will sometimes imply extra memory copies and/or usage for no
 benefit.
 
-Ideally, when when a stream is instantiated based on incoming data, these
+Ideally, when a stream is instantiated based on incoming data, these
 incoming data should be passed and the upper layers called, but it should then
 be up these upper layers to peek more data in certain circumstances. Typically
 if the pending connection data are larger than what is expected to be passed
