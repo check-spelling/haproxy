@@ -4320,7 +4320,7 @@ int sh_ssl_sess_new_cb(SSL *ssl, SSL_SESSION *sess)
 	unsigned int sid_length;
 	const unsigned char *sid_data;
 
-	/* Session id is already stored in to key and session id is known
+	/* Session id is already stored in key and session id is known
 	 * so we don't store it to keep size.
 	 * note: SSL_SESSION_set1_id is using
 	 * a memcpy so we need to use a different pointer
