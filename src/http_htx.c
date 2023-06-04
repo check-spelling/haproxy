@@ -401,7 +401,7 @@ int http_replace_req_uri(struct htx *htx, const struct ist uri)
 }
 
 /* Replace the request path in the HTX message <htx> by <path>. The host part is
- * preserverd. if <with_qs> is set, the query string is evaluated as part of the
+ * preserved. if <with_qs> is set, the query string is evaluated as part of the
  * path and replaced. Otherwise, it is preserved too. It returns 1 on success,
  * otherwise 0.
  */
