@@ -174,7 +174,7 @@ struct pattern *pat_match_reg(struct sample *smp, struct pattern_expr *expr, int
 struct pattern *pat_match_regm(struct sample *smp, struct pattern_expr *expr, int fill);
 
 /*
- * pattern_ref manipulation.
+ * pattern_reference manipulation.
  */
 struct pat_ref *pat_ref_lookup(const char *reference);
 struct pat_ref *pat_ref_lookupid(int unique_id);

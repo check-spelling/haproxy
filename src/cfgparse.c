@@ -4453,7 +4453,7 @@ init_proxies_list_stage2:
 			 */
 			free(curpeers->id);
 			curpeers = curpeers->next;
-			/* Reset any refereance to this peers section in the list of stick-tables */
+			/* Reset any reference to this peers section in the list of stick-tables */
 			for (t = stktables_list; t; t = t->next) {
 				if (t->peers.p && t->peers.p == *last)
 					t->peers.p = NULL;
