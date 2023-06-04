@@ -126,7 +126,7 @@ new HTTP header X-51D-Stats.
         ...
         http-request set-header X-51D-Stats %[51d.all(Method,Difference,Rank)]
 
-These values indicate how confident 51Degrees is in the result that that was
+These values indicate how confident 51Degrees is in the result that was
 returned. More information is available on the 51Degrees web site at:
 
     https://51degrees.com/support/documentation/pattern
