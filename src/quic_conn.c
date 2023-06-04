@@ -5041,7 +5041,7 @@ struct task *quic_conn_app_io_cb(struct task *t, void *context, unsigned int sta
 		quic_build_post_handshake_frames(qc);
 	}
 
-	/* Retranmissions */
+	/* Retransmissions */
 	if (qc->flags & QUIC_FL_CONN_RETRANS_NEEDED) {
 		TRACE_STATE("retransmission needed", QUIC_EV_CONN_IO_CB, qc);
 		qc->flags &= ~QUIC_FL_CONN_RETRANS_NEEDED;
@@ -5106,7 +5106,7 @@ struct task *quic_conn_io_cb(struct task *t, void *context, unsigned int state)
 	st = qc->state;
 	TRACE_PROTO("connection state", QUIC_EV_CONN_IO_CB, qc, &st);
 
-	/* Retranmissions */
+	/* Retransmissions */
 	if (qc->flags & QUIC_FL_CONN_RETRANS_NEEDED) {
 		TRACE_DEVEL("retransmission needed", QUIC_EV_CONN_PHPKTS, qc);
 		qc->flags &= ~QUIC_FL_CONN_RETRANS_NEEDED;
