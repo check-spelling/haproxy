@@ -99,7 +99,7 @@ static __attribute__((noreturn)) void memprof_die(const char *msg)
  * This must be called very early at boot, before the very first malloc()
  * call, and is not thread-safe! It's not even possible to use stdio there.
  * Worse, we have to account for the risk of reentrance from dlsym() when
- * it tries to prepare its error messages. Here its ahndled by in_memprof
+ * it tries to prepare its error messages. Here its handled by in_memprof
  * that makes allocators return NULL. dlsym() handles it gracefully. An
  * alternate approach consists in calling aligned_alloc() from these places
  * but that would mean not being able to intercept it later if considered
