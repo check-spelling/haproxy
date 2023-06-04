@@ -430,7 +430,7 @@ Config on both proxies (LB1 and LB2) :
 The "monitor-net" option instructs the proxies that any connection coming from
 192.168.1.252 or 192.168.1.253 will not be logged nor forwarded and will be
 closed immediately. The Alteon load-balancers will then see the proxies alive
-without perturbating the service.
+without perturbing the service.
 
 Config on the Alteon :
 ----------------------
