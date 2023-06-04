@@ -2249,7 +2249,7 @@ int stats_fill_sv_stats(struct proxy *px, struct server *sv, int flags,
 		stats_fill_sv_stats_computestate(sv, ref, &state);
 	}
 
-	/* compue time values for later use */
+	/* compute time values for later use */
 	if (selected_field == NULL || *selected_field == ST_F_QTIME ||
 	    *selected_field == ST_F_CTIME || *selected_field == ST_F_RTIME ||
 	    *selected_field == ST_F_TTIME) {
