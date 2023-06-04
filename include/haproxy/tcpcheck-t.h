@@ -140,7 +140,7 @@ struct tcpcheck_http_hdr {
 };
 
 struct tcpcheck_codes {
-	unsigned int (*codes)[2]; /* an array of roange of codes: [0]=min [1]=max */
+	unsigned int (*codes)[2]; /* an array of range of codes: [0]=min [1]=max */
 	size_t num;               /* number of entry in the array */
 };
 
