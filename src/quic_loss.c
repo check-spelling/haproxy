@@ -148,7 +148,7 @@ struct quic_pktns *quic_pto_pktns(struct quic_conn *qc,
  * their tree if deemed as lost or set the <loss_time> value the packet number
  * space if any not deemed lost.
  * Should be called after having received an ACK frame with newly acknowledged
- * packets or when the the loss detection timer has expired.
+ * packets or when the loss detection timer has expired.
  * Always succeeds.
  */
 void qc_packet_loss_lookup(struct quic_pktns *pktns, struct quic_conn *qc,

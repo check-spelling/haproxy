@@ -247,7 +247,7 @@ struct htx {
 	int32_t head;   /* oldest inserted block. -1 if the HTX message is empty */
 	int32_t first;  /* position of the first block to (re)start the analyse. -1 if unset. */
 
-	uint32_t tail_addr; /* start address of the free space in front of the the blocks table */
+	uint32_t tail_addr; /* start address of the free space in front of the blocks table */
 	uint32_t head_addr; /* start address of the free space at the beginning */
 	uint32_t end_addr;  /* end address of the free space at the beginning */
 
