@@ -81,8 +81,8 @@ static void strm_trace(enum trace_level level, uint64_t mask,
 /* The event representation is split like this :
  *   strm  - stream
  *   sc    - stream connector
- *   http  - http analyzis
- *   tcp   - tcp analyzis
+ *   http  - http analysis
+ *   tcp   - tcp analysis
  *
  * STRM_EV_* macros are defined in <proto/stream.h>
  */
@@ -96,13 +96,13 @@ static const struct trace_event strm_trace_events[] = {
 	{ .mask = STRM_EV_CS_ST,        .name = "sc_state",     .desc = "processing connector states" },
 
 	{ .mask = STRM_EV_HTTP_ANA,     .name = "http_ana",     .desc = "HTTP analyzers" },
-	{ .mask = STRM_EV_HTTP_ERR,     .name = "http_err",     .desc = "error during HTTP analyzis" },
+	{ .mask = STRM_EV_HTTP_ERR,     .name = "http_err",     .desc = "error during HTTP analysis" },
 
 	{ .mask = STRM_EV_TCP_ANA,      .name = "tcp_ana",      .desc = "TCP analyzers" },
-	{ .mask = STRM_EV_TCP_ERR,      .name = "tcp_err",      .desc = "error during TCP analyzis" },
+	{ .mask = STRM_EV_TCP_ERR,      .name = "tcp_err",      .desc = "error during TCP analysis" },
 
 	{ .mask = STRM_EV_FLT_ANA,      .name = "flt_ana",      .desc = "Filter analyzers" },
-	{ .mask = STRM_EV_FLT_ERR,      .name = "flt_err",      .desc = "error during filter analyzis" },
+	{ .mask = STRM_EV_FLT_ERR,      .name = "flt_err",      .desc = "error during filter analysis" },
 	{}
 };
 
