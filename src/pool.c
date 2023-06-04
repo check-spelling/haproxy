@@ -582,7 +582,7 @@ void pool_evict_from_local_caches()
 /* Frees an object to the local cache, possibly pushing oldest objects to the
  * shared cache, which itself may decide to release some of them to the OS.
  * While it is unspecified what the object becomes past this point, it is
- * guaranteed to be released from the users' perpective. A caller address may
+ * guaranteed to be released from the users' perspective. A caller address may
  * be passed and stored into the area when DEBUG_POOL_TRACING is set. Must not
  * be used with pools disabled.
  */
