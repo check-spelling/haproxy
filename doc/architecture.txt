@@ -728,7 +728,7 @@ attempt will expire after 5 seconds ("contimeout"), and only after that, the
 client will be redispatched to another server. So this mode is only useful
 for software updates where the server will suddenly refuse the connection
 because the process is stopped. The problem is the same if the server suddenly
-crashes. All of its users will be fairly perturbated.
+crashes. All of its users will be fairly perturbed.
 
 
 ==================================

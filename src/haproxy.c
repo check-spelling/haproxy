@@ -147,7 +147,7 @@ DECLARE_INIT_STAGES;
 
 /* create a read_mostly section to hold variables which are accessed a lot
  * but which almost never change. The purpose is to isolate them in their
- * own cache lines where they don't risk to be perturbated by write accesses
+ * own cache lines where they don't risk to be perturbed by write accesses
  * to neighbor variables. We need to create an empty aligned variable for
  * this. The fact that the variable is of size zero means that it will be
  * eliminated at link time if no other variable uses it, but alignment will
