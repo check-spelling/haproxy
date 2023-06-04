@@ -116,7 +116,7 @@ core.Info("4")
 					break
 				end
 			end
---			core.Info("processhttpresponse, Loopy, get more body data! to receive complete contentlenght")
+--			core.Info("processhttpresponse, Loopy, get more body data! to receive complete contentlength")
 		until false
 	end
 	if res.headers["Transfer-Encoding"] ~= nil and res.headers["Transfer-Encoding"] == "chunked" then
