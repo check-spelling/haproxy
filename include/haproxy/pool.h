@@ -235,7 +235,7 @@ static inline void *pool_get_from_cache(struct pool_head *pool, const void *call
 
 /*
  * Returns a pointer to type <type> taken from the pool <pool_type> or
- * dynamically allocated. Memory poisonning is performed if enabled.
+ * dynamically allocated. Memory poisoning is performed if enabled.
  */
 #define pool_alloc(pool) __pool_alloc((pool), 0)
 

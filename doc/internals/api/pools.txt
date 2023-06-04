@@ -366,13 +366,13 @@ void *__pool_alloc(struct pool_head *pool, uint flags)
         allocator. NULL is returned if the object couldn't be allocated (due to
         configured limits or lack of memory). Object allocated this way have to
         be released using pool_free(). Like with malloc(), by default the
-        contents of the returned object are undefined. If memory poisonning is
-        enabled, the object will be filled with the poisonning byte. If the
+        contents of the returned object are undefined. If memory poisoning is
+        enabled, the object will be filled with the poisoning byte. If the
         global "pool.fail-alloc" setting is non-zero and DEBUG_FAIL_ALLOC is
         enabled, a random number generator will be called to randomly return a
         NULL. The allocator's behavior may be adjusted using a few flags passed
         in <flags>:
-           - POOL_F_NO_POISON : when set, disables memory poisonning (e.g. when
+           - POOL_F_NO_POISON : when set, disables memory poisoning (e.g. when
              pointless and expensive, like for buffers)
            - POOL_F_MUST_ZERO : when set, the memory area will be zeroed before
              being returned, similar to what calloc() does

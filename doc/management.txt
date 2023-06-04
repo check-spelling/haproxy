@@ -275,7 +275,7 @@ list of options is :
    also enumerated, unless the quiet mode is in use (-q).
 
   -dM[<byte>[,]][help|options,...] : forces memory poisoning, and/or changes
-    memory other debugging options. Memory poisonning means that each and every
+    memory other debugging options. Memory poisoning means that each and every
     memory region allocated with malloc() or pool_alloc() will be filled with
     <byte> before being passed to the caller. When <byte> is not specified, it
     defaults to 0x50 ('P'). While this slightly slows down operations, it is

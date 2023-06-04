@@ -38,7 +38,7 @@ An allocated object may exist in 5 forms:
   - in the OS only: the memory allocator gave it back to the OS.
 
 The following options need to be configurable:
-  - detect improper initialization: this is done by poisonning objects before
+  - detect improper initialization: this is done by poisoning objects before
     delivering them to the application.
 
   - help figure where an object was allocated when in use: a pointer to the
@@ -216,7 +216,7 @@ Some models imply dedicating some place when in cache:
     so that the allocated size is known, and entries are filled from the
     beginning while not in use, or after the size when in use.
 
-  - if poisonning is requested, late corruption might be detected but then we
+  - if poisoning is requested, late corruption might be detected but then we
     don't want the list to be stored inside at the risk of being corrupted.
 
 Maybe just implement a few models:
@@ -224,7 +224,7 @@ Maybe just implement a few models:
   - detect late corruption: fill/sum, put l1/l2 out
   - preserve contents: put l1/l2 out
   - corruption+preserve: do not fill, sum out
-  - poisonning: not needed on free if pattern filling is done.
+  - poisoning: not needed on free if pattern filling is done.
 
 try2:
   - poison on alloc to detect missing initialization: yes/no
