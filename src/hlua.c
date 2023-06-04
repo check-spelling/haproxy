@@ -5551,7 +5551,7 @@ __LJMP static int hlua_applet_http_send(lua_State *L)
 		WILL_LJMP(lua_error(L));
 	}
 
-	/* This integer is used for followinf the amount of data sent. */
+	/* This integer is used for following the amount of data sent. */
 	lua_pushinteger(L, 0);
 
 	return MAY_LJMP(hlua_applet_http_send_yield(L, 0, 0));
