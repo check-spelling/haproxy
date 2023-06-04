@@ -41,7 +41,7 @@
 #include <haproxy/version.h>
 
 
-/* Release memory allocated by most of HTTP actions. Concretly, it releases
+/* Release memory allocated by most of HTTP actions. Concretely, it releases
  * <arg.http>.
  */
 static void release_http_action(struct act_rule *rule)
@@ -59,7 +59,7 @@ static void release_http_action(struct act_rule *rule)
 	}
 }
 
-/* Release memory allocated by HTTP actions relying on an http reply. Concretly,
+/* Release memory allocated by HTTP actions relying on an http reply. Concretely,
  * it releases <.arg.http_reply>
  */
 static void release_act_http_reply(struct act_rule *rule)
