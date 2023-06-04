@@ -1112,7 +1112,7 @@ int hlua_fcn_new_listener(lua_State *L, struct listener *lst)
 {
 	lua_newtable(L);
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_listener_ref);
 	lua_setmetatable(L, -2);
 

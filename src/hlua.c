@@ -3352,7 +3352,7 @@ static int hlua_channel_new(lua_State *L, struct channel *channel)
 	lua_pushlightuserdata(L, channel);
 	lua_rawseti(L, -2, 0);
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_channel_ref);
 	lua_setmetatable(L, -2);
 	return 1;
@@ -4381,7 +4381,7 @@ static int hlua_fetches_new(lua_State *L, struct hlua_txn *txn, unsigned int fla
 	hsmp->dir = txn->dir;
 	hsmp->flags = flags;
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_fetches_ref);
 	lua_setmetatable(L, -2);
 
@@ -7993,7 +7993,7 @@ static int hlua_txn_new(lua_State *L, struct stream *s, struct proxy *p, int dir
 		lua_rawset(L, -3);
 	}
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_txn_ref);
 	lua_setmetatable(L, -2);
 
@@ -8509,7 +8509,7 @@ static int hlua_txn_reply_new(lua_State *L)
 	lua_settable(L, -3);
 	/* stack: [ txn, <Arg:table>, <Reply:table> ] */
 
-	/* Pop a class sesison metatable and affect it to the userdata. */
+	/* Pop a class session metatable and affect it to the userdata. */
 	lua_rawgeti(L, LUA_REGISTRYINDEX, class_txn_reply_ref);
 	lua_setmetatable(L, -2);
 	return 1;
