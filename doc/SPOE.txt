@@ -1191,7 +1191,7 @@ IMPORTANT NOTE: By default, for a specific stream, when an abnormal/unexpected
                 will disable it for the transaction (request and response).
                 See 'option continue-on-error' to bypass this limitation.
 
-To avoid a stream to wait undefinetly, you must carefully choose the
+To avoid a stream to wait indefinitely, you must carefully choose the
 acknowledgement timeout. In most of cases, it will be quiet low. But it depends
 on the responsivness of your service.
 
