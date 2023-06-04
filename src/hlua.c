@@ -4514,7 +4514,7 @@ static int hlua_converters_new(lua_State *L, struct hlua_txn *txn, unsigned int 
  * It uses closure argument to store the associated converter. It
  * returns only one argument or throws an error. An error is thrown
  * only if an error is encountered during the argument parsing. If
- * the converter function function fails, nil is returned.
+ * the converter function fails, nil is returned.
  */
 __LJMP static int hlua_run_sample_conv(lua_State *L)
 {
